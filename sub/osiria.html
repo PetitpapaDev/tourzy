@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- og -->
+    <meta property="og:url" content="http://tourzy.kr" />
+    <meta property="og:title" content="투어지" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://tourzy.kr/images/main_logo_s.png" />
+    <meta property="og:description" content="센터소개 | 오시리아센터" />
+    <!-- og -->
+
+    <title>센터소개 | 오시리아 센터</title>
+
+    <link rel="shortcut icon" href="../images/3dots.ico" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/substyle.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+
+    <script>
+
+        // gnb
+        $(document).ready(function () {
+            $(".gnb_sub,.gnb_bg").hide();
+            $(".gnb > li").mouseenter(function () {
+                $(".gnb_sub,.gnb_bg").stop().slideDown(300);
+            });
+            $(".gnb > li").mouseleave(function () {
+                $(".gnb_sub,.gnb_bg").stop().slideUp(300);
+            });
+        });
+        // gnb
+
+        // mgnb
+        $(document).ready(function () {
+
+            $(".mgnb_wrap_bg").hide();
+
+            $(".m_menu_box").click(function () {
+                $(".mgnb_wrap").animate({
+                    left: '48%'
+                });
+                $(".m_menu_box").hide();
+                $(".mgnb_wrap_bg").show();
+
+            });
+            $(".close_box").click(function () {
+                $(".mgnb_wrap").animate({
+                    left: '100%'
+                });
+                $(".m_menu_box").show();
+                $(".mgnb_wrap_bg").hide();
+            });
+        });
+        // mgnb
+
+        // 마우스 스크롤 이벤트
+        $(window).ready(function () {
+
+            var $header = $("#header");
+            var $window = $(window);
+            var headerOffsetTop = $header.offset().top;
+
+            $window.resize(function () {
+                headerOffsetTop = $header.offset().top;
+            });
+
+            $window.on('scroll', function () {
+                var scrolled = $window.scrollTop() >= headerOffsetTop;
+                if (scrolled == false) {
+                    $("#header").show();
+                } else {
+                    window.onmousewheel = function (e) {
+                        if (e.wheelDelta > 0) {
+                            $("#header").show();
+                        } else {
+                            $("#header").hide();
+                        }
+                    }
+                }
+            });
+        });
+        // 마우스 스크롤 이벤트
+
+        // 터치 이벤트
+        $(document).ready(function () {
+
+            var start_touch = 0;
+
+            $(document).bind('touchstart', function (e) {
+                start_touch = e.touches[0].screenY;
+                e.preventDefault();
+            });
+
+            $(document).bind('touchmove', function (e) {
+
+                var event = e.originalEvent;
+
+                if (start_touch > event.touches[0].screenY) {
+
+                    $("#header").hide();
+
+                } else {
+
+                    $("#header").show();
+                }
+
+                event.preventDefault();
+            });
+
+            $(document).bind('touchend', function (e) {
+            });
+        });
+        // 터치 이벤트
+
+        // 주소 복사
+        function copyToClipboard(val) {
+            const t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+        }
+
+        function copy() {
+            
+            copyToClipboard('부산 기장군 기장읍 당사리 521');
+
+            $("#copied").show();
+
+            self.setTimeout("hideDiv()", 2000);
+        }
+
+        $(document).ready(function () {
+            $("#copied").hide();
+        });
+        // 주소 복사
+
+        function hideDiv () {
+            $("#copied").hide();
+        }
+
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVFQRGJYV4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVFQRGJYV4');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+</head>
+
+<body>
+    <!--wrap-->
+    <div id="wrap">
+
+        <div id="copied">주소가 복사되었습니다.</div>
+
+        <!--header-->
+        <header id="header">
+            <!--header inner-->
+            <div class="inner">
+                <div class="gnb_bg"></div>
+                <h1><a href="../index.html"><img src="../images/main_logo.png" alt="TOURZY"></a></h1>
+                <nav>
+                    <!--gnb-->
+                    <ul class="gnb">
+                        <li class="gnb_main"><a class="cate" href="about.html">투어지 소개</a>
+                            <ul class="gnb_sub">
+                                <li><a href="about.html">투어지 소개</a></li>
+                                <li><a href="news.html">투어지 소식</a></li>
+                                <li><a href="story.html">투어지 스토리</a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb_main"><a class="cate" href="bexco.html">센터소개</a>
+                            <ul class="gnb_sub">
+                                <li><a href="bexco.html">벡스코센터</a></li>
+                                <li><a href="osiria.html">오시리아센터</a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb_main"><a class="cate" href="promotion.html">제휴·프로모션</a></li>
+                        <li class="gnb_main"><a class="cate" href="faq.html">고객센터</a>
+                            <ul class="gnb_sub">
+                                <li><a href="faq.html">자주 묻는 질문</a></li>
+                                <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--//gnb-->
+
+                    <h1 class="m_menu_box">
+                        <a href="#" class="m_menu"></a>
+                    </h1>
+
+                    <!--mgnb_wrap 불투명 배경-->
+                    <div class="mgnb_wrap_bg"></div>
+
+                    <!--mgnb_wrap-->
+                    <div class="mgnb_wrap">
+                        <h1 class="close_box">
+                            <a href="#" class="close">닫기</a>
+                        </h1>
+                        <!--//mgnb-->
+                        <ul class="mgnb">
+                            <li class="group">
+                                <div class="mgnb_main">투어지 소개</div>
+                                <ul class="mgnb_sub">
+                                    <li><a href="about.html">투어지 소개</a></li>
+                                    <li><a href="news.html">투어지 소식</a></li>
+                                    <li><a href="story.html">투어지 스토리</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">
+                                <div class="mgnb_main">센터소개</div>
+                                <ul class="mgnb_sub">
+                                    <li><a href="bexco.html">벡스코센터</a></li>
+                                    <li><a href="osiria.html">오시리아센터</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">
+                                <div class="mgnb_main"><a href="promotion.html">제휴·프로모션</a></div>
+                            </li>
+                            <li class="group">
+                                <div class="mgnb_main">고객센터</div>
+                                <ul class="mgnb_sub">
+                                    <li><a href="faq.html">자주 묻는 질문</a></li>
+                                    <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--//mgnb-->
+                        <ul class="sns">
+                            <li>
+                                <a href="https://www.instagram.com/go_tourzy" target="_blank">
+                                    <img src="../images/mgnb_instagram.png" alt="인스타그램">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/tourzy.official" target="_blank">
+                                    <img src="../images/mgnb_facebook.png" alt="페이스북">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://blog.naver.com/tourzy" target="_blank">
+                                    <img src="../images/mgnb_naver.png" alt="네이버 블로그">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//mgnb_wrap-->
+                </nav>
+                <!--//nav-->
+            </div>
+            <!--//header inner-->
+        </header>
+        <!--//header-->
+
+        <!--main_visual-->
+        <article id="main_visual">
+            <h2>
+                Tourzy Osiria Center
+            </h2>
+        </article>
+        <!--//main_visual-->
+
+        <!--contents-->
+        <div id="contents">
+            <!--value-->
+            <section id="value">
+                <!--value inner-->
+                <div class="inner">
+                    <p>홈 > 투어지 오시리아 센터 소개</p>
+                </div>
+                <!--//value inner-->
+            </section>
+            <!--//value-->
+
+            <!--center-->
+            <section id="center">
+                <!--center inner-->
+                <div class="inner">
+
+                    <h2>투어지 오시리아 센터</h2>
+
+                    <div class="place">
+
+                        <div class="center_view"><img src="../images/center_osiria_view.jpg" alt=""></div>
+
+                        <img class="center_talk" src="../images/center_osiria_talk.png" alt="">
+
+                        <!-- <div class="center_talk">
+
+                            <img class="center_talk01" src="../images/center_talk_01-2.png" alt="">
+                            <img class="center_talk02" src="../images/center_talk_02-2.png" alt="">
+                            <img class="center_talk03" src="../images/center_talk_03.png" alt="">
+                            <img class="center_talk04" src="../images/center_talk_04.png" alt="">
+                            <img class="center_talk05" src="../images/center_talk_05.png" alt="">
+                            <img class="center_talk06" src="../images/center_talk_06.png" alt="">
+                            <img class="center_talk07" src="../images/center_talk_07.png" alt="">
+                            <img class="center_talk08" src="../images/center_talk_08.png" alt="">
+
+                        </div> -->
+
+                    </div>
+
+                    <!--center services-->
+                    <div class="services">
+                        <h2></h2>
+                        <ul>
+                            <li>
+                                <img src="../images/center_services_1.png" alt="">
+                                <h3>
+                                    계약서 작성<br />
+                                    바로 결제<br />
+                                    이용 방법 설명
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="../images/center_services_2.png" alt="">
+                                <h3>
+                                    센터→센터로<br />
+                                    반납 가능<br />
+                                    (센터→존 X)
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="../images/center_services_3.png" alt="">
+                                <h3>
+                                    센터에서 무료충전<br />
+                                    (존에서도 가능)
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="../images/center_services_4.png" alt="">
+                                <h3>
+                                    투어지 이용고객<br />
+                                    짐보관 서비스<br />
+                                    1일 1,000원
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//center services-->
+
+                    <div class="directions">
+
+                        <h2>투어지 오시리아 센터 오시는 길</h2>
+
+                        <!-- 1. 지도 노드 -->
+                        <div id="daumRoughmapContainer1632462986587"
+                            class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%; margin-top:58px;">
+                        </div>
+
+                        <!-- 2. 설치 스크립트 -->
+                        <script charset="UTF-8" class="daum_roughmap_loader_script"
+                            src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                        <!-- 3. 실행 스크립트 -->
+                        <script charset="UTF-8">
+
+                            $(document).ready(function () {
+
+                            var mql = window.matchMedia("screen and (max-width: 767px)");
+
+                                if (mql.matches) {
+
+                                    new daum.roughmap.Lander({
+                                        "timestamp": "1632462986587",
+                                        "key": "27g6j",
+                                        "mapHeight": "300"
+                                    }).render();
+
+                                } else {
+
+                                    new daum.roughmap.Lander({
+                                        "timestamp": "1632462986587",
+                                        "key": "27g6j",
+                                        "mapHeight": "600"
+                                    }).render();
+                                }
+                            });
+                        </script>
+
+                        <ul class="public">
+
+                            <div>
+                                <p class="line"></p>
+                                <h3>대중교통 이용시</h3>
+                            </div>
+
+                            <li class="subway">
+                                <h3 class="way">지하철 이용</h3>
+                                <ul>
+                                    <li>부산 동해선 오시리아역 1번 출구에서 약 300m 도보로 이동</li>
+                                </ul>
+                            </li>
+
+                            <li class="osiria_bus">
+                                <h3 class="way">버스 이용</h3>
+                                <ul>
+                                    <li>
+                                        오시리아역 하차
+                                        <img id="public_arrow1">
+                                        1001번
+                                    </li>
+
+                                    <li>
+                                        송정2휴먼시아역 하차
+                                        <img id="public_arrow2">
+                                        1003번
+                                    </li>
+
+                                    <li>
+                                        당사입구역 하차
+                                        <img id="public_arrow3">
+                                        40번, 38번, 39번
+                                    </li>
+
+                                    <li>
+                                        오시리아역.국립부산과학관입구역 하차
+                                        <img id="public_arrow4">
+                                        139번
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <ul class="private">
+
+                            <div>
+                                <p class="line"></p>
+                                <h3>자가용 이용시</h3>
+                            </div>
+
+                            <li class="car">
+                                <h3 class="way">상세주소</h3>
+                                <ul>
+                                    <li>
+                                        부산 동해선 오시리아역 주차장 P5 (부산 기장군 기장읍 당사리 521)
+                                        <p class="copy" onclick="copy()">
+                                            주소복사
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <!--//about-->
+        </div>
+        <!--//contents-->
+
+        <!--footer-->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="link">
+                    <li><a href="">회사소개</a></li>
+                    <li><a href="">제휴안내</a></li>
+                    <li><a href="../policy/terms.html" target="_blank">회원이용약관</a></li>
+                    <li><a href="../policy/privacy.html" target="_blank">개인정보 처리방침</a></li>
+                    <li><a href="../policy/car.html" target="_blank">자동차대여약관</a></li>
+                </ul>
+                <div class="footer_txt">
+                    <p>
+                        회사명 : (주)투어스태프 / 대표 : 김남진<br />
+                        주소 : 부산광역시 해운대구 APEC로 30 108호<br />
+                        사업자 등록번호 : 110-87-01893<br />
+                        전화 : 051-740-4080<br />
+                        통신판매업신고번호 : 2021-부산해운대-0918<br />
+                        개인정보관리책임자 : 김승휘<br />
+                        COPYRIGHT &copy; 2021 TOURZY CORP. ALL RIGHTS RESERVED.
+                    </p>
+                </div>
+            </div>
+            <!--//footer inner-->
+        </footer>
+        <!--//footer-->
+    </div>
+    <!--//wrap-->
+
+    <!--//arrow-->
+    <script>
+        
+        $(document).ready(function () {
+
+            var mql = window.matchMedia("screen and (max-width: 767px)");
+
+            if (mql.matches) {
+
+                $("#public_arrow1").attr("src", "../images/center_public_arrow.png");
+                $("#public_arrow2").attr("src", "../images/center_public_arrow.png");
+                $("#public_arrow3").attr("src", "../images/center_public_arrow.png");
+                $("#public_arrow4").attr("src", "../images/center_public_arrow.png");
+
+            } else {
+
+                $("#public_arrow1").attr("src", "../images/center_osiria_public_arrow1.png");
+                $("#public_arrow2").attr("src", "../images/center_osiria_public_arrow2.png");
+                $("#public_arrow3").attr("src", "../images/center_osiria_public_arrow3.png");
+                $("#public_arrow4").attr("src", "../images/center_osiria_public_arrow4.png");
+            }
+        });
+
+    </script>
+    <!--//arrow-->
+
+</body>
+
+</html>

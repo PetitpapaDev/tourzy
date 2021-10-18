@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>피크닉데이</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+
+  <script>
+
+    function setCookie(name, value, expiredays) {
+      var todayDate = new Date();
+      todayDate = new Date( //00시 기준
+        parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000
+      );
+      if (todayDate > new Date()) {
+        expiredays = expiredays - 1;
+      }
+      todayDate.setDate(todayDate.getDate() + expiredays);
+      document.cookie =
+        name +
+        "=" +
+        escape(value) +
+        "; path=/; expires=" +
+        todayDate.toGMTString() +
+        ";";
+    }
+
+    function closePop() {
+      setCookie("picnic", status, 1);
+      window.close();
+    }
+
+    function closeWindow() {
+
+      setTimeout(function () {
+        window.close();
+      }, 2000);
+    }
+
+  </script>
+
+  <style>
+    img {
+      width: 400px;
+      height: 400px;
+    }
+
+    .chk {
+      width: 14px;
+      height: 14px;
+      margin-left: 5px;
+      float: left;
+    }
+
+    p {
+      font-family: NanumGothic;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 14px;
+      color: #000000;
+      cursor: pointer;
+      display: inline-block;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <a onclick="closeWindow();" href="https://www.instagram.com/p/CUuJl5HlIN7/?utm_medium=copy_link"
+      target="_blank"><img src="images/banner_promotion_picnic.jpeg" alt="피크닉데이" /></a>
+    <div>
+      <input class="chk" type="checkbox" name="pop" onclick="closePop();" />
+      <p onclick="closePop();">하루동안 열지 않음</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

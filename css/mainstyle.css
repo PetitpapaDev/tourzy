@@ -1,0 +1,1264 @@
+@charset "utf-8";
+
+body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39; }
+
+#wrap { 
+    overflow: hidden; 
+}
+
+/* header */
+#header { 
+    display: flex;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+#header .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+}
+
+/* header logo */
+#header .inner h1{
+    position: absolute;
+    height: 100px;
+    line-height: 100px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#header .inner h1 img {
+    position: relative;
+    width: 219.02px;
+    height: 32px;
+    vertical-align: middle;
+    object-fit: contain;
+    z-index: 999;
+}
+
+/* header logo 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #header { 
+        width: 100%;
+        height: 18.66vw;
+    }
+    
+    #header .inner {
+        width: 66.35vw;
+        margin: 0;
+    }
+    
+    /* header logo */
+    #header .inner h1{
+        height: 18.66vw;
+        line-height: 18.66vw;;
+        text-align: left;
+    }
+    
+    #header .inner h1 img {
+        width: 42.85vw;
+        height: 8vw;
+        vertical-align: top;
+        margin-top: 10.66vw;
+        margin-left: 5.33vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #header { 
+        width: 100%;
+        height: 18.66vw;
+    }
+    
+    #header .inner {
+        width: 66.35vw;
+        margin: 0;
+    }
+    
+    /* header logo */
+    #header .inner h1{
+        height: 18.66vw;
+        line-height: 18.66vw;;
+        text-align: left;
+    }
+    
+    #header .inner h1 img {
+        width: 42.85vw;
+        height: 8vw;
+        vertical-align: top;
+        margin-top: 10.66vw;
+        margin-left: 5.33vw;
+    }
+}
+/* header logo 반응형 */
+/* header logo */
+
+/* GNB */
+#header .gnb { 
+    display: flex;
+    height: 100px;
+    top: 0;
+    float: right;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .gnb li {
+    position: relative;
+}
+
+#header .gnb .gnb_main:nth-child(1) {
+    padding-right: 4.63vw;
+}
+
+#header .gnb .gnb_main:nth-child(2) {
+    padding-right: 4.63vw;
+}
+
+#header .gnb .gnb_main:nth-child(3) {
+    padding-right: 4.63vw;
+}
+
+#header .gnb .gnb_main:nth-child(4) {
+    padding-right: 1.82vw;
+}
+
+#header .gnb li a {
+    display: block; 
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: #3E3A39;
+}
+
+#header .gnb li:hover a.cate {
+    border-bottom: 3px solid #89C53F;
+}
+
+#header .gnb .gnb_sub { 
+    transition: 0.5;
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    left: 0;
+    top: 40px;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+#header .gnb .gnb_sub li a { 
+    display: block; 
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #717363;
+    margin-top: 20px;
+}
+
+#header .gnb .gnb_sub li a:hover { 
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#header .gnb_bg {
+    position: fixed;
+    width: 100%;
+    height: 220px;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5) 50%;
+}
+/* GNB */
+
+/* mobile gnb */
+/* 햄버거 */
+#header .m_menu_box {
+    display: none;
+    width: 13.33vw;
+    height: 13.33vw;
+    line-height: 13.33vw;
+    text-align: center;
+    float: right;
+    right: 0;
+    cursor: pointer;
+}
+
+#header .m_menu_box .m_menu {
+    font-size: 0;
+    width: 6.66vw;
+    height: 0.66vw;
+    background: #89C53F;
+    position: relative;
+    float: right;
+    margin-top: 14.33vw;
+    margin-right: 6vw;
+}
+
+#header .m_menu_box .m_menu:before { 
+    content: "";
+    position: absolute;
+    width: 4.66vw;
+    height: 0.66vw;
+    background: #89C53F;
+    right: 0; 
+    top: -2.66vw;
+}
+
+#header .m_menu_box .m_menu:after {
+    content: "";
+    position: absolute;
+    width: 3.33vw;
+    height: 0.66vw;
+    background: #89C53F;
+    right: 0;
+    top: 2.66vw; 
+}
+/* 햄버거 */
+
+/* 햄버거 닫기 */
+#header .close_box {
+    text-align: center;
+    float: right;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+#header .close_box .close {
+    font-size: 0;
+    width: 6.66vw;
+    height: 0.8vw;
+    background: #3E3A39;
+    position: relative;
+    float: right;
+    margin-top: 13.33vw;
+    margin-right: 5.86vw;
+    transform: rotate(45deg);
+}
+
+#header .close_box .close:after {
+    content: "";
+    position: absolute;
+    width: 6.66vw;
+    height: 0.8vw;
+    background: #3E3A39;
+    right: 0;
+    top: 0; 
+    transform: rotate(-90deg);
+}
+/* 햄버거 닫기 */
+
+/* 햄버거 리스트 */
+#header .mgnb_wrap_bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #000000;
+    opacity: 0.8;
+    left: 0;
+}
+
+#header .mgnb_wrap {
+    z-index: 999;
+    position: fixed;
+    left: 100%;
+    top: 0;
+    width: 52%;
+    height: 100%;
+    background: #FFFFFF;
+    opacity: 0.7;
+    border-radius: 50px 0px 0px 50px;
+}
+
+#header .mgnb {
+    margin-top: 37.33vw;
+    margin-right: 10.66vw;
+}
+
+#header .mgnb .mgnb_main {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4.8vw;
+    line-height: 4.8vw;
+    text-align: right;
+    color: #000000;
+	cursor:pointer;
+}
+
+#header .mgnb .group:nth-child(2) {
+    margin-top: 8vw;
+    margin-bottom: 8vw;
+}
+
+#header .mgnb .mgnb_sub li {
+    list-style: none;
+    position: relative;
+}
+
+#header .mgnb .mgnb_sub li a {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.46vw;
+    line-height: 3.46vw;
+    text-align: right;
+    color: #717363;
+	cursor:pointer;
+    display: block;
+    margin-top: 4vw;
+}
+
+#header .mgnb .mgnb_sub li a:active {
+    color: #354547;
+}
+
+#header .mgnb_wrap .sns {
+    float: right;
+    margin-top: 12vw;
+    margin-right: 10.93vw;
+}
+
+#header .mgnb_wrap .sns li {
+    list-style: none;
+    float: left;
+}
+
+#header .mgnb_wrap .sns li img {
+    width: 8vw;
+    height: 8vw;
+    margin-left: 4vw;
+}
+
+#header .mgnb_wrap .sns li img:active {
+    background: #354547;
+}
+/* 햄버거 리스트 */
+
+/* GNB 반응형 */
+/* Web */
+@media all and (max-width : 1025px) {
+    
+    #header .gnb {
+        display: block;
+    }
+
+    #header .m_menu_box {
+        display: none;
+    }
+}
+
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+    
+    #header .gnb {
+        display: none;
+    }
+
+    #header .m_menu_box {
+        display: block;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+	#header .gnb {
+        display: none;
+    }
+
+    #header .m_menu_box {
+        display: block;
+    }
+}
+/* GNB 반응형 */
+/* mobile gnb */
+/* header */
+
+/* main_visual */
+#main_visual {
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 100%;
+}
+
+#main_visual video {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+#main_visual img {
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* main_visual 반응형 */
+/* Web */
+@media all and (max-width : 1025px) {
+
+    #main_visual video {
+        display: block;
+    }
+
+    #main_visual img {
+        display: none;
+    }
+}
+
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #main_visual video {
+        display: none;
+    }
+    #main_visual img {
+        display: block;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+	#main_visual video {
+        display: none;
+    }
+
+    #main_visual img {
+        display: block;
+    }
+}
+/* main_visual 반응형 */
+/* main_visual */
+
+/* contents */
+/* value */
+#value { 
+    display: flex;
+}
+
+#value .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+    margin-top: 86px;
+}
+
+#value h2 { 
+    font-family: Black Han Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    color: #354547;
+}
+
+#value .ment {
+    font-family: Nanum Pen Script;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 37px;
+    color: #404041;
+    position: absolute;
+}
+
+#value .detail { 
+    float: right;
+}
+
+#value .detail a { 
+    font-family: Nanum Pen Script;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 37px;
+
+    color: #404041;
+}
+
+#value .detail a:hover { 
+    color: #89c53f;
+    transition: all .5s;
+}
+
+/* value 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #value .inner { 
+        width: 94.7vw;
+    }
+
+    #value h2 {
+        font-size: 6.4vw;
+        line-height: 8vw;
+        position: absolute;
+    }
+
+    #value .ment {
+        font-size: 4.8vw;
+        line-height: 5.6vw;
+        margin-top: 8vw;
+    }
+
+    #value .detail { 
+        display: block;
+    }
+
+    #value .detail a {
+        font-size: 18px;
+        line-height: 8vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #value .inner { 
+        width: 94.7vw;
+    }
+
+    #value h2 {
+        font-size: 6.4vw;
+        line-height: 8vw;
+        position: absolute;
+    }
+
+    #value .ment {
+        font-size: 4.8vw;
+        line-height: 5.6vw;
+        margin-top: 8vw;
+    }
+
+    #value .detail { 
+        display: block;
+    }
+
+    #value .detail a {
+        font-size: 18px;
+        line-height: 8vw;
+    }
+}
+/* value 반응형 */
+/* value */
+
+/* news */
+#news { 
+    display: flex;
+}
+
+#news .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+}
+
+#news ul { 
+    display: flex; 
+    justify-content: space-between; 
+}
+
+#news .news_top { 
+    margin-top: 69px;
+}
+
+#news .news_bottom { 
+    margin-top: 40px;
+}
+
+#news ul li h3 { 
+    width: 100px;
+    height: 25px;
+    font-family: Black NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+    background: #89C53F;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 22px;
+}
+
+#news ul li p { 
+    width: 304px;
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
+    margin-top: 22px;
+
+    /* 글자 자르기 */ 
+    display: inline-block; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: normal; 
+    text-align: left; 
+    word-wrap: break-word; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+
+#news li a .img_wrapper {
+    width: 304px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#news li a .img_wrapper img {
+    width: 100%;
+    height: 200px;
+    transform: scale(1.1);
+    transition: all .5s;
+    object-fit: contain;
+}
+
+#news li:hover a img {
+    transform: scale(1);
+}
+
+/* news 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+    
+    #news .inner { 
+        width: 94.7vw;
+    }
+
+	#news ul {
+        flex-wrap: wrap;
+    }
+    
+    #news ul li {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #news li a .img_wrapper {
+        width: 89.56vw;
+        height: 59.7vw;
+    }
+    
+    #news li a .img_wrapper img {
+        height: 100%;
+    }
+
+    #news ul li h3 { 
+        width: 26.66vw;
+        height: 6.66vw;
+        font-size: 4.26vw;
+        line-height: 6.66vw;
+        border-radius: 1.33vw;
+        margin-top: 5.86vw;
+    }
+
+    #news ul li p {
+        width: 89.56vw;
+        font-size: 3.73vw;
+        line-height: 4.26vw;
+    }
+
+    #news ul li:nth-child(1) {
+        margin-bottom: 5.33vw;
+    }
+
+    #news ul li:nth-child(2) {
+        margin-bottom: 5.33vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #news .inner { 
+        width: 94.7vw;
+    }
+
+	#news ul {
+        flex-wrap: wrap;
+    }
+    
+    #news ul li {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #news li a .img_wrapper {
+        width: 89.56vw;
+        height: 59.7vw;
+    }
+    
+    #news li a .img_wrapper img {
+        height: 100%;
+    }
+
+    #news ul li h3 { 
+        width: 26.66vw;
+        height: 6.66vw;
+        font-size: 4.26vw;
+        line-height: 6.66vw;
+        border-radius: 1.33vw;
+        margin-top: 5.86vw;
+    }
+
+    #news ul li p {
+        width: 89.56vw;
+        font-size: 3.73vw;
+        line-height: 4.26vw;
+    }
+
+    #news ul li:nth-child(1) {
+        margin-bottom: 5.33vw;
+    }
+
+    #news ul li:nth-child(2) {
+        margin-bottom: 5.33vw;
+    }
+}
+/* news 반응형 */
+/* news */
+
+/* introduce */
+#introduce {
+    width: 66.35vw;
+    margin: 0 auto;
+    margin-top: 228px;
+}
+
+#introduce h2 {
+    font-family: Black Han Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: right;
+    
+    color: #354547;
+}
+
+#introduce .introduce_img img {
+    width: 463px;
+    height: 351px;
+    display: block;
+}
+
+#introduce .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#introduce .inner div {
+    width: calc(100%/2);
+    box-sizing: border-box;
+}
+
+#introduce .ment {
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: right;
+    color: #404041;
+    margin-top: 42px;
+}
+
+#introduce .app_download {
+    float: right;
+    margin-top: 50px;
+}
+
+#introduce .app_download li {
+    list-style: none;
+    float: left;
+}
+
+#introduce .app_download li div {
+    width: 142px;
+    height: 56px;
+    border: 3px solid #89C53F;
+    box-sizing: border-box;
+    border-radius: 20px;
+    transition: all .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#introduce .app_download li img {
+    Width: 120px;
+    Height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#introduce .app_download li:first-child div {
+    margin-right: 20px;
+}
+
+#introduce .app_download li:hover div {
+    background-color: black;
+}
+
+/* introduce 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #introduce {
+        width: 89.56vw;
+        margin: 0 auto;
+        margin-top: 26.66vw;
+    }
+
+    #introduce .inner {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    #introduce h2 {
+        font-size: 6.4vw;
+        line-height: 8vw;
+        text-align: start;
+    }
+
+    #introduce .inner div {
+        width: 100%;
+    }
+
+    #introduce .introduce_img {
+        text-align: center;
+    }
+
+    #introduce .introduce_img img {
+        width: 100%;
+        height: 59.7vw;
+    }
+
+    #introduce .ment {
+        font-size: 3.73vw;
+        line-height: 4.26vw;
+        text-align: start;
+    }
+
+    #introduce .app_download {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #introduce .app_download li {
+        width: 43vw;
+    }
+
+    #introduce .app_download li div {
+        width: 100%;
+        height: 100%;
+    }
+
+    #introduce .app_download li img {
+        width: 32vw;
+        height: 8vw;
+        padding: 3.46vw 0;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #introduce {
+        width: 89.56vw;
+        margin: 0 auto;
+        margin-top: 26.66vw;
+    }
+
+    #introduce .inner {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    #introduce h2 {
+        font-size: 6.4vw;
+        line-height: 8vw;
+        text-align: start;
+    }
+
+    #introduce .inner div {
+        width: 100%;
+    }
+
+    #introduce .introduce_img {
+        text-align: center;
+    }
+
+    #introduce .introduce_img img {
+        width: 100%;
+        height: 59.7vw;
+    }
+
+    #introduce .ment {
+        font-size: 3.73vw;
+        line-height: 4.26vw;
+        text-align: start;
+    }
+
+    #introduce .app_download {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #introduce .app_download li {
+        width: 43vw;
+    }
+
+    #introduce .app_download li div {
+        width: 100%;
+        height: 100%;
+    }
+
+    #introduce .app_download li img {
+        width: 32vw;
+        height: 8vw;
+        padding: 3.46vw 0;
+    }
+}
+/* introduce 반응형 */
+/* contents */
+
+/* footer */
+#footer { 
+    margin-top: 210px;
+}
+
+#footer .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+#footer .link {
+    display: inline-block
+}
+
+#footer .link li {
+    list-style: none;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#footer .link li a {
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 90px;
+    color: #717363;
+    margin-right: 32px;
+}
+
+#footer .link li:last-child a {
+    margin-right: 0;
+}
+
+#footer .link li:hover a {
+    color: #89c53f;
+    transition: all .5s;
+}
+
+#footer .footer_txt {
+    height: 180px;
+    text-align: center;
+}
+
+#footer .footer_txt p {
+    height: 100%;
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #717363;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer .footer_sns {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+}
+
+#footer .footer_sns li {
+    display: inline-block;
+    transition: 0.5s;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #717363;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#footer .footer_sns li img {
+    width: 100%;
+}
+
+/* #footer .footer_sns li:nth-child(1):hover { 
+    background: #89C53F;
+}
+
+#footer .footer_sns li:nth-child(2):hover { 
+    background: #006AEF;
+}
+
+#footer .footer_sns li:nth-child(3):hover { 
+    background: #00CB56;
+} */
+
+/* footer 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #footer { 
+        margin-top: 82.89px;
+    }
+
+    #footer .inner {
+        width: 89.56vw;
+    }
+
+    #footer .link { 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    #footer .link li { 
+        position: relative;
+        width: calc(100%/3);
+    }
+
+    #footer .link li a { 
+        font-weight: normal;
+        display: block;
+        margin: 0 auto;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+    }
+
+    #footer .link li:nth-child(1) { 
+        text-align: start;
+    }
+    
+    #footer .link li:nth-child(2) { 
+        text-align: center;
+    }
+
+    #footer .link li:nth-child(3) { 
+        text-align: end;
+    }
+
+    #footer .link li:nth-child(4) { 
+        text-align: start;
+    }
+
+    #footer .link li:nth-child(5) { 
+        text-align: end;
+    }
+
+    #footer .footer_txt {
+        height: 53.33vw;
+    }
+
+    #footer .footer_txt p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+    }
+
+    #footer .footer_sns {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #footer { 
+        margin-top: 82.89px;
+    }
+
+    #footer .inner {
+        width: 89.56vw;
+    }
+
+    #footer .link { 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    #footer .link li { 
+        position: relative;
+        width: calc(100%/3);
+    }
+
+    #footer .link li a { 
+        font-weight: normal;
+        display: block;
+        margin: 0 auto;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+    }
+
+    #footer .link li:nth-child(1) { 
+        text-align: start;
+    }
+    
+    #footer .link li:nth-child(2) { 
+        text-align: center;
+    }
+
+    #footer .link li:nth-child(3) { 
+        text-align: end;
+    }
+
+    #footer .link li:nth-child(4) { 
+        text-align: start;
+    }
+
+    #footer .link li:nth-child(5) { 
+        text-align: end;
+    }
+
+    #footer .footer_txt {
+        height: 53.33vw;
+    }
+
+    #footer .footer_txt p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+    }
+
+    #footer .footer_sns {
+        display: none;
+    }
+}
+/* footer 반응형 */
+/* footer */
+
+/* index popup */
+.popup {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999;
+
+    /* 주앙 정렬 */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+
+    /* 수직 정렬 */
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    /* 수평 정렬 */
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.popup .popup_bg {
+    background-color: #000000;
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.popup a {
+    z-index: 9999;
+}
+
+.popup img {
+    width: 100vw;
+    height: 100vw;
+}
+
+.popup .popup_check {
+    z-index: 9999;
+    display: flex;
+    cursor: pointer;
+    margin-top: 2.66vw;
+}
+
+#chkb {
+    width: 8vw;
+    height: 8vw;
+    margin-left: 1.33vw;
+    position: absolute;
+    left: 0;
+}
+
+.popup p {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 6.4vw;
+    line-height: 8vw;
+    color: #ffffff;
+    position: absolute;
+    left: 10.66vw;
+}
+
+.popup .popup_close {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 6.4vw;
+    line-height: 8vw;
+    color: #ffffff;
+    position: absolute;
+    right: 0;
+    margin-right: 1.33vw;
+}
+/* index popup */

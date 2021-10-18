@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- og -->
+  <meta property="og:url" content="http://tourzy.kr" />
+  <meta property="og:title" content="투어지" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://tourzy.kr/images/main_logo_s.png" />
+  <meta property="og:description" content="No.1 스마트라이딩 투어지" />
+  <!-- og -->
+
+  <title>No.1 스마트라이딩 투어지</title>
+
+  <link rel="shortcut icon" href="images/3dots.ico" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/mainstyle.css" />
+  <link rel="stylesheet" href="css/font.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+
+  <script>
+
+    // gnb
+    $(document).ready(function () {
+      $(".gnb_sub,.gnb_bg").hide();
+      $(".gnb > li").mouseenter(function () {
+        $(".gnb_sub,.gnb_bg").stop().slideDown(300);
+      });
+      $(".gnb > li").mouseleave(function () {
+        $(".gnb_sub,.gnb_bg").stop().slideUp(300);
+      });
+    });
+    // gnb
+
+    // mgnb
+    $(document).ready(function () {
+      $(".mgnb_wrap_bg").hide();
+      $(".m_menu_box").click(function () {
+        $(".mgnb_wrap").animate({
+          left: '48%'
+        });
+        $(".m_menu_box").hide();
+        $(".mgnb_wrap_bg").show();
+      });
+      $(".close_box").click(function () {
+        $(".mgnb_wrap").animate({
+          left: '100%'
+        });
+        $(".m_menu_box").show();
+        $(".mgnb_wrap_bg").hide();
+      });
+    });
+    // mgnb
+
+    // 이미지 바꾸기
+    $(window).ready(function () {
+      var width = window.innerWidth;
+      if (width < 1024) {
+        jQuery('.introduce_img > img').attr('src', 'images/main_introduce_imgm.jpeg')
+      } else {
+        jQuery('.introduce_img > img').attr('src', 'images/main_introduce_img.jpg')
+      }
+    })
+    // 이미지 바꾸기
+
+    // 마우스 스크롤 이벤트
+    $(window).ready(function () {
+      var $header = $("#header");
+      var $window = $(window);
+      var headerOffsetTop = $header.offset().top;
+      $window.resize(function () {
+        headerOffsetTop = $header.offset().top;
+      });
+      $window.on('scroll', function () {
+        var scrolled = $window.scrollTop() >= headerOffsetTop;
+        if (scrolled == false) {
+          $("#header").show();
+        } else {
+          window.onmousewheel = function (e) {
+            if (e.wheelDelta > 0) {
+              $("#header").show();
+            } else {
+              $("#header").hide();
+            }
+          }
+        }
+      });
+    });
+    // 마우스 스크롤 이벤트
+
+    // 터치 이벤트
+    $(document).ready(function () {
+      var start_touch = 0;
+      $(document).bind('touchstart', function (e) {
+        start_touch = e.touches[0].screenY;
+        e.preventDefault();
+      });
+      $(document).bind('touchmove', function (e) {
+        var event = e.originalEvent;
+        if (start_touch > event.touches[0].screenY) {
+          $("#header").hide();
+        } else {
+          $("#header").show();
+        }
+        event.preventDefault();
+      });
+      $(document).bind('touchend', function (e) {
+      });
+    });
+    // 터치 이벤트
+
+    // index 팝업 공지
+    $(document).ready(function () {
+
+      $(".popup").hide();
+
+      function getCookie(name) {
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while (x <= document.cookie.length) {
+          var y = x + nameOfCookie.length;
+          if (document.cookie.substring(x, y) == nameOfCookie) {
+            if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+              endOfCookie = document.cookie.length;
+            return unescape(document.cookie.substring(y, endOfCookie));
+          }
+          x = document.cookie.indexOf(" ", x) + 1;
+          if (x == 0) break;
+        }
+        return "";
+      }
+
+      //cookie값 존재하지 않으면
+      if (getCookie("picnic") != "done") {
+        var mql = window.matchMedia("screen and (max-width: 767px)");
+        if (mql.matches) {
+          $(".popup").show();
+        } else {
+          $(".popup").hide();
+          window.onload = function () {
+            window.open("popup.html", "피크닉데이", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=400, height=425, left=0, top=0");
+          };
+        }
+      }
+    });
+
+    function setCookie(name, value, expiredays) {
+      var todayDate = new Date();
+      todayDate = new Date( //00시 기준
+        parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000
+      );
+      if (todayDate > new Date()) {
+        expiredays = expiredays - 1;
+      }
+      todayDate.setDate(todayDate.getDate() + expiredays);
+      document.cookie =
+        name +
+        "=" +
+        escape(value) +
+        "; path=/; expires=" +
+        todayDate.toGMTString() +
+        ";";
+    }
+
+    // 모바일 팝업창 하루동안 열지 않음
+    function laterPop() {
+      var chkb = document.getElementById("chkb");
+      if (chkb.checked == true) {
+        chkb.checked = false;
+      } else {
+        chkb.checked = true;
+      }
+    }
+    // 모바일 팝업창 하루동안 열지 않음
+
+    // 모바일 팝업창 닫기
+    function closePop() {
+      var chkb = document.getElementById("chkb");
+      if (chkb.checked == true) {
+        setCookie("picnic", "done", 1);
+      }
+      $(".popup").hide();
+    }
+    // 모바일 팝업창 닫기
+    // index 팝업 공지
+
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVFQRGJYV4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-BVFQRGJYV4');
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+
+<body>
+
+  <!-- 팝업 -->
+  <div class="popup">
+    <div class="popup_bg"></div>
+    <a onclick="closePop();" href="https://www.instagram.com/p/CUuJl5HlIN7/?utm_medium=copy_link" target="_blank"><img src="images/banner_promotion_picnic.jpeg" alt="피크닉데이"></a>
+    <div class="popup_check" onclick="laterPop();">
+      <input id="chkb" type="checkbox" name="pop" onclick="laterPop();" />
+      <p>하루동안 열지 않음</p>
+      <div class="popup_close" onclick="closePop();">닫기</div>
+    </div>
+  </div>
+  <!-- 팝업 -->
+
+  <!--wrap-->
+  <div id="wrap">
+    <!--header-->
+    <header id="header">
+      <!--header inner-->
+      <div class="inner">
+        <div class="gnb_bg"></div>
+        <h1><a href="index.html"><img src="images/main_logo.png" alt="TOURZY"></a></h1>
+        <!--nav-->
+        <nav>
+          <!--gnb-->
+          <ul class="gnb">
+            <li class="gnb_main"><a class="cate" href="sub/about.html">투어지 소개</a>
+              <ul class="gnb_sub">
+                <li><a href="sub/about.html">투어지 소개</a></li>
+                <li><a href="sub/news.html">투어지 소식</a></li>
+                <li><a href="sub/story.html">투어지 스토리</a></li>
+              </ul>
+            </li>
+            <li class="gnb_main"><a class="cate" href="sub/bexco.html">센터소개</a>
+              <ul class="gnb_sub">
+                <li><a href="sub/bexco.html">벡스코센터</a></li>
+                <li><a href="sub/osiria.html">오시리아센터</a></li>
+              </ul>
+            </li>
+            <li class="gnb_main"><a class="cate" href="sub/promotion.html">제휴·프로모션</a></li>
+            <li class="gnb_main"><a class="cate" href="sub/faq.html">고객센터</a>
+              <ul class="gnb_sub">
+                <li><a href="sub/faq.html">자주 묻는 질문</a></li>
+                <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--//gnb-->
+
+          <h1 class="m_menu_box">
+            <a href="#" class="m_menu"></a>
+          </h1>
+
+          <!--mgnb_wrap 불투명 배경-->
+          <div class="mgnb_wrap_bg"></div>
+
+          <!--mgnb_wrap-->
+          <div class="mgnb_wrap">
+            <h1 class="close_box">
+              <a href="#" class="close">닫기</a>
+            </h1>
+            <!--//mgnb-->
+            <ul class="mgnb">
+              <li class="group">
+                <div class="mgnb_main">투어지 소개</div>
+                <ul class="mgnb_sub">
+                  <li><a href="sub/about.html">투어지 소개</a></li>
+                  <li><a href="sub/news.html">투어지 소식</a></li>
+                  <li><a href="sub/story.html">투어지 스토리</a></li>
+                </ul>
+              </li>
+              <li class="group">
+                <div class="mgnb_main">센터소개</div>
+                <ul class="mgnb_sub">
+                  <li><a href="sub/bexco.html">벡스코센터</a></li>
+                  <li><a href="sub/osiria.html">오시리아센터</a></li>
+                </ul>
+              </li>
+              <li class="group">
+                <div class="mgnb_main"><a href="sub/promotion.html">제휴·프로모션</a></div>
+              </li>
+              <li class="group">
+                <div class="mgnb_main">고객센터</div>
+                <ul class="mgnb_sub">
+                  <li><a href="sub/faq.html">자주 묻는 질문</a></li>
+                  <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!--//mgnb-->
+            <ul class="sns">
+              <li>
+                <a href="https://www.instagram.com/go_tourzy" target="_blank">
+                  <img src="images/mgnb_instagram.png" alt="인스타그램">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/tourzy.official" target="_blank">
+                  <img src="images/mgnb_facebook.png" alt="페이스북">
+                </a>
+              </li>
+              <li>
+                <a href="https://blog.naver.com/tourzy" target="_blank">
+                  <img src="images/mgnb_naver.png" alt="네이버 블로그">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--//mgnb_wrap-->
+        </nav>
+        <!--//nav-->
+      </div>
+      <!--//header inner-->
+    </header>
+    <!--//header-->
+
+    <!--main_visual-->
+    <article id="main_visual">
+      <video muted autoplay loop>
+        <source style="width: 100%" src="images/main_video.mp4" type="video/mp4" />
+      </video>
+      <img src="images/mgnb_bg.jpeg" alt="투어지 모바일 메인" />
+    </article>
+    <!--//main_visual-->
+
+    <!--contents-->
+    <div id="contents">
+      <!--value-->
+      <section id="value">
+        <!--value inner-->
+        <div class="inner">
+          <h2>투어지 소식</h2>
+          <p class="ment">매일 매일 업데이트되는 투어지의 소식을 받아보세요!</p>
+          <p class="detail"><a href="sub/news.html">MORE ></a></p>
+        </div>
+        <!--//value inner-->
+      </section>
+      <!--//value-->
+
+      <!--news-->
+      <section id="news">
+        <!--news inner-->
+        <div class="inner">
+          <!--news top-->
+          <ul class="news_top">
+            <li>
+              <a href="http://www.naeil.com/news_view/?id_art=401594" target="_blank">
+                <div class="img_wrapper">
+                  <img src="http://www.naeil.com/AttachFile/PREV/2021/10/14/00205202_P.jpg" alt="news" />
+                </div>
+                <h3>
+                  뉴스
+                </h3>
+                <p>
+                  "전기차 트위지타고 부산 여행하세요"
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.fnnews.com/news/202109161017528563" target="_blank">
+                <div class="img_wrapper">
+                  <img src="https://image.fnnews.com/resource/media/image/2021/09/16/202109161022077701_l.jpg"
+                    alt="news" />
+                </div>
+                <h3>
+                  뉴스
+                </h3>
+                <p>
+                  동부산 오시리아관광단지에 투어지 스테이션 개장
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.fnnews.com/news/202109060820101481" target="_blank">
+                <div class="img_wrapper">
+                  <img src="https://image.fnnews.com/resource/media/image/2021/09/06/202109060850592613_l.jpg"
+                    alt="news" />
+                </div>
+                <h3>
+                  뉴스
+                </h3>
+                <p>
+                  에어부산, 친환경 모빌리티 '투어지' 할인 혜택 제공
+                </p>
+              </a>
+            </li>
+          </ul>
+          <!--//news top-->
+          <!--news bottom-->
+          <ul class="news_bottom">
+            <li>
+              <a href="https://www.busaneconomy.com/news/articleView.html?idxno=254699" target="_blank">
+                <div class="img_wrapper">
+                  <img src="https://cdn.busaneconomy.com/news/photo/202108/254699_251091_5118.jpg" alt="news" />
+                </div>
+                <h3>
+                  뉴스
+                </h3>
+                <p>
+                  “유럽서 지속가능한 여행 고민…부산서 에코투어리즘 꽃 피울 것”
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.busaneconomy.com/news/articleView.html?idxno=253269" target="_blank">
+                <div class="img_wrapper">
+                  <img src="https://www.busaneconomy.com/news/photo/202108/253269_249570_248.jpg" alt="news" />
+                </div>
+                <h3>
+                  뉴스
+                </h3>
+                <p>
+                  부산 특화 콘텐츠 관광, 산·학·관 협업으로 혁신적 ‘업그레이드’
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.busaneconomy.com/news/articleView.html?idxno=251684" target="_blank">
+                <div class="img_wrapper">
+                  <img src="https://cdn.busaneconomy.com/news/photo/202107/251684_247789_2646.jpg" alt="news" />
+                </div>
+                <h3>
+                  뉴스
+                </h3>
+                <p>
+                  투어지, 부산시 공유기업 선정…‘에코투어리즘 선구자’
+                </p>
+              </a>
+            </li>
+          </ul>
+          <!--//news bottom-->
+        </div>
+        <!--//news inner-->
+      </section>
+      <!--//news-->
+
+      <!--introduce-->
+      <section id="introduce">
+
+        <h2>모바일로 더욱 편리하게</h2>
+
+        <!--introduce inner-->
+        <div class="inner">
+
+          <div class="introduce_img"><img src="" alt=""></div>
+
+          <div>
+
+            <p class="ment">
+              장거리 대중교통을 이용해 관광지로 오시면<br />
+              관광지내에서는 "투어지"를 이용해서 오시리아 관광단지 안에서<br />
+              편리하게 이동하실 수 있습니다.
+              <br />
+              <br />
+              투어지 서비스는 관광지에 새로운 차량유입을 억제하여<br />
+              관광객에게 쾌적한 이동환경을 조성하고<br />
+              친환경 전기차의 사용으로 CO2배출과 흡수를 플러스 마이너스 제로로 만드는<br />
+              탄소 중립형 그린 스마트 관광을 구축하여<br />
+              에코투어리즘의 시대를 열어나가겠습니다.
+              <br />
+              <br />
+              "해운대" "오시리아 관광단지" 등 부산권역별 관광투어 시 "투어지"를 이용하여<br />
+              "친환경 공정여행"을 만들어주세요.
+
+            <ul class="app_download">
+              <li>
+                <a href="https://play.google.com/store/apps/details?id=kr.go.tourzy" target="_blank">
+                  <div>
+                    <img src="images/app_download_aos.png" alt="플레이스토어">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://apps.apple.com/kr/app/tourzy/id1566808516" target="_blank">
+                  <div>
+                    <img src="images/app_download_ios.png" alt="앱스토어">
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+        <!--//introduce inner-->
+
+      </section>
+      <!--//introduce-->
+
+    </div>
+    <!--//contents-->
+
+    <!--footer-->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="link">
+          <li><a href="">회사소개</a></li>
+          <li><a href="">제휴안내</a></li>
+          <li><a href="policy/terms.html" target="_blank">회원이용약관</a></li>
+          <li><a href="policy/privacy.html" target="_blank">개인정보 처리방침</a></li>
+          <li><a href="policy/car.html" target="_blank">자동차대여약관</a></li>
+        </ul>
+        <div class="footer_txt">
+          <p>
+            회사명 : (주)투어스태프 / 대표 : 김남진<br />
+            주소 : 부산광역시 해운대구 APEC로 30 108호<br />
+            사업자 등록번호 : 110-87-01893<br />
+            전화 : 051-740-4080<br />
+            통신판매업신고번호 : 2021-부산해운대-0918<br />
+            개인정보관리책임자 : 김승휘<br />
+            COPYRIGHT &copy; 2021 TOURZY CORP. ALL RIGHTS RESERVED.
+          </p>
+        </div>
+
+        <!--footer_sns-->
+        <ul class="footer_sns">
+          <li>
+            <a href="https://www.instagram.com/go_tourzy" target="_blank">
+              <img src="images/mgnb_instagram.png" alt="인스타그램">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/tourzy.official" target="_blank">
+              <img src="images/mgnb_facebook.png" alt="페이스북">
+            </a>
+          </li>
+          <li>
+            <a href="https://blog.naver.com/tourzy" target="_blank">
+              <img src="images/mgnb_naver.png" alt="네이버 블로그">
+            </a>
+          </li>
+        </ul>
+        <!--//footer_sns-->
+
+      </div>
+      <!--//footer inner-->
+    </footer>
+    <!--//footer-->
+  </div>
+  <!--//wrap-->
+</body>
+
+</html>

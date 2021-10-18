@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>투어지스토리</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+
+  <script>
+
+    function closePop() {
+      window.close();
+    }
+
+  </script>
+
+  <style>
+    #tourzystory {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: 9999;
+
+      /* 주앙 정렬 */
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* flex-wrap: wrap; */
+      flex-direction: column;
+
+      /* 수직 정렬 */
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      /* 수평 정렬 */
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    #tourzystory .story_bg {
+      background-color: #000000;
+      opacity: 0.8;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    #tourzystory .story .bx-wrapper {
+      -webkit-box-shadow: none !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    #tourzystory .story .bx-prev {
+      background: url(images/bx_prev.png) no-repeat;
+      width: 22.92px;
+      height: 79.17px;
+    }
+
+    #tourzystory .story .bx-next {
+      background: url(images/bx_next.png) no-repeat;
+      width: 22.92px;
+      height: 79.17px;
+    }
+
+    #tourzystory .story .storywrap img {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    #tourzystory .story .storywrap {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* 닫기 */
+    #tourzystory .close_box {
+      text-align: center;
+      float: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+
+    #tourzystory .close_box .close {
+      font-size: 0;
+      width: 6.66vw;
+      height: 0.8vw;
+      background: #ffffff;
+      position: relative;
+      float: right;
+      margin-top: 13.33vw;
+      margin-right: 5.86vw;
+      transform: rotate(45deg);
+    }
+
+    #tourzystory .close_box .close:after {
+      content: "";
+      position: absolute;
+      width: 6.66vw;
+      height: 0.8vw;
+      background: #ffffff;
+      right: 0;
+      top: 0;
+      transform: rotate(-90deg);
+    }
+    /* 닫기 */
+    
+  </style>
+</head>
+
+<body>
+  <!--tourzystory-->
+  <section id="tourzystory">
+
+    <div class="story_bg"></div>
+
+    <!--tourzystory inner-->
+    <div class="inner">
+
+      <!--tourzystory story-->
+      <div class="story">
+
+        <!--tourzystory close_box-->
+        <h1 class="close_box" onclick="closePop();">
+          <a href="#" class="close">닫기</a>
+        </h1>
+        <!--//tourzystory close_box-->
+
+        <!--tourzystory storywrap-->
+        <div class="storywrap">
+          <ul>
+            <li>
+              <img src="images/tourzy_story_00.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_01.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_02.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_03.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_04.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_05.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_06.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_07.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_08.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_09.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_10.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_11.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_12.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_13.jpg" alt="">
+            </li>
+            <li>
+              <img src="images/tourzy_story_14.jpg" alt="">
+            </li>
+          </ul>
+        </div>
+        <!--//tourzystory storywrap-->
+
+      </div>
+      <!--//tourzystory story-->
+
+    </div>
+    <!--//tourzystory inner-->
+  </section>
+  <!--//tourzystory-->
+
+  <script>
+    // 스토리
+    $(document).ready(function () {
+      $('.story ul').bxSlider({
+        auto: false,   /*false 슬라이드가 자동으로 전환됩니다.*/
+        speed: 1000, /*500	슬라이드 전환 시간 (ms)*/
+        pause: 2000,   /*각 자동 전환 사이의 시간 (ms)*/
+        minSlides: 1,   /*표시 할 최소 슬라이드 수입니다. 캐 러셀이 원래 크기보다 작아지면 슬라이드의 크기가 줄어 듭니다.*/
+        maxSlides: 1,   /*표시 할 최대 슬라이드 수입니다. 캐 러셀이 원래 크기보다 커지면 슬라이드의 크기가 조정됩니다.*/
+        moveSlides: 1,  /*전환시 이동할 슬라이드 수입니다. 이 값은> = minSlides 및 <= maxSlides 여야합니다. 0 (기본값)이면 완전히 볼 수있는 슬라이드 수가 사용됩니다.*/
+        slideWidth: 1000,    /*각 슬라이드의 너비입니다. 이 설정은 모든 수평 캐 러셀에 필요합니다!*/
+        slideMargin: 0,   /*각 슬라이드 사이의 여백*/
+        controls: true,    /*true 진실	참이면 "Next"/ "Prev"컨트롤이 추가됩니다.*/
+        autoHover: false,    /*false  마우스를 슬라이더 위로 가져 가면 자동 표시가 일시 중지됩니다.*/
+        pager: false,    /*true 참이면 호출기가 추가됩니다.*/
+        infiniteLoop: false,
+        responsive: true,
+        touchEnabled: true,
+      });
+    });
+    // 스토리
+
+  </script>
+
+</body>
+
+</html>

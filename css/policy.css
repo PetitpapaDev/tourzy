@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@400;700;800&display=swap");
+/* font-family: 'Nanum Gothic', sans-serif; */
+/* font-family: 'Do Hyeon', sans-serif; */
+
+html {
+  padding: 30px;
+  font-size: 15px;
+}
+
+body {
+  width: 75%;
+  font-family: "Nanum Gothic";
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.title2 {
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.content {
+  margin-left: 20px;
+  font-size: 14.5px;
+}
+
+.content2 {
+  margin-left: 40px;
+  font-size: 14px;
+}
+
+.content3 {
+  margin-left: 60px;
+}
+
+#ex {
+  width: 95%;
+  height: 100%;
+  border: 1px solid black;
+  margin: 10 10 10 10;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+  html {
+    padding: 30px 0;
+    font-size: 12px;
+  }
+  
+  body {
+    width: 94.7vw;
+    font-family: "Nanum Gothic";
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 10px;
+  }
+  
+  .title2 {
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 10px;
+  }
+  
+  .content {
+    margin-left: 20px;
+    font-size: 11.5px;
+  }
+  
+  .content2 {
+    margin-left: 40px;
+    font-size: 11px;
+  }
+  
+  .content3 {
+    margin-left: 60px;
+  }
+  
+  #ex {
+    width: 95%;
+    height: 100%;
+    border: 1px solid black;
+    margin: 10 10 10 10;
+    font-size: 11px;
+  }
+}

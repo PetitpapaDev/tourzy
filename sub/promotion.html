@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- og -->
+  <meta property="og:url" content="http://tourzy.kr" />
+  <meta property="og:title" content="투어지" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://tourzy.kr/images/main_logo_s.png" />
+  <meta property="og:description" content="제휴·프로모션 | 투어지" />
+  <!-- og -->
+
+  <title>제휴·프로모션 | 투어지</title>
+
+  <link rel="shortcut icon" href="../images/3dots.ico" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/substyle.css" />
+  <link rel="stylesheet" href="../css/font.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+
+  <script>
+
+    // gnb
+    $(document).ready(function () {
+
+      $(".gnb_sub,.gnb_bg").hide();
+
+      $(".gnb > li").mouseenter(function () {
+        $(".gnb_sub,.gnb_bg").stop().slideDown(300);
+      });
+
+      $(".gnb > li").mouseleave(function () {
+        $(".gnb_sub,.gnb_bg").stop().slideUp(300);
+      });
+    });
+    // gnb
+
+    // mgnb
+    $(document).ready(function () {
+
+      $(".mgnb_wrap_bg").hide();
+
+      $(".m_menu_box").click(function () {
+        $(".mgnb_wrap").animate({
+          left: '48%'
+        });
+        $(".m_menu_box").hide();
+        $(".mgnb_wrap_bg").show();
+      });
+
+      $(".close_box").click(function () {
+        $(".mgnb_wrap").animate({
+          left: '100%'
+        });
+        $(".m_menu_box").show();
+        $(".mgnb_wrap_bg").hide();
+      });
+    });
+    // mgnb
+
+    // 마우스 스크롤 이벤트
+    $(window).ready(function () {
+
+      var $header = $("#header");
+      var $window = $(window);
+      var headerOffsetTop = $header.offset().top;
+
+      $window.resize(function () {
+        headerOffsetTop = $header.offset().top;
+      });
+
+      $window.on('scroll', function () {
+        var scrolled = $window.scrollTop() >= headerOffsetTop;
+        if (scrolled == false) {
+          $("#header").show();
+        } else {
+          window.onmousewheel = function (e) {
+            if (e.wheelDelta > 0) {
+              $("#header").show();
+            } else {
+              $("#header").hide();
+            }
+          }
+        }
+      });
+    });
+    // 마우스 스크롤 이벤트
+
+    // 터치 이벤트
+    $(document).ready(function () {
+
+      var start_touch = 0;
+
+      $(document).bind('touchstart', function (e) {
+        start_touch = e.touches[0].screenY;
+        e.preventDefault();
+      });
+
+      $(document).bind('touchmove', function (e) {
+
+        var event = e.originalEvent;
+
+        if (start_touch > event.touches[0].screenY) {
+
+          $("#header").hide();
+
+        } else {
+
+          $("#header").show();
+        }
+
+        event.preventDefault();
+      });
+
+      $(document).bind('touchend', function (e) {
+      });
+    });
+    // 터치 이벤트
+
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVFQRGJYV4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-BVFQRGJYV4');
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+
+<body>
+  <!--wrap-->
+  <div id="wrap">
+    <!--header-->
+    <header id="header">
+      <!--header inner-->
+      <div class="inner">
+        <div class="gnb_bg"></div>
+        <h1><a href="../index.html"><img src="../images/main_logo.png" alt="TOURZY"></a></h1>
+        <nav>
+          <!--gnb-->
+          <ul class="gnb">
+            <li class="gnb_main"><a class="cate" href="about.html">투어지 소개</a>
+              <ul class="gnb_sub">
+                <li><a href="about.html">투어지 소개</a></li>
+                <li><a href="news.html">투어지 소식</a></li>
+                <li><a href="story.html">투어지 스토리</a></li>
+              </ul>
+            </li>
+            <li class="gnb_main"><a class="cate" href="bexco.html">센터소개</a>
+              <ul class="gnb_sub">
+                <li><a href="bexco.html">벡스코센터</a></li>
+                <li><a href="osiria.html">오시리아센터</a></li>
+              </ul>
+            </li>
+            <li class="gnb_main"><a class="cate" href="promotion.html">제휴·프로모션</a></li>
+            <li class="gnb_main"><a class="cate" href="faq.html">고객센터</a>
+              <ul class="gnb_sub">
+                <li><a href="faq.html">자주 묻는 질문</a></li>
+                <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--//gnb-->
+
+          <h1 class="m_menu_box">
+            <a href="#" class="m_menu"></a>
+          </h1>
+
+          <!--mgnb_wrap 불투명 배경-->
+          <div class="mgnb_wrap_bg"></div>
+
+          <!--mgnb_wrap-->
+          <div class="mgnb_wrap">
+            <h1 class="close_box">
+              <a href="#" class="close">닫기</a>
+            </h1>
+            <!--//mgnb-->
+            <ul class="mgnb">
+              <li class="group">
+                <div class="mgnb_main">투어지 소개</div>
+                <ul class="mgnb_sub">
+                  <li><a href="about.html">투어지 소개</a></li>
+                  <li><a href="news.html">투어지 소식</a></li>
+                  <li><a href="story.html">투어지 스토리</a></li>
+                </ul>
+              </li>
+              <li class="group">
+                <div class="mgnb_main">센터소개</div>
+                <ul class="mgnb_sub">
+                  <li><a href="bexco.html">벡스코센터</a></li>
+                  <li><a href="osiria.html">오시리아센터</a></li>
+                </ul>
+              </li>
+              <li class="group">
+                <div class="mgnb_main"><a href="promotion.html">제휴·프로모션</a></div>
+              </li>
+              <li class="group">
+                <div class="mgnb_main">고객센터</div>
+                <ul class="mgnb_sub">
+                  <li><a href="faq.html">자주 묻는 질문</a></li>
+                  <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!--//mgnb-->
+            <ul class="sns">
+              <li>
+                <a href="https://www.instagram.com/go_tourzy" target="_blank">
+                  <img src="../images/mgnb_instagram.png" alt="인스타그램">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/tourzy.official" target="_blank">
+                  <img src="../images/mgnb_facebook.png" alt="페이스북">
+                </a>
+              </li>
+              <li>
+                <a href="https://blog.naver.com/tourzy" target="_blank">
+                  <img src="../images/mgnb_naver.png" alt="네이버 블로그">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--//mgnb_wrap-->
+        </nav>
+        <!--//nav-->
+      </div>
+      <!--//header inner-->
+    </header>
+    <!--//header-->
+
+    <!--main_visual-->
+    <article id="main_visual">
+      <h2>
+        제휴 · 프로모션
+      </h2>
+    </article>
+    <!--//main_visual-->
+
+    <!--contents-->
+    <div id="contents">
+      <!--value-->
+      <section id="value">
+        <!--value inner-->
+        <div class="inner">
+          <p>홈 > 제휴·프로모션</p>
+        </div>
+        <!--//value inner-->
+      </section>
+      <!--//value-->
+
+      <!--promotion-->
+      <section id="promotion">
+        <!--promotion inner-->
+        <div class="inner">
+          <h2>제휴</h2>
+          <!--alliance_banner-->
+          <div class="alliance_banner">
+            <ul>
+              <li>
+                <img src="../images/loacal_insight_tour4.jpeg" alt="투어지 X 짐캐리" />
+              </li>
+              <li>
+                <img src="../images/banner_alliance_zimcarry.jpg" alt="투어지 X 짐캐리" />
+              </li>
+              <li>
+                <img src="../images/banner_alliance_surfholic.jpg" alt="바다 위에서 서핑하지? 길위에서는 투어지!!!" />
+              </li>
+              <li>
+                <img src="../images/banner_alliance_citytourbusan.jpg" alt="투어지 X 부산시티투어버스" />
+              </li>
+            </ul>
+          </div>
+          <!--//alliance_banner-->
+
+          <h2>프로모션</h2>
+          <!--promotion_banner-->
+          <div class="promotion_banner">
+            <ul>
+              <li>
+                <img src="../images/banner_promotion_picnic.jpeg" alt="피크닉" />
+              </li>
+              <li>
+                <img src="../images/banner_promotion_kakaoch1.jpg" alt="카카오톡 채널추가" />
+              </li>
+              <li>
+                <img src="../images/banner_promotion_kakaoch2.jpg" alt="카카오톡 채널추가" />
+              </li>
+              <li>
+                <img src="../images/banner_promotion_hashtag.jpg" alt="해쉬태그 이벤트" />
+              </li>
+            </ul>
+          </div>
+          <!--//promotion_banner-->
+
+        </div>
+        <!--//promotion inner-->
+      </section>
+      <!--//promotion-->
+    </div>
+    <!--//contents-->
+
+    <!--footer-->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="link">
+          <li><a href="">회사소개</a></li>
+          <li><a href="">제휴안내</a></li>
+          <li><a href="../policy/terms.html" target="_blank">회원이용약관</a></li>
+          <li><a href="../policy/privacy.html" target="_blank">개인정보 처리방침</a></li>
+          <li><a href="../policy/car.html" target="_blank">자동차대여약관</a></li>
+        </ul>
+        <div class="footer_txt">
+          <p>
+            회사명 : (주)투어스태프 / 대표 : 김남진<br />
+            주소 : 부산광역시 해운대구 APEC로 30 108호<br />
+            사업자 등록번호 : 110-87-01893<br />
+            전화 : 051-740-4080<br />
+            통신판매업신고번호 : 2021-부산해운대-0918<br />
+            개인정보관리책임자 : 김승휘<br />
+            COPYRIGHT &copy; 2021 TOURZY CORP. ALL RIGHTS RESERVED.
+          </p>
+        </div>
+      </div>
+      <!--//footer inner-->
+    </footer>
+    <!--//footer-->
+  </div>
+  <!--//wrap-->
+
+  <script>
+    // 제휴
+    var mql = window.matchMedia("screen and (min-width : 1024px)");
+
+    if (mql.matches) {
+
+      $(document).ready(function () {
+        $('.alliance_banner ul').bxSlider({
+          auto: true,   /*false 슬라이드가 자동으로 전환됩니다.*/
+          speed: 1000, /*500	슬라이드 전환 시간 (ms)*/
+          pause: 2000,   /*각 자동 전환 사이의 시간 (ms)*/
+          minSlides: 3,   /*표시 할 최소 슬라이드 수입니다. 캐 러셀이 원래 크기보다 작아지면 슬라이드의 크기가 줄어 듭니다.*/
+          maxSlides: 3,   /*표시 할 최대 슬라이드 수입니다. 캐 러셀이 원래 크기보다 커지면 슬라이드의 크기가 조정됩니다.*/
+          moveSlides: 1,  /*전환시 이동할 슬라이드 수입니다. 이 값은> = minSlides 및 <= maxSlides 여야합니다. 0 (기본값)이면 완전히 볼 수있는 슬라이드 수가 사용됩니다.*/
+          slideWidth: 400,    /*각 슬라이드의 너비입니다. 이 설정은 모든 수평 캐 러셀에 필요합니다!*/
+          slideMargin: 36.39,   /*각 슬라이드 사이의 여백*/
+          controls: false,    /*true 진실	참이면 "Next"/ "Prev"컨트롤이 추가됩니다.*/
+          autoHover: false,    /*false  마우스를 슬라이더 위로 가져 가면 자동 표시가 일시 중지됩니다.*/
+          pager: false,    /*true 참이면 호출기가 추가됩니다.*/
+          responsive: true,
+          touchEnabled: true
+        });
+
+        $('.promotion_banner ul').bxSlider({
+          auto: true,   /*false 슬라이드가 자동으로 전환됩니다.*/
+          speed: 1000, /*500	슬라이드 전환 시간 (ms)*/
+          pause: 2000,   /*각 자동 전환 사이의 시간 (ms)*/
+          minSlides: 3,   /*표시 할 최소 슬라이드 수입니다. 캐 러셀이 원래 크기보다 작아지면 슬라이드의 크기가 줄어 듭니다.*/
+          maxSlides: 3,   /*표시 할 최대 슬라이드 수입니다. 캐 러셀이 원래 크기보다 커지면 슬라이드의 크기가 조정됩니다.*/
+          moveSlides: 1,  /*전환시 이동할 슬라이드 수입니다. 이 값은> = minSlides 및 <= maxSlides 여야합니다. 0 (기본값)이면 완전히 볼 수있는 슬라이드 수가 사용됩니다.*/
+          slideWidth: 400,    /*각 슬라이드의 너비입니다. 이 설정은 모든 수평 캐 러셀에 필요합니다!*/
+          slideMargin: 36.39,   /*각 슬라이드 사이의 여백*/
+          controls: false,    /*true 진실	참이면 "Next"/ "Prev"컨트롤이 추가됩니다.*/
+          autoHover: false,    /*false  마우스를 슬라이더 위로 가져 가면 자동 표시가 일시 중지됩니다.*/
+          pager: false,    /*true 참이면 호출기가 추가됩니다.*/
+          responsive: true,
+          touchEnabled: true
+        });
+      });
+    }
+    // 제휴
+  </script>
+
+</body>
+
+</html>

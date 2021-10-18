@@ -1,0 +1,702 @@
+@charset "utf-8";
+
+body {
+    font-family: NanumGothic;
+    font-size: 1.0rem;
+    line-height: 1;
+    color: #3E3A39;
+}
+
+#wrap { 
+    overflow: hidden; 
+}
+
+/* header */
+#header {
+    display: flex;
+    width: 100%;
+    height: 80px;
+}
+
+#header .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+}
+
+/* header logo */
+#header .inner h1 {
+    width: 66.35vw;
+    position: absolute;
+    height: 80px;
+    line-height: 80px;
+    white-space: nowrap;
+    text-align: center;
+    right: 0;
+}
+
+#header .inner h1 img {
+    position: relative;
+    width: 219.02px;
+    height: 32px;
+    vertical-align: middle;
+    object-fit: contain;
+    z-index: 999;
+}
+
+/* header logo 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #header { 
+        width: 100%;
+        height: 20.86vw;
+    }
+    
+    #header .inner {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* header logo */
+    #header .inner h1{
+        width: 100%;
+        height: 21.33vw;
+        line-height: 21.33vw;
+        text-align: end;
+        margin-right: 5.86vw;
+    }
+    
+    #header .inner h1 img {
+        width: 42.66vw;
+        height: 8vw;
+        vertical-align: bottom;
+        margin-bottom: 2.66vw;
+
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #header { 
+        width: 100%;
+        height: 20.86vw;
+    }
+    
+    #header .inner {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* header logo */
+    #header .inner h1{
+        width: 100%;
+        height: 21.33vw;
+        line-height: 21.33vw;
+        text-align: end;
+        margin-right: 5.86vw;
+    }
+    
+    #header .inner h1 img {
+        width: 42.66vw;
+        height: 8vw;
+        vertical-align: bottom;
+        margin-bottom: 2.66vw;
+
+    }
+}
+/* header logo 반응형 */
+/* header logo */
+
+/* main_visual */
+#main_visual {
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 100%;
+    height: 150px;
+    background-color: #89C53F;
+    text-align: center;
+}
+
+#main_visual h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 150px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* main_visual 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #main_visual { 
+        height: 40vw;
+    }
+
+    #main_visual h2 {
+        font-size: 5vw;
+        line-height: 40vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #main_visual { 
+        height: 40vw;
+    }
+
+    #main_visual h2 {
+        font-size: 5vw;
+        line-height: 40vw;
+    }
+}
+/* main_visual 반응형 */
+/* main_visual */
+
+/* value */
+#value { 
+    display: flex;
+}
+
+#value .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+    margin-top: 31px;
+}
+
+#value p { 
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #3E3A39;
+}
+
+/* value 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #value .inner { 
+        width: 94.7vw;
+        margin-top: 2.4vw;
+    }
+
+    #value p { 
+        font-weight: normal;
+        font-size: 2.66vw;
+        line-height: 2.66vw;
+        color: #000000;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #value .inner { 
+        width: 94.7vw;
+        margin-top: 2.4vw;
+    }
+
+    #value p { 
+        font-weight: normal;
+        font-size: 2.66vw;
+        line-height: 2.66vw;
+        color: #000000;
+    }
+}
+/* value 반응형 */
+/* value */
+
+/* footer */
+#footer .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#footer .link {
+    clear: both;
+    display: inline-block
+}
+
+#footer .link li {
+    list-style: none;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#footer .link li a {
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 90px;
+    color: #717363;
+    margin-right: 32px;
+}
+
+#footer .link li:last-child a {
+    margin-right: 0;
+}
+
+#footer .link li:hover a {
+    color: #89C53F;
+    transition: all .5s;
+}
+
+#footer .footer_txt {
+    height: 180px;
+    text-align: center;
+}
+
+#footer .footer_txt p {
+    height: 100%;
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #717363;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* footer 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #footer .inner {
+        width: 89.56vw;
+    }
+
+    #footer .link { 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    #footer .link li { 
+        position: relative;
+        width: calc(100%/3);
+    }
+
+    #footer .link li a { 
+        font-weight: normal;
+        display: block;
+        margin: 0 auto;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+    }
+
+    #footer .link li:nth-child(1) { 
+        text-align: start;
+    }
+    
+    #footer .link li:nth-child(2) { 
+        text-align: center;
+    }
+
+    #footer .link li:nth-child(3) { 
+        text-align: end;
+    }
+
+    #footer .link li:nth-child(4) { 
+        text-align: start;
+    }
+
+    #footer .link li:nth-child(5) { 
+        text-align: end;
+    }
+
+    #footer .footer_txt {
+        height: 53.33vw;
+    }
+
+    #footer .footer_txt p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #footer .inner {
+        width: 89.56vw;
+    }
+
+    #footer .link { 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    #footer .link li { 
+        position: relative;
+        width: calc(100%/3);
+    }
+
+    #footer .link li a { 
+        font-weight: normal;
+        display: block;
+        margin: 0 auto;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+    }
+
+    #footer .link li:nth-child(1) { 
+        text-align: start;
+    }
+    
+    #footer .link li:nth-child(2) { 
+        text-align: center;
+    }
+
+    #footer .link li:nth-child(3) { 
+        text-align: end;
+    }
+
+    #footer .link li:nth-child(4) { 
+        text-align: start;
+    }
+
+    #footer .link li:nth-child(5) { 
+        text-align: end;
+    }
+
+    #footer .footer_txt {
+        height: 53.33vw;
+    }
+
+    #footer .footer_txt p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+    }
+}
+/* footer 반응형 */
+/* footer */
+
+/* rent */
+#rent {
+    width: 66.35vw;
+    margin: 0 auto;
+    margin-bottom: 105px;
+}
+
+#rent .inner {
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* 중간 중간 점선 */
+#rent .dashed img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* rent 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+    
+    #rent { 
+        width: 94.7vw;
+        margin-bottom: 14.63vw;
+    }
+    
+    /* 중간 중간 점선 */
+    #rent .dashed img {
+        display: block;
+        margin: 0 auto;
+        height: 50px;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #rent { 
+        width: 70.93vw;
+        margin-bottom: 14.63vw;
+    }
+
+    /* 중간 중간 점선 */
+    #rent .dashed img {
+        display: block;
+        margin: 0 auto;
+        height: 50px;
+    }
+}
+/* rent 반응형 */
+
+#rent h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    color: #3E3A39;
+}
+
+#rent .price {
+    margin-top: 50px;
+}
+
+#rent .price table {
+    width: 100%;
+    margin-top: 36px;
+    margin-bottom: 30px;
+}
+
+#rent table {
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+
+#rent .price table tr:first-child td:first-child {
+    width: 25%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    text-align: center;
+    color: #FFFFFF;
+
+    background: #707263;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#rent .price table tr:first-child td:last-child {
+    width: 75%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    text-align: center;
+    color: #FFFFFF;
+
+    background: #4EAECC;
+    border-radius: 0px;
+}
+
+#rent .price table tr:last-child td:nth-child(1) {
+    width: 25%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    text-align: center;
+    color: #3E3A39;
+
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#rent .price table tr:last-child td:nth-child(2) {
+    width: 50%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    text-align: center;
+    color: #4EAECC;
+
+    border: 0.5px solid #4EAECC;
+    box-sizing: border-box;
+}
+
+#rent .price table tr:last-child td:nth-child(3) {
+    width: 25%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.13vw;
+    line-height: 2.13vw;
+    text-align: center;
+    color: #707263;
+
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+}
+
+#rent .terms {
+    margin-top: 37px;
+}
+
+#rent .terms table {
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 30px;
+}
+
+#rent .terms table tr:first-child td:first-child {
+    width: 25%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    text-align: center;
+    color: #FFFFFF;
+
+    background: #4EAECC;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#rent .terms table tr:first-child td:last-child {
+    width: 75%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.66vw;
+    line-height: 2.66vw;
+    text-align: center;
+    color: #3E3A39;
+
+    border: 0.5px solid #707263;
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+
+#rent .terms table tr:last-child td:first-child {
+    width: 25%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    text-align: center;
+    color: #4EAECC;
+
+    border: 0.5px solid #4EAECC;
+    box-sizing: border-box;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#rent .terms table tr:last-child td:last-child {
+    width: 75%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.66vw;
+    line-height: 2.66vw;
+    text-align: center;
+    color: #3E3A39;
+
+    border: 0.5px solid #4EAECC;
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+
+#rent .explain {
+    margin-top: 30px;
+}
+
+#rent .explain table {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#tr_1 td:first-child {
+    width: 25%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.66vw;
+    line-height: 2.66vw;
+    text-align: center;
+    color: #FFFFFF;
+
+    background: #4EAECC;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#tr_1 td:last-child {
+    width: 75%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.66vw;
+    line-height: 2.66vw;
+    text-align: center;
+    color: #3E3A39;
+
+    border: 0.5px solid #707263;
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+
+#tr_2 td:first-child {
+    width: 25%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.66vw;
+    line-height: 2.66vw;
+    text-align: center;
+    color: #4EAECC;
+
+    border: 0.5px solid #4EAECC;
+    box-sizing: border-box;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#tr_2 td:last-child {
+    width: 75%;
+    height: 6.66vw;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.66vw;
+    line-height: 2.66vw;
+    text-align: center;
+    color: #3E3A39;
+
+    border: 0.5px solid #4EAECC;
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+
+#rent .detail {
+    background: #EEEEEE;
+    border-radius: 10px;
+    padding: 12px 7px;
+    margin-bottom: 29px;
+}
+
+#rent p {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.13vw;
+    line-height: 2.13vw;
+    color: #3E3A39;
+    text-align: start;
+    margin: 0 auto;
+}
