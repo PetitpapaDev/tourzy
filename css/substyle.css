@@ -3461,13 +3461,13 @@ body {
 }
 
 #tourzystory .story .bx-prev {
-    background: url(../images/bx_prev.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/bx_prev.png) no-repeat;
     width: 22.92px;
     height: 79.17px;
 }
 
 #tourzystory .story .bx-next {
-    background: url(../images/bx_next.png) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/bx_next.png) no-repeat;
     width: 22.92px;
     height: 79.17px;
 }
