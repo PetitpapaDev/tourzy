@@ -156,11 +156,30 @@
           런칭시기: launching+"",
           운영방식: kind+""
         },
-        type: "POST",
+        method: "POST",
+        dataType: "json",
+
         success:function() {
           alert("등록되었습니다.\n감사합니다.");
         }
-      });
+      })
+      
+      .done(function(json) {
+        $("<h1>").text(json.title).appendTo("body");
+        $("<div class=\"content\">").html(json.html).appendTo("body");
+      })
+      // HTTP 요청이 실패하면 오류와 상태에 관한 정보가 fail() 메소드로 전달됨.
+      .fail(function(xhr, status, errorThrown) {
+          $("#text").html("오류가 발생했습니다.<br>")
+          .append("오류명: " + errorThrown + "<br>")
+          .append("상태: " + status);
+      })
+      // HTTP 요청이 성공하거나 실패하는 것에 상관없이 언제나 always() 메소드가 실행됨.
+      .always(function(xhr, status) {
+          $("#text").html("요청이 완료되었습니다!");
+      })
+      
+      ;
     }
     // 폼 전송
 
