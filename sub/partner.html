@@ -26,9 +26,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
-
   <script>
 
     // gnb
@@ -129,20 +126,38 @@
     // 터치 이벤트
 
     // 폼 전송
-    var $form = $('form#parthner-form'),
-    url = 'https://script.google.com/macros/s/AKfycbxcaM0TFBFu8SdtNcvhry_ZOTlUriQHf0ePWq8Mv_W7j-0r290/exec'
-
-    $('#submit-form').on('click', function(e) {
-      e.preventDefault();
-      var jqxhr = $.ajax({
-        url: url,
-        method: "GET",
-        dataType: "json",
-        data: $form.serializeObject()
-      }).success(
-        // do something
-      );
-    })
+    function postFormData() {
+      var name = document.getElementById().value;
+      var phone = document.getElementById().value;
+      var email = document.getElementById().value;
+      var location = document.getElementById().value;
+      var investment = document.getElementById().value;
+      var launching = document.getElementById().value;
+      var kind = document.getElementById().value;
+      $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbxcaM0TFBFu8SdtNcvhry_ZOTlUriQHf0ePWq8Mv_W7j-0r290/exec",
+        data: {
+          // name: name+"",
+          // phone: phone+"",
+          // email: email+"",
+          // location: location+"",
+          // investment: investment+"",
+          // launching: launching+"",
+          // kind: kind+""
+          이름: name+"",
+          전화번호: phone+"",
+          이메일: email+"",
+          지역: location+"",
+          투자금: investment+"",
+          런칭시기: launching+"",
+          운영방식: kind+""
+        },
+        type: "POST",
+        success:function(){
+          alert("등록되었습니다.\n감사합니다.");
+        }
+      });
+    }
     // 폼 전송
 
   </script>
@@ -291,41 +306,41 @@
   
             <div>						
               <label>이름</label>						
-              <input type="text" name="이름" placeholder="name"/>
+              <input id="name" type="text" name="이름" placeholder="name"/>
             </div>
           
             <div>
               <label>전화번호</label>
-              <input type="text" name="전화번호" placeholder="phone"/>
+              <input id="phone" type="text" name="전화번호" placeholder="phone"/>
             </div>
             
             <div>
               <label>이메일</label>
-              <input type="text" name="이메일" placeholder="email"/>
+              <input id="email" type="text" name="이메일" placeholder="email"/>
             </div>
             
             <div>
               <label>지역</label>
-              <input type="text" name="지역" placeholder="location"/>
+              <input id="location" type="text" name="지역" placeholder="location"/>
             </div>
 
             <div>
               <label>투자금</label>
-              <input type="text" name="투자금" placeholder="investment"/>
+              <input id="investment" type="text" name="투자금" placeholder="investment"/>
             </div>
 
             <div>
               <label>런칭시기</label>
-              <input type="text" name="런칭시기" placeholder="launching"/>
+              <input id="launching" type="text" name="런칭시기" placeholder="launching"/>
             </div>
 
             <div>
               <label>운영방식</label>
-              <input type="text" name="운영방식" placeholder="kind"/>
+              <input id="kind" type="text" name="운영방식" placeholder="kind"/>
             </div>
           
             <div>
-              <button type="submit"id="submit-form">Submit</button>
+              <button type="submit" onclick="postFormData()">Submit</button>
             </div>
           
           </form>
