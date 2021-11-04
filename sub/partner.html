@@ -169,12 +169,10 @@
       })
 
       .fail(function(xhr, status, errorThrown) {
-        alert("요청 실패");
+        alert("요청 실패")
+        .append("오류명: " + errorThrown + "<br>")
+        .append("상태: " + status);
       })
-
-      .always(function(xhr, status) {
-        alert("요청 완료");
-      });
     }
     // 폼 전송
 
