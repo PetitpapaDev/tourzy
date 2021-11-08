@@ -2298,6 +2298,36 @@ body {
     margin-top: 100px;
 }
 
+
+#faq .inner .table_select {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#faq .inner .table_select li {
+    float: left;
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+    vertical-align: middle;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    color: #8AC63F;
+    border: 1px solid #8AC63F;
+    border-radius: 10px;
+}
+
+#faq .inner .table_select li:hover {
+    color: #FFFFFF;
+    background: #8AC63F;
+    border-radius: 10px;
+}
+
 /* faq 반응형 */
 /* Tablets */
 @media all and (min-width : 768px) and (max-width : 1024px) {
@@ -2341,7 +2371,7 @@ body {
     width: 100%;
     border-top: 2px solid #000000;
     border-bottom: 1px solid #000000;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 #faq > .inner > table th:nth-child(1) {
@@ -2598,6 +2628,7 @@ body {
     border-radius: 10px;
     padding-top: 26px;
     padding-left: 70px;
+    padding-right: 70px;
     padding-bottom: 26px;
 }
 
