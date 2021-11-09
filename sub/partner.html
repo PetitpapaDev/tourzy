@@ -125,6 +125,33 @@
     });
     // 터치 이벤트
 
+    $.fn.serializeObject = function(){
+
+      var o = {};
+      var a = this.serializeArray();
+
+      $.each(a, function() {
+
+        var name = $.trim(this.value), value = $.trim(this.value);
+
+        if (o[name]) {
+          
+          if (!o[name].push) {
+            
+            o[name] = [o[name]];
+          }
+
+          o[name].push(value || '');
+
+        } else {
+
+          o[name] = value || '';
+        }
+      });
+
+      return o;
+    }
+
     // 폼 전송
     function postFormData() {
 
