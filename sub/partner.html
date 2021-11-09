@@ -126,49 +126,54 @@
     // 터치 이벤트
 
     // 폼 전송
-    function postFormData() {
+    // function postFormData() {
 
-      var name = document.getElementById("name").value;
-      var phone = document.getElementById("phone").value;
-      var email = document.getElementById("email").value;
-      var location = document.getElementById("location").value;
-      var investment = document.getElementById("investment").value;
-      var launching = document.getElementById("launching").value;
-      var kind = document.getElementById("kind").value;
+    //   var name = document.getElementById("name").value;
+    //   var phone = document.getElementById("phone").value;
+    //   var email = document.getElementById("email").value;
+    //   var location = document.getElementById("location").value;
+    //   var investment = document.getElementById("investment").value;
+    //   var launching = document.getElementById("launching").value;
+    //   var kind = document.getElementById("kind").value;
 
-      alert("이름: " + name + "\n" + "전화번호: " + phone + "\n" + "이메일: " + email + "\n" + "지역: " + location + "\n" + "투자금: " + investment + "\n" + "런칭시기: " + launching + "\n" + "운영방식: " + kind);
+    //   alert("이름: " + name + "\n" + "전화번호: " + phone + "\n" + "이메일: " + email + "\n" + "지역: " + location + "\n" + "투자금: " + investment + "\n" + "런칭시기: " + launching + "\n" + "운영방식: " + kind);
 
-      $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbxcaM0TFBFu8SdtNcvhry_ZOTlUriQHf0ePWq8Mv_W7j-0r290/exec",
-        data: {
-          // name: name + "",
-          // phone: phone + "",
-          // email: email + "",
-          // location: location + "",
-          // investment: investment + "",
-          // launching: launching + "",
-          // kind: kind + ""
-          이름: name+"",
-          전화번호: phone+"",
-          이메일: email+"",
-          지역: location+"",
-          투자금: investment+"",
-          런칭시기: launching+"",
-          운영방식: kind+""
-        },
-        method: "POST",
-        dataType: "json",
+    //   $.ajax({
+    //     url: "https://script.google.com/macros/s/AKfycbxcaM0TFBFu8SdtNcvhry_ZOTlUriQHf0ePWq8Mv_W7j-0r290/exec",
+    //     data: {
+    //       이름: name+"",
+    //       전화번호: phone+"",
+    //       이메일: email+"",
+    //       지역: location+"",
+    //       투자금: investment+"",
+    //       런칭시기: launching+"",
+    //       운영방식: kind+""
+    //     },
+    //     method: "POST",
+    //     dataType: "json",
 
-        success:function() {
-          alert("등록되었습니다.\n감사합니다.");
-        }
-      })
+    //     success:function() {
+    //       alert("등록되었습니다.\n감사합니다.");
+    //     }
+    //   })
 
-      .fail(function(xhr, status, errorThrown) {
-        alert("오류명: " + errorThrown + "\n" + "상태: " + status)
-      })
-    }
+    //   .fail(function(xhr, status, errorThrown) {
+    //     alert("오류명: " + errorThrown + "\n" + "상태: " + status)
+    //   })
+    // }
     // 폼 전송
+
+    //
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxcaM0TFBFu8SdtNcvhry_ZOTlUriQHf0ePWq8Mv_W7j-0r290/exec'
+    const form = document.forms['postFormData']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+    //
 
   </script>
 
