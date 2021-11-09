@@ -143,7 +143,7 @@
       alert("이름: " + $('#name').val() + "\n" + "전화번호: " + $('#phone').val() + "\n" + "이메일: " + $('#email').val() + "\n" + "지역: " + $('#loca').val() + "\n" + "투자금: " + $('#investment').val() + "\n" + "런칭시기: " + $('#launching').val() + "\n" + "운영방식: " + $('#kind').val());
 
       $.ajax({
-        url: 'https://script.google.com/macros/s/AKfycbwV2I-hfV8hCLZ0a5no4LIjVYCEReJDKxGGD4NSEA-0BXVXJoY/exec',
+        url: 'https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec',
         type: 'post',
         method: 'post',
         data: formData,
@@ -162,6 +162,23 @@
       })
     }
     // 폼 전송
+
+    //
+    var $form = $('form#test-form'),
+        url = 'https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec'
+
+    $('#submit-form').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form.serializeObject()
+      }).success(
+        // do something
+      );
+    })
+    //
 
   </script>
 
@@ -344,6 +361,34 @@
           
             <div>
               <button type="submit" id="submit" onclick="postFormData();">Submit</button>
+            </div>
+          
+          </form>
+
+          <form id="test-form">
+  
+            <div>
+              <label>Field 1</label>
+              <input type="text" name="form_field_1" placeholder="Field 1"/>
+            </div>
+          
+            <div>
+              <label>Field 2</label>
+              <input type="text" name="form_field_2" placeholder="Field 2"/>
+            </div>
+            
+            <div>
+              <label>Field 3</label>
+              <input type="text" name="form_field_3" placeholder="Field 3"/>
+            </div>
+            
+            <div>
+              <label>Field 4</label>
+              <input type="text" name="form_field_4" placeholder="Field 4"/>
+            </div>
+          
+            <div>
+              <button type="submit"id="submit-form">Submit</button>
             </div>
           
           </form>
