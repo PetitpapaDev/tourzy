@@ -165,14 +165,15 @@
 
     //
     function getFormData() {
-      var $form = $("form#test-form")
+
+      var form = $("form#test-form")
       var url = "https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec"
 
-      var jqxhr = $.ajax({
+      $.ajax({
         url: url,
         method: "GET",
         dataType: "json",
-        data: $form.serializeObject()
+        data: form.serializeObject()
       }).success(
         // do something
       );
