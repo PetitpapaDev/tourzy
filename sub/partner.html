@@ -193,6 +193,18 @@
     }
     // 폼 전송
 
+    //
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+    //
+
   </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -335,7 +347,7 @@
         <div class="inner">
           <h2>제휴안내</h2>
           
-          <form id="submitGoogle">
+          <form id="submitGoogle" name="submit-to-google-sheet">
   
             <div>						
               <label>이름</label>						
@@ -373,7 +385,7 @@
             </div>
           
             <div>
-              <button type="submitTo" id="submit" onclick="postFormData();">Submit</button>
+              <button type="submit" id="submitTo" onclick="postFormData();">Submit</button>
             </div>
           
           </form>
