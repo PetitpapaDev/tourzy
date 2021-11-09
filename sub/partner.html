@@ -165,20 +165,17 @@
 
     //
     function getFormData() {
-      var $form = $('form#test-form'),
-        url = 'https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec'
+      var $form = $("form#test-form")
+      var url = "https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec"
 
-      $('#submit-form').on('click', function(e) {
-        e.preventDefault();
-        var jqxhr = $.ajax({
-          url: url,
-          method: "GET",
-          dataType: "json",
-          data: $form.serializeObject()
-        }).success(
-          // do something
-        );
-      })
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form.serializeObject()
+      }).success(
+        // do something
+      );
     }
     //
 
