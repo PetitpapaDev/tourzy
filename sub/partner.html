@@ -182,21 +182,23 @@
     // 폼 전송
 
     //
-    var $form = $('form#submit-to-google-sheet'),
-        url = 'https://script.google.com/macros/s/AKfycbwV2I-hfV8hCLZ0a5no4LIjVYCEReJDKxGGD4NSEA-0BXVXJoY/exec'
+    function postFormData() {
 
-    $('#submit').on('click', function(e) {
-      e.preventDefault();
-      var jqxhr = $.ajax({
-        url: url,
-        method: "get",
-        type: 'get',
-        dataType: "json",
-        data: $form.serializeObject()
-      }).success(
-        // do something
-      );
-    })
+      var $form = $('form#submit-to-google-sheet'), url = 'https://script.google.com/macros/s/AKfycbwV2I-hfV8hCLZ0a5no4LIjVYCEReJDKxGGD4NSEA-0BXVXJoY/exec'
+
+      $('#submit').on('click', function(e) {
+        e.preventDefault();
+        var jqxhr = $.ajax({
+          url: url,
+          method: "get",
+          type: 'get',
+          dataType: "json",
+          data: $form.serializeObject()
+        }).success(
+          // do something
+        );
+      })
+    }
     //
 
   </script>
