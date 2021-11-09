@@ -139,7 +139,7 @@
 
       // alert("이름: " + $('#name').val() + "\n" + "전화번호: " + $('#phone').val() + "\n" + "이메일: " + $('#email').val() + "\n" + "지역: " + $('#loca').val() + "\n" + "투자금: " + $('#investment').val() + "\n" + "런칭시기: " + $('#launching').val() + "\n" + "운영방식: " + $('#kind').val());
 
-      var formDatas = JSON.stringify($('form#submit-to-google-sheet').serializeObject());
+      var formDatas = JSON.stringify($('form#submitGoogle').serializeObject());
 
       alert(formDatas);
 
@@ -308,7 +308,7 @@
         <div class="inner">
           <h2>제휴안내</h2>
           
-          <form id="submit-to-google-sheet">
+          <form id="submitGoogle">
   
             <div>						
               <label>이름</label>						
@@ -346,7 +346,7 @@
             </div>
           
             <div>
-              <button type="submit" id="submit" onclick="postFormData();">Submit</button>
+              <button type="submitTo" id="submit" onclick="postFormData();">Submit</button>
             </div>
           
           </form>
