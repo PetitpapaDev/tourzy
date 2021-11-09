@@ -139,15 +139,15 @@
       alert("이름: " + name + "\n" + "전화번호: " + phone + "\n" + "이메일: " + email + "\n" + "지역: " + location + "\n" + "투자금: " + investment + "\n" + "런칭시기: " + launching + "\n" + "운영방식: " + kind);
 
       $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbxBczY-yp2WkYu1jUHX_RjW3-ZkKTwktgQ7eDllgp39BW8F1w4PWIecJaxSaNdvgshd/exec",
+        url: "https://script.google.com/macros/s/AKfycbwV2I-hfV8hCLZ0a5no4LIjVYCEReJDKxGGD4NSEA-0BXVXJoY/exec",
         data: {
-          이름: name+"",
-          전화번호: phone+"",
-          이메일: email+"",
-          지역: location+"",
-          투자금: investment+"",
-          런칭시기: launching+"",
-          운영방식: kind+""
+          name: name+"",
+          phone: phone+"",
+          email: email+"",
+          location: location+"",
+          investment: investment+"",
+          launching: launching+"",
+          kind: kind+""
         },
         type: "POST",
         dataType: "json",
