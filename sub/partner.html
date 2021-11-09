@@ -126,43 +126,59 @@
     // 터치 이벤트
 
     // 폼 전송
-    function postFormData() {
+    // function postFormData() {
 
-      var name = document.getElementById("name").value;
-      var phone = document.getElementById("phone").value;
-      var email = document.getElementById("email").value;
-      var location = document.getElementById("location").value;
-      var investment = document.getElementById("investment").value;
-      var launching = document.getElementById("launching").value;
-      var kind = document.getElementById("kind").value;
+    //   var name = document.getElementById("name").value;
+    //   var phone = document.getElementById("phone").value;
+    //   var email = document.getElementById("email").value;
+    //   var location = document.getElementById("location").value;
+    //   var investment = document.getElementById("investment").value;
+    //   var launching = document.getElementById("launching").value;
+    //   var kind = document.getElementById("kind").value;
 
-      alert("이름: " + name + "\n" + "전화번호: " + phone + "\n" + "이메일: " + email + "\n" + "지역: " + location + "\n" + "투자금: " + investment + "\n" + "런칭시기: " + launching + "\n" + "운영방식: " + kind);
+    //   alert("이름: " + name + "\n" + "전화번호: " + phone + "\n" + "이메일: " + email + "\n" + "지역: " + location + "\n" + "투자금: " + investment + "\n" + "런칭시기: " + launching + "\n" + "운영방식: " + kind);
 
-      $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbxcaM0TFBFu8SdtNcvhry_ZOTlUriQHf0ePWq8Mv_W7j-0r290/exec",
-        data: {
-          이름: name+"",
-          전화번호: phone+"",
-          이메일: email+"",
-          지역: location+"",
-          투자금: investment+"",
-          런칭시기: launching+"",
-          운영방식: kind+""
-        },
-        type: "POST",
+    //   $.ajax({
+    //     url: "https://script.google.com/macros/s/AKfycbxcaM0TFBFu8SdtNcvhry_ZOTlUriQHf0ePWq8Mv_W7j-0r290/exec",
+    //     data: {
+    //       이름: name+"",
+    //       전화번호: phone+"",
+    //       이메일: email+"",
+    //       지역: location+"",
+    //       투자금: investment+"",
+    //       런칭시기: launching+"",
+    //       운영방식: kind+""
+    //     },
+    //     type: "POST",
+    //     method: "POST",
+    //     dataType: "json",
+
+    //     success:function() {
+    //       alert("등록되었습니다.\n감사합니다.");
+    //     }
+    //   })
+
+    //   .fail(function(xhr, status, errorThrown) {
+    //     alert("xhr: " + xhr + "\n" + "오류명: " + errorThrown + "\n" + "상태: " + status)
+    //   })
+    // }
+    // 폼 전송
+
+    //
+    var $form = $('form#submit-to-google-sheet'), url = 'https://script.google.com/macros/s/AKfycbxcaM0TFBFu8SdtNcvhry_ZOTlUriQHf0ePWq8Mv_W7j-0r290/exec'
+
+    $('#submit').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
         method: "POST",
         dataType: "json",
-
-        success:function() {
-          alert("등록되었습니다.\n감사합니다.");
-        }
-      })
-
-      .fail(function(xhr, status, errorThrown) {
-        alert("xhr: " + xhr + "\n" + "오류명: " + errorThrown + "\n" + "상태: " + status)
-      })
-    }
-    // 폼 전송
+        data: $form.serializeObject()
+      }).success(
+        // do something
+      );
+    })
+    //
 
   </script>
 
@@ -344,7 +360,7 @@
             </div>
           
             <div>
-              <button type="submit" onclick="postFormData();">Submit</button>
+              <button type="submit" id="submit" onclick="postFormData();">Submit</button>
             </div>
           
           </form>
