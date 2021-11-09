@@ -166,21 +166,27 @@
 
       // alert("이름: " + $('#name').val() + "\n" + "전화번호: " + $('#phone').val() + "\n" + "이메일: " + $('#email').val() + "\n" + "지역: " + $('#loca').val() + "\n" + "투자금: " + $('#investment').val() + "\n" + "런칭시기: " + $('#launching').val() + "\n" + "운영방식: " + $('#kind').val());
 
-      var formDatas = JSON.stringify($('form#submitGoogle').serializeObject());
+      var formData = JSON.stringify($('form#submitGoogle').serializeObject());
 
-      alert(formDatas);
+      alert(formData);
 
       $.ajax({
-        data: formDatas,
-        url: "https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec",
-        type: "POST",
-        dataType: "JSON",
-        contentType: "application/json; charset=UTF-8",
+        // data: formData,
+        // url: "https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec",
+        // type: "POST",
+        // dataType: "JSON",
+        // contentType: "application/json; charset=UTF-8",
         
-        async: true,
-        cache: false,
-        contentType: false,
-        processData: false,
+        type: 'POST',
+        url:'https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec',
+        data: formData,
+        contentType: 'application/x-www-form-urlencoded',
+        dataType: 'json',
+
+        // async: true,
+        // cache: false,
+        // contentType: false,
+        // processData: false,
 
         error: function(jqXHR, textStatus, errorThrown) {
           alert("jqXHR.status: " + jqXHR.status + "\n" + "오류명: " + errorThrown + "\n" + "상태: " + textStatus)
@@ -192,18 +198,6 @@
       })
     }
     // 폼 전송
-
-    //
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec'
-    const form = document.forms['submit-to-google-sheet']
-
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-    //
 
   </script>
 
