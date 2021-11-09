@@ -189,7 +189,7 @@
         // processData: false,
 
         error: function(jqXHR, textStatus, errorThrown) {
-          alert("jqXHR.status: " + jqXHR.status + "\n" + "오류명: " + errorThrown + "\n" + "상태: " + textStatus)
+          alert("jqXHR.status: " + jqXHR.status + "\n" + "jqXHR.statusText: " + jqXHR.statusText + "\n" + "오류명: " + errorThrown + "\n" + "상태: " + textStatus)
         },
 
         success: function(data, jqXHR, textStatus) {
