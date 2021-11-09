@@ -164,20 +164,22 @@
     // 폼 전송
 
     //
-    var $form = $('form#test-form'),
+    function getFormData() {
+      var $form = $('form#test-form'),
         url = 'https://script.google.com/macros/s/AKfycbypvtRF4Dlu8KjhLVV7IDklggjbNEn7pP7QpLR7YIpEmy-AJf4/exec'
 
-    $('#submit-form').on('click', function(e) {
-      e.preventDefault();
-      var jqxhr = $.ajax({
-        url: url,
-        method: "GET",
-        dataType: "json",
-        data: $form.serializeObject()
-      }).success(
-        // do something
-      );
-    })
+      $('#submit-form').on('click', function(e) {
+        e.preventDefault();
+        var jqxhr = $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          data: $form.serializeObject()
+        }).success(
+          // do something
+        );
+      })
+    }
     //
 
   </script>
@@ -388,7 +390,7 @@
             </div>
           
             <div>
-              <button type="submit"id="submit-form">Submit</button>
+              <button type="submit"id="submit-form" onclick="getFormData();">Submit</button>
             </div>
           
           </form>
