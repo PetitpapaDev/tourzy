@@ -177,10 +177,10 @@
         dataType: "JSON",
         contentType: "application/json; charset=UTF-8",
         
-        // async: true,
-        // cache: false,
-        // contentType: false,
-        // processData: false,
+        async: true,
+        cache: false,
+        contentType: false,
+        processData: false,
 
         error: function(jqXHR, textStatus, errorThrown) {
           alert("jqXHR: " + jqXHR + "\n" + "오류명: " + errorThrown + "\n" + "상태: " + textStatus)
