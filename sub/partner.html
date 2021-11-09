@@ -189,7 +189,8 @@
       e.preventDefault();
       var jqxhr = $.ajax({
         url: url,
-        method: "GET",
+        method: "get",
+        type: 'get',
         dataType: "json",
         data: $form.serializeObject()
       }).success(
