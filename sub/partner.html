@@ -152,15 +152,16 @@
               data: serializedData
           });
 
-          request.done(function (response, textStatus, jqXHR){
-              alert("Hooray, it worked!");
+          request.error(function(errorThrown, textStatus, jqXHR){
+            alert(errorThrown + ' / ' + textStatus + ' / ' + jqXHR.textStatus);
           });
 
-          request.fail(function (jqXHR, textStatus, errorThrown){
-              alert(
-                  "The following error occurred: "+
-                  textStatus, errorThrown
-              );
+          request.done(function (response, textStatus, jqXHR){
+              alert(response + ' / ' + textStatus + ' / ' + jqXHR.textStatus);
+          });
+
+          request.fail(function (errorThrown, textStatus, jqXHR){
+            alert(errorThrown + ' / ' + textStatus + ' / ' + jqXHR.textStatus);
           });
 
           request.always(function () {
