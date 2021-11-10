@@ -157,22 +157,50 @@
     // 폼 전송
     function postFormData () {
 
-      $.ajax({
-        
-        url:'https://script.google.com/macros/s/AKfycbzTC3QilPoqugJMDjjhK_Ze0rYCclKhZ76jZPjxDrfm-y7xZxE/exec',
-        type:'post',
-        data:$('form#googleForm').serializeArray(),
-          
-          success: function() {
-            alert("Form Data Submitted :)")
-          },
-
-          error: function() {
-            alert($('form#googleForm').serializeArray())
-          }
-      });
+      
     }
     // 폼 전송
+
+    var request;
+
+      $("#googleForm").submit(function(event) {
+
+          event.preventDefault();
+
+          if (request) {
+              request.abort();
+          }
+
+          var $form = $(this);
+
+          var $inputs = $form.find("input, select, button, textarea");
+
+          var serializedData = $form.serialize();
+
+          $inputs.prop("disabled", true);
+
+          request = $.ajax({
+              url: "https://script.google.com/macros/s/AKfycbzTC3QilPoqugJMDjjhK_Ze0rYCclKhZ76jZPjxDrfm-y7xZxE/exec",
+              type: "post",
+              data: serializedData
+          });
+
+          request.done(function (response, textStatus, jqXHR){
+              alert("Hooray, it worked!");
+          });
+
+          request.fail(function (jqXHR, textStatus, errorThrown){
+              alert(
+                  "The following error occurred: "+
+                  textStatus, errorThrown
+              );
+          });
+
+          request.always(function () {
+              $inputs.prop("disabled", false);
+          });
+
+      });
 
   </script>
 
