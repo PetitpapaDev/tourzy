@@ -153,11 +153,14 @@
           });
 
           request.done(function (response, textStatus, jqXHR){
-              alert(response + ' / ' + textStatus + ' / ' + jqXHR.textStatus);
+              alert(response + ' / ' + textStatus + ' / ' + jqXHR);
           });
 
-          request.fail(function (errorThrown, textStatus, jqXHR){
-            alert(errorThrown + ' / ' + textStatus + ' / ' + jqXHR.textStatus);
+          request.fail(function (jqXHR, textStatus, errorThrown){
+              alert(
+                  "The following error occurred: "+
+                  textStatus, errorThrown
+              );
           });
 
           request.always(function () {
