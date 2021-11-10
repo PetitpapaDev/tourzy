@@ -182,7 +182,7 @@
           });
 
           request.done(function (response, textStatus, jqXHR){
-              alert("Hooray, it worked!");
+              alert($form.serialize());
           });
 
           request.fail(function (jqXHR, textStatus, errorThrown){
