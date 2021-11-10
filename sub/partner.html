@@ -152,10 +152,6 @@
               data: serializedData
           });
 
-          request.error(function(errorThrown, textStatus, jqXHR){
-            alert(errorThrown + ' / ' + textStatus + ' / ' + jqXHR.textStatus);
-          });
-
           request.done(function (response, textStatus, jqXHR){
               alert(response + ' / ' + textStatus + ' / ' + jqXHR.textStatus);
           });
