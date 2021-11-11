@@ -152,11 +152,12 @@
               data: serializedData
           });
 
-          request.done(function (response, textStatus, jqXHR){
-              alert(response + ' / ' + textStatus + ' / ' + jqXHR);
+          request.done(function (response, textStatus, jqXHR) {
+
+              alert(response.call + ' / ' + textStatus + ' / ' + jqXHR);
           });
 
-          request.fail(function (jqXHR, textStatus, errorThrown){
+          request.fail(function (jqXHR, textStatus, errorThrown) {
               alert(
                   "The following error occurred: "+
                   textStatus, errorThrown
