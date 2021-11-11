@@ -154,7 +154,7 @@
 
           request.done(function (response, textStatus, jqXHR) {
 
-              alert(response.call + ' / ' + textStatus + ' / ' + jqXHR);
+              alert(response.textStatus + ' / ' + textStatus + ' / ' + jqXHR);
           });
 
           request.fail(function (jqXHR, textStatus, errorThrown) {
