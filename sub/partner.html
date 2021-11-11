@@ -154,14 +154,17 @@
 
           request.done(function (response, textStatus, jqXHR) {
 
-              alert(response.textStatus + ' / ' + textStatus + ' / ' + jqXHR);
+            console.log(response);
+
+            alert(response + ' / ' + textStatus + ' / ' + jqXHR);
           });
 
           request.fail(function (jqXHR, textStatus, errorThrown) {
-              alert(
-                  "The following error occurred: "+
-                  textStatus, errorThrown
-              );
+            
+            alert(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
           });
 
           request.always(function () {
