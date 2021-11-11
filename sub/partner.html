@@ -148,8 +148,8 @@
 
           request = $.ajax({
               url: "https://script.google.com/macros/s/AKfycbzTC3QilPoqugJMDjjhK_Ze0rYCclKhZ76jZPjxDrfm-y7xZxE/exec",
-              type: "post",
-              data: serializedData
+              type: "POST",
+              data: $(this)
           });
 
           request.done(function (response, textStatus, jqXHR) {
