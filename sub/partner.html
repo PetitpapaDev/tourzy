@@ -155,8 +155,9 @@
           request.done(function (response, textStatus, jqXHR) {
 
             const obj = JSON.stringify(response);
+            var oPerson = JSON.parse(person);
 
-            alert(obj.result + ' / ' + obj.row);
+            alert(oPerson.result + ' / ' + oPerson.row);
           });
 
           request.always(function () {
