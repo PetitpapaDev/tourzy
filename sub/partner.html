@@ -154,11 +154,14 @@
 
           request.done(function (response, textStatus, jqXHR) {
 
-            alert(response + ' / ' + textStatus + ' / ' + jqXHR);
+            const obj = JSON.parse(response);
+
+            alert(obj.result + ' / ' + obj.row);
           });
 
           request.always(function () {
-              $inputs.prop("disabled", false);
+
+            $inputs.prop("disabled", false);
           });
       });
     }
