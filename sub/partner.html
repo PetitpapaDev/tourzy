@@ -149,28 +149,17 @@
           request = $.ajax({
               url: "https://script.google.com/macros/s/AKfycbwMrSvmnkesyXC8-q0w-rohnx0BSmVTrHli8EEYOvu0b8Z9-ezS/exec",
               type: "post",
-              data: serializedData
+              data: $form
           });
 
           request.done(function (response, textStatus, jqXHR) {
 
-            console.log("jqXHR : ", jqXHR);
-
             alert(response + ' / ' + textStatus + ' / ' + jqXHR);
-          });
-
-          request.fail(function (jqXHR, textStatus, errorThrown) {
-            
-            alert(
-                "The following error occurred: "+
-                textStatus, errorThrown
-            );
           });
 
           request.always(function () {
               $inputs.prop("disabled", false);
           });
-
       });
     }
     // 폼 전송
