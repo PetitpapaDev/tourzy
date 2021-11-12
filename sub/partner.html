@@ -157,7 +157,9 @@
             const obj = JSON.stringify(response);
             var object = JSON.parse(obj);
 
-            alert(object.result + ' / ' + object.row);
+            // alert(object.result + ' / ' + object.row);
+
+            alert(object.result);
           });
 
           request.always(function () {
