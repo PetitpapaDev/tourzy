@@ -1,0 +1,53 @@
+/* apply */
+#apply {
+    width: 66.35vw;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 211px;
+}
+
+#apply h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+    color: #3E3A39;
+}
+
+#allpy #googleForm {
+    margin: 0 auto;
+}
+
+/* apply 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #apply {
+        width: 100%;
+        margin-top: 5.33vw;
+        margin-bottom: 40vw;
+    }
+
+    #apply .inner {
+        margin-left: 5.33vw;
+        margin-right: 5.33vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #apply {
+        /* width: 89.56vw; */
+        width: 100%;
+        margin-top: 5.33vw;
+        margin-bottom: 40vw;
+    }
+
+    #apply .inner {
+        margin-left: 5.33vw;
+        margin-right: 5.33vw;
+    }
+}
+/* apply 반응형 */

@@ -19,8 +19,9 @@
 
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/3dots.ico" />
   <link rel="stylesheet" href="../css/reset.css" />
-  <link rel="stylesheet" href="../css/substyle.css" />
-  <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/partner.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
@@ -157,8 +158,6 @@
             const obj = JSON.stringify(response);
             var object = JSON.parse(obj);
 
-            // alert(object.result + ' / ' + object.row);
-
             alert(object.result);
           });
 
@@ -196,23 +195,23 @@
         <nav>
           <!--gnb-->
           <ul class="gnb">
-            <li class="gnb_main"><a class="cate" href="about.html">투어지 소개</a>
+            <li class="gnb_main"><a class="cate" href="../sub/about.html">투어지 소개</a>
               <ul class="gnb_sub">
-                <li><a href="about.html">투어지 소개</a></li>
-                <li><a href="news.html">투어지 소식</a></li>
-                <li><a href="story.html">투어지 스토리</a></li>
+                <li><a href="../sub/about.html">투어지 소개</a></li>
+                <li><a href="../sub/news.html">투어지 소식</a></li>
+                <li><a href="../sub/story.html">투어지 스토리</a></li>
               </ul>
             </li>
-            <li class="gnb_main"><a class="cate" href="bexco.html">센터소개</a>
+            <li class="gnb_main"><a class="cate" href="../sub/bexco.html">센터소개</a>
               <ul class="gnb_sub">
-                <li><a href="bexco.html">벡스코센터</a></li>
-                <li><a href="osiria.html">오시리아센터</a></li>
+                <li><a href="../sub/bexco.html">벡스코센터</a></li>
+                <li><a href="../sub/osiria.html">오시리아센터</a></li>
               </ul>
             </li>
-            <li class="gnb_main"><a class="cate" href="promotion.html">제휴·프로모션</a></li>
-            <li class="gnb_main"><a class="cate" href="faq.html">고객센터</a>
+            <li class="gnb_main"><a class="cate" href="../sub/promotion.html">제휴·프로모션</a></li>
+            <li class="gnb_main"><a class="cate" href="../sub/faq.html">고객센터</a>
               <ul class="gnb_sub">
-                <li><a href="faq.html">자주 묻는 질문</a></li>
+                <li><a href="../sub/faq.html">자주 묻는 질문</a></li>
                 <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
               </ul>
             </li>
@@ -236,25 +235,25 @@
               <li class="group">
                 <div class="mgnb_main">투어지 소개</div>
                 <ul class="mgnb_sub">
-                  <li><a href="about.html">투어지 소개</a></li>
-                  <li><a href="news.html">투어지 소식</a></li>
-                  <li><a href="story.html">투어지 스토리</a></li>
+                  <li><a href="../sub/about.html">투어지 소개</a></li>
+                  <li><a href="../sub/news.html">투어지 소식</a></li>
+                  <li><a href="../sub/story.html">투어지 스토리</a></li>
                 </ul>
               </li>
               <li class="group">
                 <div class="mgnb_main">센터소개</div>
                 <ul class="mgnb_sub">
-                  <li><a href="bexco.html">벡스코센터</a></li>
-                  <li><a href="osiria.html">오시리아센터</a></li>
+                  <li><a href="../sub/bexco.html">벡스코센터</a></li>
+                  <li><a href="../sub/osiria.html">오시리아센터</a></li>
                 </ul>
               </li>
               <li class="group">
-                <div class="mgnb_main"><a href="promotion.html">제휴·프로모션</a></div>
+                <div class="mgnb_main"><a href="../sub/promotion.html">제휴·프로모션</a></div>
               </li>
               <li class="group">
                 <div class="mgnb_main">고객센터</div>
                 <ul class="mgnb_sub">
-                  <li><a href="faq.html">자주 묻는 질문</a></li>
+                  <li><a href="../sub/faq.html">자주 묻는 질문</a></li>
                   <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
                 </ul>
               </li>
@@ -306,47 +305,73 @@
       </section>
       <!--//value-->
 
-      <!--parthner-->
-      <section id="parthner">
-        <!--parthner inner-->
+      <!--apply-->
+      <section id="apply">
+        <!--apply inner-->
         <div class="inner">
           <h2>제휴안내</h2>
           
           <form id="googleForm" name="제휴안내">
   
-            <div>						
-              <label>이름</label>						
+            <div>
+              <p>이름<br /></p>
               <input id="partnerNames" type="text" name="이름" placeholder="이름"/>
             </div>
           
             <div>
-              <label>전화번호</label>
-              <input id="partnerPhone" type="text" name="전화번호" placeholder="전화번호"/>
+              <p>전화 번호<br /></p>
+              <input id="partnerPhone" type="text" name="전화번호" placeholder="전화 번호"/>
             </div>
             
             <div>
-              <label>이메일</label>
-              <input id="partnerEmail" type="text" name="이메일" placeholder="이메일"/>
+              <p>이메일 주소<br /></p>
+              <input id="partnerEmail" type="text" name="이메일" placeholder="이메일 주소"/>
             </div>
             
             <div>
-              <label>지역</label>
+              <p>희망 운영 지역<br /></p>
               <input id="partnerLocation" type="text" name="지역" placeholder="지역"/>
+
+              <select name="partnerLocation">
+                <option value="서울">서울</option>
+                <option value="경기도">경기도</option>
+                <option value="인천">인천</option>
+                <option value="부산">부산</option>
+                <option value="대전">대전</option>
+                <option value="대구">대구</option>
+                <option value="울산">울산</option>
+                <option value="세종">세종</option>
+                <option value="광주">광주</option>
+                <option value="강원도">강원도</option>
+                <option value="충청북도">충청북도</option>
+                <option value="충청남도">충청남도</option>
+                <option value="경상북도">경상북도</option>
+                <option value="경상남도">경상남도</option>
+                <option value="전라북도">전라북도</option>
+                <option value="전라남도">전라남도</option>
+                <option value="제주도">제주도</option>
+              </select>
             </div>
 
             <div>
-              <label>투자금</label>
-              <input id="partnerInvestment" type="text" name="투자금" placeholder="투자금"/>
+              <p>투자금<br /></p>
+              <input id="partnerInvestment" type="radio" name="투자금" value="5천만원">5천만원
+              <input id="partnerInvestment" type="radio" name="투자금" value="1억 미만">1억 미만
+              <input id="partnerInvestment" type="radio" name="투자금" value="2억 미만">2억 미만
+              <input id="partnerInvestment" type="radio" name="투자금" value="5억 미만">5억 미만
+              <input id="partnerInvestment" type="radio" name="투자금" value="5억 이상">5억 이상
             </div>
 
             <div>
-              <label>런칭시기</label>
+              <p>런칭시기<br /></p>
               <input id="partnerLaunching" type="text" name="런칭시기" placeholder="런칭시기"/>
             </div>
 
             <div>
-              <label>운영방식</label>
-              <input id="partnerKind" type="text" name="운영방식" placeholder="운영방식"/>
+              <p>운영방식<br /></p>
+              <input id="partnerKind" type="radio" name="운영방식" value="직접">직접 운영 (킥보드 구입 후 직접 관리)
+              <input id="partnerKind" type="radio" name="운영방식" value="위탁">위탁 운영 (킥보드 구입 후 위탁 운영)
+              <input id="partnerKind" type="radio" name="운영방식" value="복합방식">복합방식 및 미정 (상담 후 결정)
             </div>
           
             <div>
@@ -356,9 +381,9 @@
           </form>
 
         </div>
-        <!--//parthner inner-->
+        <!--//apply inner-->
       </section>
-      <!--//parthner-->
+      <!--//apply-->
     </div>
     <!--//contents-->
 
@@ -367,7 +392,7 @@
       <div class="inner">
         <ul class="link">
           <li><a href="">회사소개</a></li>
-          <li><a href="partner.html">제휴안내</a></li>
+          <li><a href="apply.html">제휴안내</a></li>
           <li><a href="../policy/terms.html" target="_blank">회원이용약관</a></li>
           <li><a href="../policy/privacy.html" target="_blank">개인정보 처리방침</a></li>
           <li><a href="../policy/car.html" target="_blank">자동차대여약관</a></li>

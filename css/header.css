@@ -1,0 +1,674 @@
+@charset "utf-8";
+
+body {
+    font-family: NanumGothic;
+    font-size: 1.0rem;
+    line-height: 1;
+    color: #3E3A39;
+}
+
+#wrap { 
+    overflow: hidden; 
+}
+
+/* header */
+#header { 
+    display: flex;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+#header .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+}
+
+/* header logo */
+#header .inner h1{
+    position: absolute;
+    height: 100px;
+    line-height: 100px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#header .inner h1 img {
+    position: relative;
+    width: 219.02px;
+    height: 32px;
+    vertical-align: middle;
+    object-fit: contain;
+    z-index: 999;
+}
+
+/* header logo 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #header { 
+        width: 100%;
+        height: 18.66vw;
+    }
+    
+    #header .inner {
+        width: 66.35vw;
+        margin: 0;
+    }
+    
+    /* header logo */
+    #header .inner h1{
+        height: 18.66vw;
+        line-height: 18.66vw;;
+        text-align: left;
+    }
+    
+    #header .inner h1 img {
+        width: 42.85vw;
+        height: 8vw;
+        vertical-align: top;
+        margin-top: 10.66vw;
+        margin-left: 5.33vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #header { 
+        width: 100%;
+        height: 18.66vw;
+    }
+    
+    #header .inner {
+        width: 66.35vw;
+        margin: 0;
+    }
+    
+    /* header logo */
+    #header .inner h1{
+        height: 18.66vw;
+        line-height: 18.66vw;;
+        text-align: left;
+    }
+    
+    #header .inner h1 img {
+        width: 42.85vw;
+        height: 8vw;
+        vertical-align: top;
+        margin-top: 10.66vw;
+        margin-left: 5.33vw;
+    }
+}
+/* header logo 반응형 */
+/* header logo */
+
+/* GNB */
+#header .gnb { 
+    display: flex; 
+    height: 100px;
+    top: 0;
+    float: right;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .gnb li {
+    position: relative;
+}
+
+#header .gnb .gnb_main:nth-child(1) {
+    padding-right: 4.63vw;
+}
+
+#header .gnb .gnb_main:nth-child(2) {
+    padding-right: 4.63vw;
+}
+
+#header .gnb .gnb_main:nth-child(3) {
+    padding-right: 4.63vw;
+}
+
+#header .gnb .gnb_main:nth-child(4) {
+    padding-right: 1.82vw;
+}
+
+#header .gnb li a { 
+    display: block; 
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: #3E3A39;
+}
+
+#header .gnb li:hover a.cate { 
+    border-bottom: 3px solid #89C53F;
+}
+
+#header .gnb .gnb_sub { 
+    transition: 0.5;
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    left: 0;
+    top: 40px;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+#header .gnb .gnb_sub li a { 
+    display:block; 
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #717363;
+    margin-top: 20px;
+}
+
+#header .gnb .gnb_sub li a:hover {
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#header .gnb_bg {
+    position: fixed;
+    width: 100%;
+    height: 220px;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5) 50%;
+}
+/* GNB */
+
+/* mobile gnb */
+/* 햄버거 */
+#header .m_menu_box {
+    display: none;
+    width: 13.33vw;
+    height: 13.33vw;
+    line-height: 13.33vw;
+    text-align: center;
+    float: right;
+    right: 0;
+    cursor: pointer;
+}
+
+#header .m_menu_box .m_menu {
+    font-size: 0;
+    width: 6.66vw;
+    height: 0.66vw;
+    background: #89C53F;
+    position: relative;
+    float: right;
+    margin-top: 14.33vw;
+    margin-right: 6vw;
+}
+
+#header .m_menu_box .m_menu:before { 
+    content: "";
+    position: absolute;
+    width: 4.66vw;
+    height: 0.66vw;
+    background: #89C53F;
+    right: 0; 
+    top: -2.66vw;
+}
+
+#header .m_menu_box .m_menu:after {
+    content: "";
+    position: absolute;
+    width: 3.33vw;
+    height: 0.66vw;
+    background: #89C53F;
+    right: 0;
+    top: 2.66vw; 
+}
+/* 햄버거 */
+
+/* 햄버거 닫기 */
+#header .close_box {
+    text-align: center;
+    float: right;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+#header .close_box .close {
+    font-size: 0;
+    width: 6.66vw;
+    height: 0.8vw;
+    background: #3E3A39;
+    position: relative;
+    float: right;
+    margin-top: 13.33vw;
+    margin-right: 5.86vw;
+    transform: rotate(45deg);
+}
+
+#header .close_box .close:after {
+    content: "";
+    position: absolute;
+    width: 6.66vw;
+    height: 0.8vw;
+    background: #3E3A39;
+    right: 0;
+    top: 0; 
+    transform: rotate(-90deg);
+}
+/* 햄버거 닫기 */
+
+/* 햄버거 리스트 */
+#header .mgnb_wrap_bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #000000;
+    opacity: 0.8;
+    left: 0;
+}
+
+#header .mgnb_wrap {
+    z-index: 999;
+    position: fixed;
+    left: 100%;
+    top: 0;
+    width: 52%;
+    height: 100%;
+    background: #FFFFFF;
+    opacity: 0.7;
+    border-radius: 50px 0px 0px 50px;
+}
+
+#header .mgnb {
+    margin-top: 37.33vw;
+    margin-right: 10.66vw;
+}
+
+#header .mgnb .mgnb_main {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4.8vw;
+    line-height: 4.8vw;
+    text-align: right;
+    color: #000000;
+	cursor:pointer;
+}
+
+#header .mgnb .group:nth-child(2) {
+    margin-top: 8vw;
+    margin-bottom: 8vw;
+}
+
+#header .mgnb .mgnb_sub li {
+    list-style: none;
+    position: relative;
+}
+
+#header .mgnb .mgnb_sub li a {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.46vw;
+    line-height: 3.46vw;
+    text-align: right;
+    color: #717363;
+	cursor:pointer;
+    display: block;
+    margin-top: 4vw;
+}
+
+#header .mgnb .mgnb_sub li a:active {
+    color: #354547;
+}
+
+#header .mgnb_wrap .sns {
+    float: right;
+    margin-top: 12vw;
+    margin-right: 10.93vw;
+}
+
+#header .mgnb_wrap .sns li {
+    list-style: none;
+    float: left;
+}
+
+#header .mgnb_wrap .sns li img {
+    width: 8vw;
+    height: 8vw;
+    margin-left: 4vw;
+}
+
+#header .mgnb_wrap .sns li img:active {
+    background: #354547;
+}
+/* 햄버거 리스트 */
+
+/* GNB 반응형 */
+/* Web */
+@media all and (max-width : 1025px) {
+    
+    #header .gnb {
+        display: block;
+    }
+
+    #header .m_menu_box {
+        display: none;
+    }
+}
+
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+    
+    #header .gnb {
+        display: none;
+    }
+
+    #header .m_menu_box {
+        display: block;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+	#header .gnb {
+        display: none;
+    }
+
+    #header .m_menu_box {
+        display: block;
+    }
+}
+/* GNB 반응형 */
+/* mobile gnb */
+/* header */
+
+/* main_visual */
+#main_visual {
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 100%;
+    height: 300px;
+    background-color: #89C53F;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#main_visual h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 300px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* main_visual 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #main_visual { 
+        height: 40vw;
+        margin-top: 26.66vw;
+    }
+
+    #main_visual h2 {
+        font-size: 6.4vw;
+        line-height: 40vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #main_visual { 
+        height: 40vw;
+        margin-top: 26.66vw;
+    }
+
+    #main_visual h2 {
+        font-size: 6.4vw;
+        line-height: 40vw;
+    }
+}
+/* main_visual 반응형 */
+/* main_visual */
+
+/* value */
+#value { 
+    display: flex;
+}
+
+#value .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+    margin-top: 31px;
+}
+
+#value p { 
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #3E3A39;
+}
+
+/* value 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #value .inner { 
+        width: 94.7vw;
+        margin-top: 2.4vw;
+    }
+
+    #value p { 
+        font-weight: normal;
+        font-size: 2.66vw;
+        line-height: 2.66vw;
+        color: #000000;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #value .inner { 
+        width: 94.7vw;
+        margin-top: 2.4vw;
+    }
+
+    #value p { 
+        font-weight: normal;
+        font-size: 2.66vw;
+        line-height: 2.66vw;
+        color: #000000;
+    }
+}
+/* value 반응형 */
+/* value */
+
+/* footer */
+#footer .inner {
+    width: 66.35vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#footer .link {
+    clear: both;
+    display: inline-block
+}
+
+#footer .link li {
+    list-style: none;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#footer .link li a {
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 90px;
+    color: #717363;
+    margin-right: 32px;
+}
+
+#footer .link li:last-child a {
+    margin-right: 0;
+}
+
+#footer .link li:hover a {
+    color: #89C53F;
+    transition: all .5s;
+}
+
+#footer .footer_txt {
+    height: 180px;
+    text-align: center;
+}
+
+#footer .footer_txt p {
+    height: 100%;
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #717363;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* footer 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #footer .inner {
+        width: 89.56vw;
+    }
+
+    #footer .link { 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    #footer .link li { 
+        position: relative;
+        width: calc(100%/3);
+    }
+
+    #footer .link li a { 
+        font-weight: normal;
+        display: block;
+        margin: 0 auto;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+    }
+
+    #footer .link li:nth-child(1) { 
+        text-align: start;
+    }
+    
+    #footer .link li:nth-child(2) { 
+        text-align: center;
+    }
+
+    #footer .link li:nth-child(3) { 
+        text-align: end;
+    }
+
+    #footer .link li:nth-child(4) { 
+        text-align: start;
+    }
+
+    #footer .link li:nth-child(5) { 
+        text-align: end;
+    }
+
+    #footer .footer_txt {
+        height: 53.33vw;
+    }
+
+    #footer .footer_txt p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #footer .inner {
+        width: 89.56vw;
+    }
+
+    #footer .link { 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    #footer .link li { 
+        position: relative;
+        width: calc(100%/3);
+    }
+
+    #footer .link li a { 
+        font-weight: normal;
+        display: block;
+        margin: 0 auto;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+    }
+
+    #footer .link li:nth-child(1) { 
+        text-align: start;
+    }
+    
+    #footer .link li:nth-child(2) { 
+        text-align: center;
+    }
+
+    #footer .link li:nth-child(3) { 
+        text-align: end;
+    }
+
+    #footer .link li:nth-child(4) { 
+        text-align: start;
+    }
+
+    #footer .link li:nth-child(5) { 
+        text-align: end;
+    }
+
+    #footer .footer_txt {
+        height: 53.33vw;
+    }
+
+    #footer .footer_txt p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+    }
+}
+/* footer 반응형 */
+/* footer */
