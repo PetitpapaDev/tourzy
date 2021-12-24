@@ -184,10 +184,6 @@
 
     // 모바일 팝업창 닫기
     function closePop() {
-      var chkb = document.getElementById("chkb");
-      if (chkb.checked == true) {
-        setCookie("picnic", "done", 1);
-      }
       $(".popup").hide();
     }
     // 모바일 팝업창 닫기
@@ -211,12 +207,12 @@
 
   <!-- 팝업 -->
   <div class="popup">
-    <div class="popup_bg"></div>
-    <a onclick="closePop();" href="https://www.instagram.com/p/CUuJl5HlIN7/?utm_medium=copy_link" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/banner_promotion_picnic.jpeg" alt="피크닉데이"></a>
-    <div class="popup_check" onclick="laterPop();">
-      <input id="chkb" type="checkbox" name="pop" onclick="laterPop();" />
-      <p>하루동안 열지 않음</p>
-      <div class="popup_close" onclick="closePop();">닫기</div>
+    <div class="popup_bg">
+      <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/1hour_bg.png" alt="피크닉데이">
+    </div>
+    <a onclick="closePop();" href="https://tourzykr.page.link/appdownload" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/1hour_obj.png" alt="피크닉데이"></a>
+    <div class="popup_check">
+      <div class="popup_close" onclick="closePop();">아니오, 다음에 이용할게요.</div>
     </div>
   </div>
   <!-- 팝업 -->
