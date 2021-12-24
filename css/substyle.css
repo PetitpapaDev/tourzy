@@ -1274,9 +1274,20 @@
     border-radius: 10px;
 }
 
-#news .headline .title {
-    width: 80%;
+#news .headline .press {
+    width: 15%;
+    vertical-align: middle;
     padding-left: 70px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000000;
+}
+
+#news .headline .title {
+    width: 65%;
     vertical-align: middle;
 }
 
