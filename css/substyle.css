@@ -1336,8 +1336,13 @@
         border-radius: 1.33vw;
     }
 
+    #news .headline .press {
+        width: 25%;
+        padding-left: 2.66vw;
+    }
+
     #news .headline .title {
-        width: 70%;
+        width: 45%;
         padding-left: 2.66vw;
         padding-right: 2.66vw;
     }
@@ -1377,8 +1382,13 @@
         border-radius: 1.33vw;
     }
 
+    #news .headline .press {
+        width: 25%;
+        padding-left: 2.66vw;
+    }
+
     #news .headline .title {
-        width: 70%;
+        width: 45%;
         padding-left: 2.66vw;
         padding-right: 2.66vw;
     }
