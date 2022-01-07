@@ -1740,6 +1740,19 @@
     width: 100%;
 }
 
+#promotion .alliance_banner .sh {
+    height: 400px;
+    line-height: 400px;
+    text-align: center;
+}
+
+#promotion .alliance_banner .sh img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: contain;
+}
+
 #promotion .alliance_banner {
     display: flex;
     width: 100%;
@@ -1759,14 +1772,22 @@
     margin-top: 100px;
 }
 
+#promotion .promotion_banner img {
+    width: 100%;
+    height: 400px;
+}
+
 #promotion .promotion_banner {
     display: flex;
     width: 100%;
     justify-content: center;
 }
 
-#promotion .promotion_banner img {
-    width: 100%;
+#promotion .promotion_banner .ft {
+    background-image:url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/1hour_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    Background-size: 1000px;
 }
 
 /* promotion 반응형 */
