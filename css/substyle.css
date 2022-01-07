@@ -1113,6 +1113,81 @@
         line-height: 5vw;
         margin-bottom: 8vw;
     }
+
+    #about .fee table tr:first-child td:nth-child(1) {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
+    
+    #about .fee table tr:first-child td:nth-child(2) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
+    
+    #about .fee table tr:first-child td:nth-child(2) span {
+        font-weight: normal;
+        font-size: 1.04vw;
+        line-height: 1.04vw;
+    }
+    
+    #about .fee table tr:first-child td:nth-child(3) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
+    
+    #about .fee table tr:first-child td:nth-child(3) span {
+        font-weight: normal;
+        font-size: 1.04vw;
+        line-height: 1.04vw;
+    }
+    
+    #about .fee table tr:nth-child(2) td:nth-child(1) {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
+    
+    #about .fee table tr:nth-child(2) td:nth-child(2) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
+    
+    #about .fee table tr:nth-child(2) td:nth-child(3) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
+    
+    #about .fee table tr:last-child td:nth-child(1) {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
+    
+    #about .fee table tr:last-child td:nth-child(2) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
+    
+    #about .fee table tr:last-child td:nth-child(3) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+    }
 }
 /* fee 반응형 */
 /* fee */
