@@ -276,7 +276,7 @@
               <li>
                 <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/banner_alliance_zimcarry.jpg" alt="투어지 X 짐캐리" />
               </li>
-              <li>
+              <li class="sh">
                 <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/banner_alliance_surfholic.jpg" alt="바다 위에서 서핑하지? 길위에서는 투어지!!!" />
               </li>
               <li>
@@ -350,6 +350,24 @@
 
     if (mql.matches) {
 
+      // 프로모션
+      $('.promotion_banner ul').bxSlider({
+          auto: true,   /*false 슬라이드가 자동으로 전환됩니다.*/
+          speed: 1000, /*500	슬라이드 전환 시간 (ms)*/
+          pause: 2000,   /*각 자동 전환 사이의 시간 (ms)*/
+          minSlides: 1,   /*표시 할 최소 슬라이드 수입니다. 캐 러셀이 원래 크기보다 작아지면 슬라이드의 크기가 줄어 듭니다.*/
+          maxSlides: 3,   /*표시 할 최대 슬라이드 수입니다. 캐 러셀이 원래 크기보다 커지면 슬라이드의 크기가 조정됩니다.*/
+          moveSlides: 1,  /*전환시 이동할 슬라이드 수입니다. 이 값은> = minSlides 및 <= maxSlides 여야합니다. 0 (기본값)이면 완전히 볼 수있는 슬라이드 수가 사용됩니다.*/
+          slideWidth: 400,    /*각 슬라이드의 너비입니다. 이 설정은 모든 수평 캐 러셀에 필요합니다!*/
+          slideMargin: 36.39,   /*각 슬라이드 사이의 여백*/
+          controls: false,    /*true 진실	참이면 "Next"/ "Prev"컨트롤이 추가됩니다.*/
+          autoHover: false,    /*false  마우스를 슬라이더 위로 가져 가면 자동 표시가 일시 중지됩니다.*/
+          pager: false,    /*true 참이면 호출기가 추가됩니다.*/
+          responsive: true,
+          touchEnabled: true
+        });
+      // 프로모션
+
       // 제휴
       $(document).ready(function () {
         $('.alliance_banner ul').bxSlider({
@@ -367,26 +385,8 @@
           responsive: true,
           touchEnabled: true
         });
-        // 제휴
-
-        // 프로모션
-        $('.promotion_banner ul').bxSlider({
-          auto: true,   /*false 슬라이드가 자동으로 전환됩니다.*/
-          speed: 1000, /*500	슬라이드 전환 시간 (ms)*/
-          pause: 2000,   /*각 자동 전환 사이의 시간 (ms)*/
-          minSlides: 1,   /*표시 할 최소 슬라이드 수입니다. 캐 러셀이 원래 크기보다 작아지면 슬라이드의 크기가 줄어 듭니다.*/
-          maxSlides: 3,   /*표시 할 최대 슬라이드 수입니다. 캐 러셀이 원래 크기보다 커지면 슬라이드의 크기가 조정됩니다.*/
-          moveSlides: 1,  /*전환시 이동할 슬라이드 수입니다. 이 값은> = minSlides 및 <= maxSlides 여야합니다. 0 (기본값)이면 완전히 볼 수있는 슬라이드 수가 사용됩니다.*/
-          slideWidth: 400,    /*각 슬라이드의 너비입니다. 이 설정은 모든 수평 캐 러셀에 필요합니다!*/
-          slideMargin: 36.39,   /*각 슬라이드 사이의 여백*/
-          controls: false,    /*true 진실	참이면 "Next"/ "Prev"컨트롤이 추가됩니다.*/
-          autoHover: false,    /*false  마우스를 슬라이더 위로 가져 가면 자동 표시가 일시 중지됩니다.*/
-          pager: false,    /*true 참이면 호출기가 추가됩니다.*/
-          responsive: true,
-          touchEnabled: true
-        });
       });
-      // 프로모션
+      // 제휴
     }
   </script>
 

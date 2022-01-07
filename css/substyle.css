@@ -1740,18 +1740,18 @@
     width: 100%;
 }
 
-/* #promotion .alliance_banner li {
+#promotion .alliance_banner .sh {
     height: 400px;
     line-height: 400px;
     text-align: center;
-} */
+}
 
-/* #promotion .alliance_banner .sh {
+#promotion .alliance_banner .sh img {
     width: 100%;
     height: 100%;
     vertical-align: middle;
     object-fit: contain;
-} */
+}
 
 #promotion .alliance_banner {
     display: flex;
