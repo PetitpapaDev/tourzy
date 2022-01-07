@@ -899,15 +899,15 @@
 /* review 반응형 */
 /* review */
 
-/* event_fee */
-#about .event_fee {
+/* fee */
+#about .fee {
     width: 66.35vw;
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 106px;
 }
 
-#about .event_fee h2 {
+#about .fee h2 {
     font-family: NanumGothic;
     font-style: normal;
     font-weight: bold;
@@ -919,23 +919,180 @@
     
     margin-bottom: 120px;
 }
-#about .event_fee img {
-    width: 80%;
-    display: block;
-    margin: 0 auto;
+
+#about .fee table {
+    width: 100%;
+    margin-top: 36px;
+    margin-bottom: 30px;
 }
 
-/* event_fee 반응형 */
+#about .fee table {
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+
+#about .fee table tr:first-child td:nth-child(1) {
+    width: 196.23px;
+    height: 55.15px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+
+    background: #53BDB8;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#about .fee table tr:first-child td:nth-child(2) {
+    width: 295.85px;
+    height: 55.15px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+
+    background: #717363;
+    border-radius: 0px;
+}
+
+#about .fee table tr:first-child td:nth-child(2) span {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+#about .fee table tr:first-child td:nth-child(3) {
+    width: 295.85px;
+    height: 55.15px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+
+    background: #717363;
+    border-radius: 0px;
+}
+
+#about .fee table tr:first-child td:nth-child(3) span {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+#about .fee table tr:nth-child(2) td:nth-child(1) {
+    width: 196.23px;
+    height: 44.12px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #3E3A39;
+
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#about .fee table tr:nth-child(2) td:nth-child(2) {
+    width: 295.85px;
+    height: 44.12px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #4EAECC;
+
+    background: rgba(83, 189, 184, 0.2);
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+}
+
+#about .fee table tr:nth-child(2) td:nth-child(3) {
+    width: 295.85px;
+    height: 44.12px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #707263;
+
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+}
+
+#about .fee table tr:last-child td:nth-child(1) {
+    width: 196.23px;
+    height: 44.12px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #3E3A39;
+
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#about .fee table tr:last-child td:nth-child(2) {
+    width: 295.85px;
+    height: 44.12px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #4EAECC;
+
+    background: rgba(83, 189, 184, 0.2);
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+}
+
+#about .fee table tr:last-child td:nth-child(3) {
+    width: 295.85px;
+    height: 44.12px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #707263;
+
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+}
+
+/* fee 반응형 */
 /* Tablets */
 @media all and (min-width : 768px) and (max-width : 1024px) {
     
-    #about .event_fee {
+    #about fee {
         width: 94.7vw;
         margin-top: 8vw;
         margin-bottom: 8vw;
     }
 
-    #about .event_fee h2 {
+    #about .fee h2 {
         font-size: 5vw;
         line-height: 55vw;
         margin-bottom: 8vw;
@@ -945,20 +1102,20 @@
 /* Mobile */
 @media all and (max-width : 767px) {
 
-    #about .event_fee {
+    #about .fee {
         width: 94.7vw;
         margin-top: 8vw;
         margin-bottom: 8vw;
     }
 
-    #about .event_fee h2 {
+    #about .fee h2 {
         font-size: 5vw;
         line-height: 5vw;
         margin-bottom: 8vw;
     }
 }
-/* event_fee 반응형 */
-/* event_fee */
+/* fee 반응형 */
+/* fee */
 
 /* app_download */
 #about .app_download {
@@ -1527,14 +1684,14 @@
     margin-top: 100px;
 }
 
-#promotion .promotion_banner img {
-    width: 100%;
-}
-
 #promotion .promotion_banner {
     display: flex;
     width: 100%;
     justify-content: center;
+}
+
+#promotion .promotion_banner img {
+    width: 100%;
 }
 
 /* promotion 반응형 */
