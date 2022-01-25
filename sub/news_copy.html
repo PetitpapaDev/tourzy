@@ -230,7 +230,7 @@
                 txt += "<div class='round_box'>뉴 스</div>";
                 txt += "</td>";
                 txt += "<td class='press'>[" + json[i].press + "]</td>";
-                txt += "<<td class='title'><a href=" + json[i].url + "target='_blank'>" + json[i].title + "</a></td>";
+                txt += "<<td class='title'><a href=" + json[i].url + " target='_blank'>" + json[i].title + "</a></td>";
                 txt += "<td class='date'>" + json[i].date + "</td>";
                 txt += "</tr>";
                 txt += "</table>";
@@ -427,7 +427,12 @@
                                         <col width="10%" />
                                     </colgroup>
                                     
-                                    <tbody id="dataSection"></tbody>
+                                    <div id="news_page">
+
+                                        <tbody id="dataSection"></tbody>
+
+                                    </div>
+
                                 </table>
                             </form>
                         </div>
