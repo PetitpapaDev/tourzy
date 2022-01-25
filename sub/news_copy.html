@@ -223,6 +223,8 @@
             
             // 테이블의 row를 삽입하는 부분
             for(i = 0; i < json.length; i++) {
+                txt += "<li class='group'>";
+                txt += "<table class='headline'>";
                 txt += "<tr>";
                 txt += "<td class='kind'>";
                 txt += "<div class='round_box'>뉴 스</div>";
@@ -231,7 +233,25 @@
                 txt += "<<td class='title'><a href=" + json[i].url + "target='_blank'>" + json[i].title + "</a></td>";
                 xt += "<td class='date'>" + json[i].date + "</td>";
                 txt += "</tr>";
+                txt += "</table>";
+                txt += "</li>";
             }
+
+            // <li class="group">
+            //     <table class="headline">
+            //         <tr>
+            //             <td class="kind">
+            //                 <div class="round_box">뉴 스</div>
+            //             </td>
+            //             <td class="press">[국제신문]</td>
+            //             </td>
+            //             <td class="title"><a
+            //                     href="http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2100&key=20220106.22017001301"
+            //                     target="_blank">“전기차 공유 ‘투어지’ 인기…관광업 돌파구 될 것”</a></td>
+            //             <td class="date">2021.01.05</td>
+            //         </tr>
+            //     </table>
+            // </li>
 
             $("#dataSection").html(txt);
 
