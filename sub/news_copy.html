@@ -223,16 +223,16 @@
             
             // 테이블의 row를 삽입하는 부분
             for(i = 0; i < json.length; i++) {
-                data += "<tr>";
-                data += "<td>" + json[i].url + "</td>";
-                data += "<td>" + json[i].press + "</td>";
-                data += "<td>" + json[i].date + "</td>";
-                data += "<td>" + json[i].title + "</td>";
-                data += "<td>" + json[i].contents + "</td>";
-                data += "</tr>";
+                txt += "<tr>";
+                txt += "<td>" + json[i].url + "</td>";
+                txt += "<td>" + json[i].press + "</td>";
+                txt += "<td>" + json[i].date + "</td>";
+                txt += "<td>" + json[i].title + "</td>";
+                txt += "<td>" + json[i].contents + "</td>";
+                txt += "</tr>";
             }
 
-            $("#dataSection").html(data);
+            $("#dataSection").html(txt);
 
         }
         //
