@@ -223,11 +223,12 @@
             
             // 테이블의 row를 삽입하는 부분
             for(i = 0; i < json.length; i++) {
-                data += "<td>" + list[i]['url'] + "</td>";
-                data += "<td>" + list[i]['press'] + "</td>";
-                data += "<td>" + list[i]['date'] + "</td>";
-                data += "<td>" + list[i]['title'] + "</td>";
-                data += "<td>" + list[i]['contents'] + "</td>";
+                data += "<tr>";
+                data += "<td>" + json[i].url + "</td>";
+                data += "<td>" + json[i].press + "</td>";
+                data += "<td>" + json[i].date + "</td>";
+                data += "<td>" + json[i].title + "</td>";
+                data += "<td>" + json[i].contents + "</td>";
                 data += "</tr>";
             }
 
