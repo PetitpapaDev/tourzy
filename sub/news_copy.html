@@ -327,46 +327,7 @@
         <!--//footer-->
     </div>
     <!--//wrap-->
-
-    <!-- <script type="text/javascript">
-
-        let xhttp = new XMLHttpRequest();
-
-        xhttp.onreadystatechange = function () {
-            if (xhttp.readyState == 4 && xhttp.status == 200) {
-                jsonfunc(this.responseText);
-            }
-        }
-
-        xhttp.open("GET", "news.json", true);
-        xhttp.send();
-
-        function jsonfunc(jsonText) {
-
-            let json = JSON.parse(jsonText);
-
-            let txt = "";
-
-            for (i = 0; i < json.length; i++) {
-                txt += "<li class='group'>";
-                txt += "<table class='headline'>";
-                txt += "<tr>";
-                txt += "<td class='kind'>";
-                txt += "<div class='round_box'>뉴 스</div>";
-                txt += "</td>";
-                txt += "<td class='press'>[" + json[i].press + "]</td>";
-                txt += "<td class='title'><a href=" + json[i].url + " target='_blank'>" + json[i].title + "</a></td>";
-                txt += "<td class='date'>" + json[i].date + "</td>";
-                txt += "</tr>";
-                txt += "</table>";
-                txt += "</li>";
-            }
-
-            $("#news_page").html(txt);
-        }
-
-    </script> -->
-
+    
     <script type="text/javascript">
 
         let xhttp = new XMLHttpRequest();
@@ -425,12 +386,6 @@
             }
 
             //페이징 번호 표시 
-
-            console.log("totalData : " + totalData);
-
-            console.log("dataPerPage : " + dataPerPage);
-
-            console.log("totalPage : " + totalPage);
 
             for (var i = first; i <= last; i++) {
 
@@ -508,91 +463,6 @@
             paging(totalData, dataPerPage, pageCount, globalCurrentPage);
             displayData(globalCurrentPage, dataPerPage);
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // 뉴 스 페이징
-        // function pagination() {
-
-        //     var req_num_row = 10;
-        //     var $tr = jQuery('#news_page > li.group');
-        //     var total_num_row = $tr.length;
-        //     var num_pages = 0;
-
-        //     if (total_num_row % req_num_row == 0) {
-
-        //         num_pages = total_num_row / req_num_row;
-        //     }
-
-        //     if (total_num_row % req_num_row >= 1) {
-
-        //         num_pages = total_num_row / req_num_row;
-
-        //         num_pages++;
-
-        //         num_pages = Math.floor(num_pages++);
-        //     }
-
-        //     for (var i = 1; i <= num_pages; i++) {
-
-        //         jQuery('.pagination').append('<li class="page-item "><a class="page-link" href="#">' + i + '</a></li>');
-        //         jQuery('.pagination li:nth-child(1)').addClass("active");
-        //         jQuery('.pagination a').addClass("pagination-link");
-        //     }
-
-        //     $tr.each(function (i) {
-
-        //         jQuery(this).hide();
-
-        //         if (i + 1 <= req_num_row) {
-
-        //             $tr.eq(i).show();
-        //         }
-        //     });
-
-        //     jQuery('.pagination a').click('.pagination-link', function (e) {
-
-        //         e.preventDefault();
-        //         $tr.hide();
-
-        //         var page = jQuery(this).text();
-        //         var temp = page - 1;
-        //         var start = temp * req_num_row;
-        //         var current_link = temp;
-
-        //         jQuery('.pagination li').removeClass("selected");
-        //         jQuery(this).parent().addClass("selected");
-
-        //         for (var i = 0; i < req_num_row; i++) {
-
-        //             $tr.eq(start + i).show();
-        //         }
-        //     });
-        // }
-
-        // jQuery('document').ready(function () {
-
-        //     pagination();
-        // });
-        // 뉴 스 페이징
 
     </script>
 
