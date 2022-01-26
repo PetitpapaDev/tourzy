@@ -282,26 +282,6 @@
                     </table>
                     <div id="news_page">
 
-                        <!-- <div class="testlist">
-                            <form id="boardForm" name="boardForm" method="post">
-                                <table class="table table-hover">
-                                    <colgroup>
-                                        <col width="10%" />
-                                        <col width="15%" />
-                                        <col width="65%" />
-                                        <col width="10%" />
-                                    </colgroup>
-                                    
-                                    <div id="news_page">
-
-                                        <tbody id="dataSection"></tbody>
-
-                                    </div>
-
-                                </table>
-                            </form>
-                        </div> -->
-
                         <!-- 뉴 스 페이징 -->
                         <ul class="pagination"></ul>
                         <!-- //뉴 스 페이징 -->
@@ -379,109 +359,64 @@
                 txt += "</table>";
                 txt += "</li>";
             }
+
+            var req_num_row = 15;  //화면에 표시할 목록 개수
+            var $tr = jQuery('#news_page > li.group');  // paging 대상 class 명
+            var total_num_row = $tr.length;
+            var num_pages = 0;
+
+            if (total_num_row % req_num_row == 0) {
+
+                num_pages = total_num_row / req_num_row;
+            }
+
+            if (total_num_row % req_num_row >= 1) {
+
+                num_pages = total_num_row / req_num_row;
+
+                num_pages++;
+
+                num_pages = Math.floor(num_pages++);
+            }
+
+            for (var i = 1; i <= num_pages; i++) {
+
+                jQuery('.pagination').append('<li class="page-item "><a class="page-link" href="#">' + i + '</a></li>');
+                jQuery('.pagination li:nth-child(1)').addClass("active");
+                jQuery('.pagination a').addClass("pagination-link");
+            }
+
+            $tr.each(function (i) {
+
+                jQuery(this).hide();
+
+                if (i + 1 <= req_num_row) {
+
+                    $tr.eq(i).show();
+                }
+            });
+
+            jQuery('.pagination a').click('.pagination-link', function (e) {
+
+                e.preventDefault();
+                $tr.hide();
+
+                var page = jQuery(this).text();
+                var temp = page - 1;
+                var start = temp * req_num_row;
+                var current_link = temp;
+
+                jQuery('.pagination li').removeClass("selected");
+                jQuery(this).parent().addClass("selected");
+
+                for (var i = 0; i < req_num_row; i++) {
+
+                    $tr.eq(start + i).show();
+                }
+            });
             
             $("#news_page").html(txt);
-
-            //
-            var block = "";
-
-            // 이전버튼 활성화 여부를 결정하는 부분
-            if (pagination['prev']) {
-                block += "<li class='page-item'><a class='page-link' href='javascript:getPage("
-                        + (pagination['startPage'] - 1)
-                        + ")'> < </a></li>";
-            } else {
-                block += "<li class='page-item disabled'><a class='page-link'> < </a></li>";
-            }
-
-            // 번호를 표시하는 부분
-            for (var i = pagination['startPage']; i < pagination['endPage']; i++) {
-                if (page !== i) {
-                    block += "<li class='page-item'><a class='page-link' href='javascript:getPage("
-                            + i + ")'>" + (i + 1) + "</a></li>";
-                } else {
-                    block += "<li class='page-item disabled'><a class='page-link'>"
-                            + (i + 1) + "</a></li>";
-                }
-            }
-
-            if (pagination['next']) {
-                block += "<li class='page-item'><a class='page-link' href='javascript:getPage("
-                        + (pagination['endPage'])
-                        + ")'>  > </a></li>";
-            } else {
-                block += "<li class='page-item disabled'><a class='page-link'> > </a></li>";
-            }
-
-            $("#paginationBox").html(block);
-
-            //
         }
-
-        // 뉴 스 페이징
-        function pagination() {
-
-        var req_num_row = 15;  //화면에 표시할 목록 개수
-        var $tr = jQuery('#news_page > li.group');  // paging 대상 class 명
-        var total_num_row = $tr.length;
-        var num_pages = 0;
-
-        if (total_num_row % req_num_row == 0) {
-
-            num_pages = total_num_row / req_num_row;
-        }
-
-        if (total_num_row % req_num_row >= 1) {
-
-            num_pages = total_num_row / req_num_row;
-
-            num_pages++;
-
-            num_pages = Math.floor(num_pages++);
-        }
-
-        for (var i = 1; i <= num_pages; i++) {
-
-            jQuery('.pagination').append('<li class="page-item "><a class="page-link" href="#">' + i + '</a></li>');
-            jQuery('.pagination li:nth-child(1)').addClass("active");
-            jQuery('.pagination a').addClass("pagination-link");
-        }
-
-        $tr.each(function (i) {
-
-            jQuery(this).hide();
-
-            if (i + 1 <= req_num_row) {
-
-                $tr.eq(i).show();
-            }
-        });
-
-        jQuery('.pagination a').click('.pagination-link', function (e) {
-
-            e.preventDefault();
-            $tr.hide();
-
-            var page = jQuery(this).text();
-            var temp = page - 1;
-            var start = temp * req_num_row;
-            var current_link = temp;
-
-            jQuery('.pagination li').removeClass("selected");
-            jQuery(this).parent().addClass("selected");
-
-            for (var i = 0; i < req_num_row; i++) {
-
-                $tr.eq(start + i).show();
-            }
-        });
-        }
-
-        jQuery('document').ready(function () {
-
-        pagination();
-        });
-        // 뉴 스 페이징
 
     </script>
 
