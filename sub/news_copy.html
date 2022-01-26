@@ -307,9 +307,7 @@
                         <!-- //뉴 스 페이징 -->
 
                         <div class="pagination1">
-                            <ul id="paginationBox" class="pagination">
-
-                            </ul>
+                            <ul id="paginationBox" class="pagination"></ul>
                         </div>
                     </div>
 
@@ -395,7 +393,6 @@
 
         function getPage(page) {
             var listSize = 20;
-            var searchType = $("#searchType").val();
             $.ajax ({
                 url: "news.json",
                 data: {
