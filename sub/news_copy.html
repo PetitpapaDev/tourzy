@@ -359,16 +359,47 @@
             }
             
             $("#news_page").html(txt);
+
+            var block = "";
+            const pagination = 1;
+
+            // 이전버튼 활성화 여부를 결정하는 부분
+            if (pagination['prev']) {
+                block += "<li class='page-item'><a class='page-link' href='javascript:getPage("
+                        + (pagination['startPage'] - 1)
+                        + ")'> < </a></li>";
+            } else {
+                block += "<li class='page-item disabled'><a class='page-link'> < </a></li>";
+            }
+
+            // 번호를 표시하는 부분
+            for (var i = pagination['startPage']; i < pagination['endPage']; i++) {
+                if (page !== i) {
+                    block += "<li class='page-item'><a class='page-link' href='javascript:getPage("
+                            + i + ")'>" + (i + 1) + "</a></li>";
+                } else {
+                    block += "<li class='page-item disabled'><a class='page-link'>"
+                            + (i + 1) + "</a></li>";
+                }
+            }
+
+            if (pagination['next']) {
+                block += "<li class='page-item'><a class='page-link' href='javascript:getPage("
+                        + (pagination['endPage'])
+                        + ")'>  > </a></li>";
+            } else {
+                block += "<li class='page-item disabled'><a class='page-link'> > </a></li>";
+            }
+
+            $("#paginationBox").html(block);
         }
 
     </script>
 
-    <script>
+    <!-- <script>
 
         // 뉴 스 페이징
         function pagination() {
-
-            console.log(jQuery('#news_page > li.group'));		
 
             var req_num_row = 15;  //화면에 표시할 목록 개수
             var $tr = jQuery('#news_page > li.group');  // paging 대상 class 명
@@ -432,7 +463,7 @@
         });
         // 뉴 스 페이징
 
-    </script>
+    </script> -->
 
 </body>
 
