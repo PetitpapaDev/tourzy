@@ -285,10 +285,6 @@
                         <!-- 뉴 스 페이징 -->
                         <ul class="pagination"></ul>
                         <!-- //뉴 스 페이징 -->
-
-                        <div class="pagination1">
-                            <ul id="paginationBox" class="pagination"></ul>
-                        </div>
                     </div>
 
                 </div>
@@ -360,8 +356,8 @@
                 txt += "</li>";
             }
 
-            var req_num_row = 15;  //화면에 표시할 목록 개수
-            var $tr = jQuery('#news_page > li.group');  // paging 대상 class 명
+            var req_num_row = 20;
+            var $tr = jQuery('#news_page > li.group');
             var total_num_row = $tr.length;
             var num_pages = 0;
 
