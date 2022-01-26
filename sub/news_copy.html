@@ -381,8 +381,6 @@
             if (xhttp.readyState == 4 && xhttp.status == 200) {
 
                 json = JSON.parse(this.responseText);
-
-                totalData = json.lengh;
             }
         }
 
@@ -395,7 +393,7 @@
             displayData(1, dataPerPage);
 
             //페이징 표시 호출
-            paging(totalData, dataPerPage, pageCount, 1);
+            paging(json.lenght(), dataPerPage, pageCount, 1);
         });
 
         function paging(totalData, dataPerPage, pageCount, currentPage) {
