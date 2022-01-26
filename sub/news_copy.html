@@ -371,7 +371,7 @@
 
         let xhttp = new XMLHttpRequest();
         let json;
-        let totalData = jQuery('#news_page > li.group').length; //총 데이터 수
+        let totalData; //총 데이터 수
         let dataPerPage = 10; //한 페이지에 나타낼 글 수
         let pageCount = 10; //페이징에 나타낼 페이지 수
         let globalCurrentPage = 1; //현재 페이지
@@ -381,6 +381,8 @@
             if (xhttp.readyState == 4 && xhttp.status == 200) {
 
                 json = JSON.parse(this.responseText);
+
+                totalData = this.responseText.length;
             }
         }
 
