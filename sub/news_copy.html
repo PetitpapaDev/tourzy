@@ -280,8 +280,9 @@
                             </tr>
                         </thead>
                     </table>
-                    <div id="news_page">
 
+                    <div id="news_page">
+                        
                         <!-- 뉴 스 페이징 -->
                         <ul class="pagination"></ul>
                         <!-- //뉴 스 페이징 -->
@@ -355,6 +356,8 @@
                 txt += "</table>";
                 txt += "</li>";
             }
+
+            console(jQuery('#news_page > li.group'));
 
             var req_num_row = 20;
             var $tr = jQuery('#news_page > li.group');
