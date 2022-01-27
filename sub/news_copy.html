@@ -412,9 +412,11 @@
                 let main_visual = document.querySelector('#main_visual');
                 let rect = main_visual.getBoundingClientRect();
 
-                console.log("absoluteTop : ", rect.top-bodyRect.top);
+                let aa = rect.top-bodyRect.top;
 
-                window.scrollTo(0, ect.top-bodyRect.top);
+                console.log("absoluteTop : ", aa);
+
+                window.scrollTo(0, aa);
 
                 let $id = $(this).attr("id");
                 selectedPage = $(this).text();
