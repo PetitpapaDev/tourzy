@@ -327,7 +327,7 @@
         <!--//footer-->
     </div>
     <!--//wrap-->
-
+    
     <script type="text/javascript">
 
         let xhttp = new XMLHttpRequest();
@@ -360,7 +360,7 @@
         });
 
         function paging(totalData, dataPerPage, pageCount, currentPage) {
-
+            
             totalPage = Math.ceil(totalData / dataPerPage); //총 페이지 수
 
             if (totalPage < pageCount) {
@@ -412,19 +412,47 @@
             //페이징 번호 클릭 이벤트 
             $("#pagingul li a").click(function () {
 
-                const target = document.getElementById('#main_visual'); // 요소의 id 값이 target이라 가정
+                // const target = document.getElementById('#main_visual'); // 요소의 id 값이 target이라 가정
 
-                const clientRect = target.getBoundingClientRect(); // DomRect 구하기 (각종 좌표값이 들어있는 객체)
+                // const clientRect = target.getBoundingClientRect(); // DomRect 구하기 (각종 좌표값이 들어있는 객체)
 
-                const relativeTop = clientRect.top; // Viewport의 시작지점을 기준으로한 상대좌표 Y 값.
+                // const relativeTop = clientRect.top; // Viewport의 시작지점을 기준으로한 상대좌표 Y 값.
 
-                const scrolledTopLength = window.pageYOffset; // 스크롤된 길이
+                // const scrolledTopLength = window.pageYOffset; // 스크롤된 길이
 
-                const absoluteTop = scrolledTopLength + relativeTop; // 절대좌표
+                // const absoluteTop = scrolledTopLength + relativeTop; // 절대좌표
+
+                // console.log("absoluteTop : " + absoluteTop);
+
+                // window.scrollTo(0, absoluteTop);
+
+
+
+
+
+
+
+
+
+
+
+                var main_visual = $('#main_visual');
+
+                var clientRect = main_visual.getBoundingClientRect();
+
+                var relativeTop = clientRect.top;
+
+                var scrolledTopLength = window.pageYOffset;
+
+                var absoluteTop = scrolledTopLength + relativeTop;
 
                 console.log("absoluteTop : " + absoluteTop);
 
                 window.scrollTo(0, absoluteTop);
+
+
+
+
 
                 let $id = $(this).attr("id");
                 selectedPage = $(this).text();
@@ -453,7 +481,7 @@
             dataPerPage = Number(dataPerPage);
 
             for (var i = (currentPage - 1) * dataPerPage; i < (currentPage - 1) * dataPerPage + dataPerPage; i++) {
-
+                
                 txt += "<li class='group'>";
                 txt += "<table class='headline'>";
                 txt += "<tr>";
@@ -508,7 +536,7 @@
         #pagingul li.on a {
             color: #fff;
         } */
-
+        
         /* news 페이징 */
         #pagingul {
             display: flex;
@@ -519,8 +547,8 @@
 
         #pagingul li a {
             display: flex;
-            display: inline-block;
-            cursor: pointer;
+            display:inline-block;
+            cursor:pointer;
             font-family: RIDIbatang;
             font-style: normal;
             font-weight: normal;
@@ -543,7 +571,7 @@
             #pagingul {
                 margin-top: 13.33vw;
             }
-
+            
             #pagingul li.on a {
                 font-size: 3.73vw;
                 line-height: 3.73vw;
@@ -558,7 +586,7 @@
             #pagingul {
                 margin-top: 13.33vw;
             }
-
+            
             #pagingul li.on a {
                 font-size: 3.73vw;
                 line-height: 3.73vw;
@@ -566,7 +594,6 @@
                 padding-right: 2.66vw;
             }
         }
-
         /* news 페이징 반응형 */
         /* news 페이징 */
     </style>
