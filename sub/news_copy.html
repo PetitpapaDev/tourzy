@@ -456,9 +456,11 @@
 
                 press = json[i].press;
 
-                if (date.includes("언론사 선정")) {
+                if (press.includes("언론사 선정")) {
 
-                    txt += "<td class='press'>[" + date.substring(0, press) + "]</td>";
+                    cut = press.indexOf('언론사 선정');
+
+                    txt += "<td class='press'>[" + press.substring(0, press) + "]</td>";
 
                 } else {
 
