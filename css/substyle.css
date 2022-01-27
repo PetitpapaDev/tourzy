@@ -1509,13 +1509,14 @@
 #news .headline .press {
     width: 20%;
     vertical-align: middle;
-    padding-left: 70px;
     font-family: NanumGothic;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 14px;
     color: #000000;
+
+    text-align: center;
 }
 
 #news .headline .title {
