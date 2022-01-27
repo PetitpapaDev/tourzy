@@ -530,6 +530,39 @@
             color: #000000;
             font-weight: bold;
         }
+
+        /* news 페이징 반응형 */
+        /* Tablets */
+        @media all and (min-width : 768px) and (max-width : 1024px) {
+
+            #pagingul {
+                margin-top: 13.33vw;
+            }
+            
+            #pagingul li.on a {
+                font-size: 3.73vw;
+                line-height: 3.73vw;
+                padding-left: 2.66vw;
+                padding-right: 2.66vw;
+            }
+        }
+
+        /* Mobile */
+        @media all and (max-width : 767px) {
+
+            #pagingul {
+                margin-top: 13.33vw;
+            }
+            
+            #pagingul li.on a {
+                font-size: 3.73vw;
+                line-height: 3.73vw;
+                padding-left: 2.66vw;
+                padding-right: 2.66vw;
+            }
+        }
+        /* news 페이징 반응형 */
+        /* news 페이징 */
     </style>
 
 </body>
