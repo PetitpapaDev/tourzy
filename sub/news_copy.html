@@ -387,17 +387,17 @@
 
                 if (currentPage == i) {
 
-                    pageHtml += "<li class='on'><a href='#news > .inner > h2' id='" + i + "'>" + i + "</a></li>";
+                    pageHtml += "<li class='on'><a href='#news > .inner' id='" + i + "'>" + i + "</a></li>";
 
                 } else {
 
-                    pageHtml += "<li><a href='##news > .inner > h2' id='" + i + "'>" + i + "</a></li>";
+                    pageHtml += "<li><a href='##news > .inner' id='" + i + "'>" + i + "</a></li>";
                 }
             }
 
             if (last < totalPage) {
 
-                pageHtml += "<li><a href='##news > .inner > h2' id='next'> 다음 </a></li>";
+                pageHtml += "<li><a href='##news > .inner' id='next'> 다음 </a></li>";
             }
 
             $("#pagingul").html(pageHtml);
@@ -408,12 +408,12 @@
             //페이징 번호 클릭 이벤트 
             $("#pagingul li a").click(function () {
 
-                //
-                let newsPage = $('#news_page');
-                let top = newsPage.offset().top; 
-                console.log("top : " + top);
-                window.scrollTo(0, top);
-                //
+                // 스크롤
+                // let newsPage = $('#news_page');
+                // let top = newsPage.offset().top; 
+                // console.log("top : " + top);
+                // window.scrollTo(0, top);
+                // 스크롤
 
 
                 
