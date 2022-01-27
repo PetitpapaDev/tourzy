@@ -443,6 +443,7 @@
 
             let cut = "";
             let date = "";
+            let press = "";
 
             for (var i = (currentPage - 1) * dataPerPage; i < (currentPage - 1) * dataPerPage + dataPerPage; i++) {
                 
@@ -452,7 +453,18 @@
                 txt += "<td class='kind'>";
                 txt += "<div class='round_box'>뉴 스</div>";
                 txt += "</td>";
-                txt += "<td class='press'>[" + json[i].press + "]</td>";
+
+                press = json[i].press;
+
+                if (date.includes("언론사 선정")) {
+
+                    txt += "<td class='press'>[" + date.substring(0, press) + "]</td>";
+
+                } else {
+
+                    txt += "<td class='press'>[" + press + "]</td>";
+                }
+
                 txt += "<td class='title'><a href=" + json[i].url + " target='_blank'>" + json[i].title + "</a></td>";
                 
                 date = json[i].date;
