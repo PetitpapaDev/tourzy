@@ -1507,7 +1507,7 @@
 }
 
 #news .headline .press {
-    width: 17%;
+    width: 15%;
     vertical-align: middle;
     padding-left: 30px;
     font-family: NanumGothic;
@@ -1519,7 +1519,7 @@
 }
 
 #news .headline .title {
-    width: 63%;
+    width: 65%;
     vertical-align: middle;
 }
 
