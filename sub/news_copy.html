@@ -387,7 +387,9 @@
 
             //페이징 번호 표시
             const main_visual = document.querySelector('#main_visual');
-            const mainVisualTop = main_visual.getBoundingClientRect().top + window.scrollY; 
+            const mainVisualTop = main_visual.getBoundingClientRect().top + window.scrollY;
+
+            console.log(mainVisualTop + " / " + main_visual.getBoundingClientRect().top);
 
             for (var i = first; i <= last; i++) {
 
