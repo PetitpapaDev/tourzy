@@ -412,12 +412,11 @@
             //페이징 번호 클릭 이벤트 
             $("#pagingul li a").click(function () {
 
-                const main_visual = document.querySelector('#main_visual');
-                const mainVisualTop = main_visual.getBoundingClientRect().top;
+                var main_visual = $('#main_visual').offset();
 
-                console.log(mainVisualTop);
+                console.log(main_visual.top);
 
-                window.scrollTo(0, mainVisualTop);
+                window.scrollTo(0, main_visual.top);
 
                 let $id = $(this).attr("id");
                 selectedPage = $(this).text();
