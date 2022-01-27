@@ -418,6 +418,16 @@
 
                 window.scrollTo(0, aa);
 
+                var divEl = $("news_page");
+                            
+                var divX = divEl.offset().left;
+                var divY = divEl.offset().top;
+
+                console.log("divY : ", divY);
+
+
+
+
                 let $id = $(this).attr("id");
                 selectedPage = $(this).text();
 
