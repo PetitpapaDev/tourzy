@@ -271,7 +271,7 @@
                     <h2>투어지 소식</h2>
                     <!-- 투어지 소식 -->
 
-                    <table>
+                    <table id="news_page_th">
                         <thead>
                             <tr>
                                 <th>목 록</th>
@@ -387,17 +387,17 @@
 
                 if (currentPage == i) {
 
-                    pageHtml += "<li class='on'><a href='#news' id='" + i + "'>" + i + "</a></li>";
+                    pageHtml += "<li class='on'><a href='#news_page_th' id='" + i + "'>" + i + "</a></li>";
 
                 } else {
 
-                    pageHtml += "<li><a href='#news' id='" + i + "'>" + i + "</a></li>";
+                    pageHtml += "<li><a href='#news_page_th' id='" + i + "'>" + i + "</a></li>";
                 }
             }
 
             if (last < totalPage) {
 
-                pageHtml += "<li><a href='#news' id='next'> 다음 </a></li>";
+                pageHtml += "<li><a href='#news_page_th' id='next'> 다음 </a></li>";
             }
 
             $("#pagingul").html(pageHtml);
@@ -414,12 +414,6 @@
                 // console.log("top : " + top);
                 // window.scrollTo(0, top);
                 // 스크롤
-
-
-                
-
-
-
 
                 let $id = $(this).attr("id");
                 selectedPage = $(this).text();
