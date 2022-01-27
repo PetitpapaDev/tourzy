@@ -441,6 +441,8 @@
             currentPage = Number(currentPage);
             dataPerPage = Number(dataPerPage);
 
+            let cut = "";
+
             for (var i = (currentPage - 1) * dataPerPage; i < (currentPage - 1) * dataPerPage + dataPerPage; i++) {
                 
                 txt += "<li class='group'>";
@@ -451,7 +453,24 @@
                 txt += "</td>";
                 txt += "<td class='press'>[" + json[i].press + "]</td>";
                 txt += "<td class='title'><a href=" + json[i].url + " target='_blank'>" + json[i].title + "</a></td>";
-                txt += "<td class='date'>" + json[i].date + "</td>";
+                
+                if (json[i].date.string.includes("단")) {
+
+                    cut = json[i].date.indexOf('단');
+                    
+                    txt += "<td class='date'>" + json[i].date.substring(0, cut) + "<br />" +json[i].date.substring(cut+1) + "</td>";
+
+                } else if (json[i].date.string.includes("TOP")) {
+
+                    cut = json[i].date.indexOf('P');
+
+                    txt += "<td class='date'>" + json[i].date.substring(0, cut) + "<br />" +json[i].date.substring(cut+1) + "</td>";
+
+                } else {
+
+                    txt += "<td class='date'>" + json[i].date + "</td>";
+                }
+
                 txt += "</tr>";
                 txt += "</table>";
                 txt += "</li>";
