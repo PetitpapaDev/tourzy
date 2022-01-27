@@ -408,23 +408,15 @@
             //페이징 번호 클릭 이벤트 
             $("#pagingul li a").click(function () {
 
-                let bodyRect = document.body.getBoundingClientRect();
-                let main_visual = document.querySelector('#main_visual');
-                let rect = main_visual.getBoundingClientRect();
+                let newsPage = $('#news_page');
+                // 아이디가 test인 요소를 변수에 test에 할당
 
-                let aa = rect.top-bodyRect.top;
+                let top = newsPage.offset().top; 
+                // 상단을 기준으로 test 엘리먼트 요소가 위치한 거리를 절대좌표로 반환
 
-                console.log("absoluteTop : ", aa);
+                console.log("newsPage : " + newsPage + " / " + "top : " + top);
 
-                window.scrollTo(0, aa);
-
-                var divEl = $("news_page");
-                            
-                var divX = divEl.offset().left;
-                var divY = divEl.offset().top;
-
-                console.log("divY : ", divY);
-
+                window.scrollTo(0, top);
 
 
 
