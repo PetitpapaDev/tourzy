@@ -286,12 +286,8 @@
                     </div>
 
                     <!-- 뉴스 페이징 -->
-                    <!-- <ul class="pagination"></ul> -->
-                    <!-- //뉴스 페이징 -->
-
-                    <!-- 뉴스 뉴 페이징 -->
                     <ul id="pagingul"></ul>
-                    <!-- //뉴스 뉴 페이징 -->
+                    <!-- //뉴스 페이징 -->
 
                 </div>
                 <!--//news inner-->
@@ -412,47 +408,13 @@
             //페이징 번호 클릭 이벤트 
             $("#pagingul li a").click(function () {
 
-                // const target = document.getElementById('#main_visual'); // 요소의 id 값이 target이라 가정
+                let bodyRect = document.body.getBoundingClientRect();
+                let main_visual = document.querySelector('#main_visual');
+                let rect = main_visual.getBoundingClientRect();
 
-                // const clientRect = target.getBoundingClientRect(); // DomRect 구하기 (각종 좌표값이 들어있는 객체)
+                console.log("absoluteTop : ", rect.top - bodyRect.top);
 
-                // const relativeTop = clientRect.top; // Viewport의 시작지점을 기준으로한 상대좌표 Y 값.
-
-                // const scrolledTopLength = window.pageYOffset; // 스크롤된 길이
-
-                // const absoluteTop = scrolledTopLength + relativeTop; // 절대좌표
-
-                // console.log("absoluteTop : " + absoluteTop);
-
-                // window.scrollTo(0, absoluteTop);
-
-
-
-
-
-
-
-
-
-
-
-                var main_visual = $('#main_visual');
-
-                var clientRect = main_visual.getBoundingClientRect();
-
-                var relativeTop = clientRect.top;
-
-                var scrolledTopLength = window.pageYOffset;
-
-                var absoluteTop = scrolledTopLength + relativeTop;
-
-                console.log("absoluteTop : " + absoluteTop);
-
-                window.scrollTo(0, absoluteTop);
-
-
-
-
+                window.scrollTo(0, ect.top - bodyRect.top);
 
                 let $id = $(this).attr("id");
                 selectedPage = $(this).text();
