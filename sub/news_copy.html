@@ -385,27 +385,23 @@
                 pageHtml += "<li><a href='#' id='prev'> 이전 </a></li>";
             }
 
-            //페이징 번호 표시
-            const main_visual = document.querySelector('#main_visual');
-            const mainVisualTop = main_visual.getBoundingClientRect().top + window.scrollY;
-
-            console.log(mainVisualTop + " / " + main_visual.getBoundingClientRect().top);
+            //페이징 번호 표시 
 
             for (var i = first; i <= last; i++) {
 
                 if (currentPage == i) {
 
-                    pageHtml += "<li class='on'><a href='#' id='" + i + "' href='javascript:window.scrollTo( 0, '" + mainVisualTop + "' );'>" + i + "</a></li>";
+                    pageHtml += "<li class='on'><a href='#' id='" + i + "'>" + i + "</a></li>";
 
                 } else {
 
-                    pageHtml += "<li><a href='#' id='" + i + "' href='javascript:window.scrollTo( 0, '" + mainVisualTop + "' );'>" + i + "</a></li>";
+                    pageHtml += "<li><a href='#' id='" + i + "'>" + i + "</a></li>";
                 }
             }
 
             if (last < totalPage) {
 
-                pageHtml += "<li><a href='#' id='next' href='javascript:window.scrollTo( 0, '" + mainVisualTop + "' );'> 다음 </a></li>";
+                pageHtml += "<li><a href='#' id='next'> 다음 </a></li>";
             }
 
             $("#pagingul").html(pageHtml);
@@ -415,6 +411,11 @@
 
             //페이징 번호 클릭 이벤트 
             $("#pagingul li a").click(function () {
+
+                const main_visual = document.querySelector('#main_visual');
+                const mainVisualTop = main_visual.getBoundingClientRect().top;
+
+                window.scrollTo(0, mainVisualTop);
 
                 let $id = $(this).attr("id");
                 selectedPage = $(this).text();
