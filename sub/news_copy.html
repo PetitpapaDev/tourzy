@@ -387,17 +387,17 @@
 
                 if (currentPage == i) {
 
-                    pageHtml += "<li class='on'><a href='#news' id='" + i + "'>" + i + "</a></li>";
+                    pageHtml += "<li class='on'><a href='#news > .inner > h2' id='" + i + "'>" + i + "</a></li>";
 
                 } else {
 
-                    pageHtml += "<li><a href='#news' id='" + i + "'>" + i + "</a></li>";
+                    pageHtml += "<li><a href='##news > .inner > h2' id='" + i + "'>" + i + "</a></li>";
                 }
             }
 
             if (last < totalPage) {
 
-                pageHtml += "<li><a href='#news' id='next'> 다음 </a></li>";
+                pageHtml += "<li><a href='##news > .inner > h2' id='next'> 다음 </a></li>";
             }
 
             $("#pagingul").html(pageHtml);
