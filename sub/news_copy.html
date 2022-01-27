@@ -474,7 +474,7 @@
             border-right: 0;
         } */
 
-        #pagingul li {
+        /* #pagingul li {
             text-align: center;
             float: left;
         }
@@ -485,15 +485,15 @@
             padding: 9px 12px;
             border-right: solid 1px #ccc;
             box-sizing: border-box;
-        }
+        } */
 
-        #pagingul li.on {
+        /* #pagingul li.on {
             background: #eda712;
         }
 
         #pagingul li.on a {
             color: #fff;
-        }
+        } */
 
 
 
@@ -505,14 +505,14 @@
 
 
         /* news 페이징 */
-        .pagingul {
+        #pagingul {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 50px;
         }
 
-        .pagination li a {
+        #pagingul li a {
             display: flex;
             display:inline-block;
             cursor:pointer;
@@ -525,48 +525,11 @@
             padding-left: 10px;
             padding-right: 10px;
         }
-        .pagination li a:hover {
+
+        #pagingul li.on a {
             color: #000000;
             font-weight: bold;
         }
-        .pagination li a:active {
-            color: #000000;
-            font-weight: bold;
-
-        }
-
-        /* news 페이징 반응형 */
-        /* Tablets */
-        @media all and (min-width : 768px) and (max-width : 1024px) {
-
-            .pagination {
-                margin-top: 13.33vw;
-            }
-            
-            .pagination li a {
-                font-size: 3.73vw;
-                line-height: 3.73vw;
-                padding-left: 2.66vw;
-                padding-right: 2.66vw;
-            }
-        }
-
-        /* Mobile */
-        @media all and (max-width : 767px) {
-
-            .pagination {
-                margin-top: 13.33vw;
-            }
-            
-            .pagination li a {
-                font-size: 3.73vw;
-                line-height: 3.73vw;
-                padding-left: 2.66vw;
-                padding-right: 2.66vw;
-            }
-        }
-        /* news 페이징 반응형 */
-        /* news 페이징 */
     </style>
 
 </body>
