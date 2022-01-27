@@ -1507,19 +1507,19 @@
 }
 
 #news .headline .press {
-    width: 15%;
+    width: 10%;
     vertical-align: middle;
-    padding-left: 30px;
     font-family: NanumGothic;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 14px;
     color: #000000;
+    text-align: center;
 }
 
 #news .headline .title {
-    width: 65%;
+    width: 70%;
     vertical-align: middle;
 }
 
