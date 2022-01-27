@@ -442,6 +442,7 @@
             dataPerPage = Number(dataPerPage);
 
             let cut = "";
+            let date = "";
 
             for (var i = (currentPage - 1) * dataPerPage; i < (currentPage - 1) * dataPerPage + dataPerPage; i++) {
                 
@@ -454,21 +455,23 @@
                 txt += "<td class='press'>[" + json[i].press + "]</td>";
                 txt += "<td class='title'><a href=" + json[i].url + " target='_blank'>" + json[i].title + "</a></td>";
                 
-                if (json[i].date.string.includes("단")) {
+                date = json[i].date;
 
-                    cut = json[i].date.indexOf('단');
+                if (date.includes("단")) {
+
+                    cut = date.indexOf('단');
                     
-                    txt += "<td class='date'>" + json[i].date.substring(0, cut) + "<br />" +json[i].date.substring(cut+1) + "</td>";
+                    txt += "<td class='date'>" + date.substring(0, cut) + "<br />" +date.substring(cut+1) + "</td>";
 
-                } else if (json[i].date.string.includes("TOP")) {
+                } else if (date.string.includes("TOP")) {
 
-                    cut = json[i].date.indexOf('P');
+                    cut = date.indexOf('P');
 
-                    txt += "<td class='date'>" + json[i].date.substring(0, cut) + "<br />" +json[i].date.substring(cut+1) + "</td>";
+                    txt += "<td class='date'>" + date.substring(0, cut) + "<br />" +date.substring(cut+1) + "</td>";
 
                 } else {
 
-                    txt += "<td class='date'>" + json[i].date + "</td>";
+                    txt += "<td class='date'>" + date + "</td>";
                 }
 
                 txt += "</tr>";
