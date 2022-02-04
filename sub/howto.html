@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- og -->
+    <meta property="og:url" content="http://tourzy.kr" />
+    <meta property="og:title" content="투어지" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://tourzy.kr/images/main_logo_s.png" />
+    <meta property="og:description" content="투어지 이용방법 | 투어지" />
+    <!-- og -->
+
+    <title>투어지 이용방법 | 투어지</title>
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/3dots.ico" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/substyle.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+
+    <script>
+
+        // gnb
+        $(document).ready(function () {
+            $(".gnb_sub,.gnb_bg").hide();
+            $(".gnb > li").mouseenter(function () {
+                $(".gnb_sub,.gnb_bg").stop().slideDown(300);
+            });
+            $(".gnb > li").mouseleave(function () {
+                $(".gnb_sub,.gnb_bg").stop().slideUp(300);
+            });
+        });
+        // gnb
+
+        // mgnb
+        $(document).ready(function () {
+
+            $(".mgnb_wrap_bg").hide();
+
+            $(".m_menu_box").click(function () {
+                $(".mgnb_wrap").animate({
+                    left: '48%'
+                });
+                $(".m_menu_box").hide();
+                $(".mgnb_wrap_bg").show();
+
+            });
+            $(".close_box").click(function () {
+                $(".mgnb_wrap").animate({
+                    left: '100%'
+                });
+                $(".m_menu_box").show();
+                $(".mgnb_wrap_bg").hide();
+            });
+        });
+        // mgnb
+
+        // 마우스 스크롤 이벤트
+        $(window).ready(function () {
+
+            var $header = $("#header");
+            var $window = $(window);
+            var headerOffsetTop = $header.offset().top;
+
+            $window.resize(function () {
+                headerOffsetTop = $header.offset().top;
+            });
+
+            $window.on('scroll', function () {
+                var scrolled = $window.scrollTop() >= headerOffsetTop;
+                if (scrolled == false) {
+                    $("#header").show();
+                } else {
+                    window.onmousewheel = function (e) {
+                        if (e.wheelDelta > 0) {
+                            $("#header").show();
+                        } else {
+                            $("#header").hide();
+                        }
+                    }
+                }
+            });
+        });
+        // 마우스 스크롤 이벤트
+
+        // 터치 이벤트
+        $(document).ready(function () {
+
+            var start_touch = 0;
+
+            $(document).bind('touchstart', function (e) {
+                start_touch = e.touches[0].screenY;
+                e.preventDefault();
+            });
+
+            $(document).bind('touchmove', function (e) {
+
+                var event = e.originalEvent;
+
+                if (start_touch > event.touches[0].screenY) {
+
+                    $("#header").hide();
+
+                } else {
+
+                    $("#header").show();
+                }
+
+                event.preventDefault();
+            });
+
+            $(document).bind('touchend', function (e) {
+            });
+        });
+        // 터치 이벤트
+
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVFQRGJYV4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVFQRGJYV4');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+
+<body>
+    <!--wrap-->
+    <div id="wrap">
+        <!--header-->
+        <header id="header">
+            <!--header inner-->
+            <div class="inner">
+                <div class="gnb_bg"></div>
+                <h1><a href="../index.html"><img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/main_logo.png" alt="TOURZY"></a></h1>
+                <nav>
+                    <!--gnb-->
+                    <ul class="gnb">
+                        <li class="gnb_main"><a class="cate" href="about.html">투어지 소개</a>
+                            <ul class="gnb_sub">
+                                <li><a href="about.html">투어지 소개</a></li>
+                                <li><a href="news.html">투어지 소식</a></li>
+                                <li><a href="story.html">투어지 스토리</a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb_main"><a class="cate" href="bexco.html">센터소개</a>
+                            <ul class="gnb_sub">
+                              <li><a href="bexco.html">벡스코센터</a></li>
+                              <li><a href="osiria.html">오시리아센터</a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb_main"><a class="cate" href="promotion.html">제휴·프로모션</a></li>
+                        <li class="gnb_main"><a class="cate" href="faq.html">고객센터</a>
+                            <ul class="gnb_sub">
+                                <li><a href="faq.html">자주 묻는 질문</a></li>
+                                <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
+                                <li><a href="howto.html">투어지 이용방법</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--//gnb-->
+
+                    <h1 class="m_menu_box">
+                        <a href="#" class="m_menu"></a>
+                    </h1>
+
+                    <!--mgnb_wrap 불투명 배경-->
+                    <div class="mgnb_wrap_bg"></div>
+
+                    <!--mgnb_wrap-->
+                    <div class="mgnb_wrap">
+                        <h1 class="close_box">
+                            <a href="#" class="close">닫기</a>
+                        </h1>
+                        <!--//mgnb-->
+                        <ul class="mgnb">
+                            <li class="group">
+                                <div class="mgnb_main">투어지 소개</div>
+                                <ul class="mgnb_sub">
+                                    <li><a href="about.html">투어지 소개</a></li>
+                                    <li><a href="news.html">투어지 소식</a></li>
+                                    <li><a href="story.html">투어지 스토리</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">
+                                <div class="mgnb_main">센터소개</div>
+                                <ul class="mgnb_sub">
+                                  <li><a href="bexco.html">벡스코센터</a></li>
+                                  <li><a href="osiria.html">오시리아센터</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">
+                                <div class="mgnb_main"><a href="promotion.html">제휴·프로모션</a></div>
+                            </li>
+                            <li class="group">
+                                <div class="mgnb_main">고객센터</div>
+                                <ul class="mgnb_sub">
+                                    <li><a href="faq.html">자주 묻는 질문</a></li>
+                                    <li><a href="http://pf.kakao.com/_Lxkxaus/chat">카카오톡 상담</a></li>
+                                    <li><a href="howto.html">투어지 이용방법</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--//mgnb-->
+                        <ul class="sns">
+                            <li>
+                                <a href="https://www.instagram.com/go_tourzy" target="_blank">
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/mgnb_instagram.png" alt="인스타그램">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/tourzy.official" target="_blank">
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/mgnb_facebook.png" alt="페이스북">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://blog.naver.com/tourzy" target="_blank">
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/mgnb_naver.png" alt="네이버 블로그">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//mgnb_wrap-->
+                </nav>
+                <!--//nav-->
+            </div>
+            <!--//header inner-->
+        </header>
+        <!--//header-->
+
+        <!--main_visual-->
+        <article id="main_visual">
+            <h2>
+                투어지 이용방법
+            </h2>
+        </article>
+        <!--//main_visual-->
+
+        <!--contents-->
+        <div id="contents">
+            <!--value-->
+            <section id="value">
+                <!--value inner-->
+                <div class="inner">
+                    <p>홈 >  고객센터 > 투어지 이용방법</p>
+                </div>
+                <!--//value inner-->
+            </section>
+            <!--//value-->
+
+            <!--howto-->
+            <section id="howto">
+                <!--howto inner-->
+                <div class="inner">
+
+                    <!--howto reason-->
+                    <div class="reason">
+                        <h2>투어지 이용방법</h2>
+                    </div>
+                    <!--//howto reason-->
+
+                    <div class="dashed">
+                        <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/line_dashed.svg" alt="">
+                    </div>
+
+                    <!--howto value-->
+                    <div class="value">
+                        <h2>투어지 정보</h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    제조사 : 르노
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    분류 : 소형 전기차
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    연료 : 전기
+                                </h3>
+                            </li>
+                            <li>
+                                 <h3>
+                                    변속 방식 : 자동
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    승차 정원 :2인
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto value-->
+
+                    <div class="dashed">
+                        <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/line_dashed.svg" alt="">
+                    </div>
+
+                    <!--howto value-->
+                    <div class="value">
+                        <h2>투어지 사용방법</h2>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    계기판 장치
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    계기와 표시창
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    계기판: 경고등 및 표시등
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    탑승 (운전석 조절/ 안전벨트)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    시동 켜기
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    차량 주차 및 반납
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    차량 충전
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    문 열고 닫기 (동절기)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto value-->
+
+                    <!--howto dashboard-->
+                    <div class="value">
+                        <h2>계기판 장치</h2>
+                        <img src="" />
+                        <ul>
+                            <li>
+                                <h3>
+                                    ① 보관함 및  파워 아웃렛
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ② 스위치:
+                                    경음기
+                                    방향 지시등
+                                    헤드램프
+                                    보행자 경음기
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ③ 계기판
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ④ 운전석 에어백 위치
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ⑤ 스위치 :
+                                    앞유리 와이퍼 및 워셔 스위치
+                                    트립 컴퓨터와 경고 시스템/ 트립 컴퓨터 컨트롤
+                                    앞유리 김서림 제거 스위치
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ⑦⑫ 아웃사이드 미러
+                                    미러를 조정하려면 미러를 누르세요.
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ⑧ 전기 엔진 시동 스위치
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ⑨ 주차 브레이크
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ⑩ 스위치 :
+                                    전진
+                                    중립
+                                    후진
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ⑪ 비상 점멸 표시등 버튼
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto dashboard-->
+
+                    <!--howto value-->
+                    <div class="value">
+                        <h2>계기와 표시창</h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    ① 충전 레벨
+                                    에너지 잔량을 알려주는 게이지 입니다.
+                                    ▷ 에너지 잔량 경고
+                                    배터리가 약 12% 충전 상태에 도달하면 경고등이 점등하고 경고음이 울립니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ② 에코미터
+                                    계기판의 에코미터는 운전자에게 차량의 연료 소비 상황을 실시간으로 보여줍니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ③ 차량 속도계
+                                    시간당 킬로미터.
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ⑤ 표시창4
+                                    버튼 5를 길게 눌러 구간 거리계를 재설정합니다. 계기판이 구간 거리계로 설정되어야 합니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    ◎ 버튼5를 반복적으로 누르면 계기판 6에 아래의 정보가 표시됩니다 :
+                                    1회 충전 주행거리
+                                    적산 거리계
+                                    구간 거리계
+                                    에코 점수
+                                    시간
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto value-->
+
+                    <!--howto howtouse-->
+                    <div class="howtouse">
+                        <h2>탑승 (운전석 조절/ 안전벨트)</h2>
+                        <ul>
+                            <li class="manual">
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_howtouse1.jpeg" alt="">
+                                <h3>
+                                    ◎ 시트 앞/뒤 조절
+                                    핸들 ①을 들어 올려 시트의 잠금을 해제합니다. 시트를 원하는 위치로 이동시킨 뒤 핸들을 놓습니다.
+                                </h3>
+                            </li>
+                            <li class="manual">
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_howtouse2.svg" alt="">
+                                <h3>
+                                    ◎ 운전석 사이드 안전벨트
+                                    벨트 ③이 어깨 위로 오게 하십시오.
+                                </h3>
+                            </li>
+                            <li class="manual">
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_howtouse3.svg" alt="">
+                                <h3>
+                                    ◎ 안전벨트
+                                    운전석 안전벨트는 왼쪽 어깨 부근에 위치합니다. ④벨트를 가능한 목 가까이 조절하세요. ⑤벨트는 허벅지 위 골반에 위치해야 합니다.
+                                </h3>
+                            </li>
+                            <li class="manual">
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_howtouse4_ori.jpeg" alt="">
+                                <h3>
+                                    ◎ 안전벨트 풀기
+                                    버클 ⑦의 ⑧을 누르고 벨트를 뺍니다.
+                                    ※ 뒷자리 벨트 버클은 ⑥번 위치에 있습니다.
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto howtouse-->
+
+                    <div class="dashed">
+                        <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/line_dashed.svg" alt="">
+                    </div>
+
+                    <!--howto caution-->
+                    <div class="caution">
+                        <h2>시동 켜기</h2>
+                        <ul>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_license.svg" alt="운전면허 취득 1년 이상">
+                                <h3>
+                                    ⅰ) 내부 또는 외부에서 도어 열기
+                                    손잡이 ①을 올리고 위쪽으로 당깁니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_nosmoking.svg" alt="차량 내 흡연 불가">
+                                <h3>
+                                    ⅱ) 브레이크 페달 밟고 시동 켜기
+                                    왼쪽에 위치한 브레이크 페달을 밟은 채로 삐- 소리가 날 때까지 핸들 오른쪽 아래 시동 버튼을 길게 눌러줍니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_nopet.svg" alt="야완동물 동반 불가">
+                                <h3>
+                                    ⅲ) 주차 브레이크 해제
+                                    브레이크 페달을 강하게 밟은 채로 버튼 ②를 누른 상태에서 레버 ①을 위로 강하게 당겼다가 갈 수 있는 만큼 누릅니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_adult.svg" alt="만 21세 이상">
+                                <h3>
+                                    ⅳ) 변속 기어 컨트롤
+                                    주차 브레이크를 해제 한 후에 ②버튼을 눌러 주행, 후진을 할 수 있습니다.
+                                    ▷D : 주행
+                                    ▷N : 중립 (D,R 동시에 누름)
+                                    ▷R : 후진
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto caution-->
+
+                    <!--howto caution-->
+                    <div class="caution">
+                        <h2>차량 주차 및 반납</h2>
+                        <ul>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_license.svg" alt="운전면허 취득 1년 이상">
+                                <h3>
+                                    ⅰ) 변속 기어 컨트롤
+                                    차량이 정지한 상태에서 N 스위치를 누르면 계기판에 N이 점등합니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_nosmoking.svg" alt="차량 내 흡연 불가">
+                                <h3>
+                                    ⅱ) 주차 브레이크 작동
+                                    브레이크 페달을 강하게 밟은 채로 레버①을 위로 당겨 올립니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_nopet.svg" alt="야완동물 동반 불가">
+                                <h3>
+                                    ⅲ) 주차 브레이크 확인
+                                    주차 브레이크를 작동시켜 표시등③이 계기판에 켜지는 것을 확인합니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_adult.svg" alt="만 21세 이상">
+                                <h3>
+                                    ⅳ) 시동 끄고 앱 반납
+                                    핸들 오른쪽 아래  시동버튼①을 눌러 계기판이 꺼지는 것을 확인하고, 앱으로 반납을 완료해주세요. (②③④)
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto caution-->
+
+                    <!--howto caution-->
+                    <div class="caution">
+                        <h2>차량 충전</h2>
+                        <ul>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_license.svg" alt="운전면허 취득 1년 이상">
+                                <h3>
+                                    구동배터리 재충전
+                                    차량 엔진 스위치를 OFF 시키고 전방 보관함 커버③을 엽니다.
+                                    보관함 내 충전선 ②를 적당한 힘으로 꺼냅어 충전 소켓 등의 전원에 연결합니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_nosmoking.svg" alt="차량 내 흡연 불가">
+                                <h3>
+                                    계기판 상태 확인
+                                    충전하면 계기판에 충전관련 정보가 표기됩니다.
+                                    ⑥이 충전 중임을 나타내고, ⑤은 충전 완료율을 보여줍니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_nopet.svg" alt="야완동물 동반 불가">
+                                <h3>
+                                    충전시 팬 소리/ 케이블
+                                    ▷ 충전시 팬 소리가 납니다. 충전이 완료되더라도, 플러그가 연결되어 있으면 들릴 수 있습니다.
+                                    ▷ 케이블 ②가 너무 늘어나지 않도록 하세요. 케이블 ⑧이 손상된 경우 교체가 필요합니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_adult.svg" alt="만 21세 이상">
+                                <h3>
+                                    전원 차단
+                                    플러그를 빼서 전원에서 충전선을 분리합니다. 케이블 ②를 보관함에 넣습니다. 커버 ③을 꼭 닫아야합니다. 약간 열려있어도 주행이 안 될 수 있습니다.
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto caution-->
+
+                    <!--howto caution-->
+                    <div class="caution">
+                        <h2>문 열고 닫기 (동절기)</h2>
+                        <ul>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_license.svg" alt="운전면허 취득 1년 이상">
+                                <h3>
+                                    열기 ⅰ)
+                                    ①영역에 손을 넣어, ②번 레버를 위로 올립니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_nosmoking.svg" alt="차량 내 흡연 불가">
+                                <h3>
+                                    열기 ⅱ)
+                                    ③번 끈을 잡고 문을 들어올립니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_nopet.svg" alt="야완동물 동반 불가">
+                                <h3>
+                                    닫기 ⅰ)
+                                    ②레버를 위로 올립니다.
+                                </h3>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/about_caution_adult.svg" alt="만 21세 이상">
+                                <h3>
+                                    닫기 ⅱ)
+                                    ④번 부분을 손바닥으로 쳐서 밀어올려 줍니다.
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto caution-->
+
+                </div>
+                <!--//howto inner-->
+            </section>
+            <!--//howto-->
+        </div>
+        <!--//contents-->
+
+        <!--footer-->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="link">
+                    <li><a href="">회사소개</a></li>
+                    <li><a href="">제휴안내</a></li>
+                    <li><a href="../policy/terms.html" target="_blank">회원이용약관</a></li>
+                    <li><a href="../policy/privacy.html" target="_blank">개인정보 처리방침</a></li>
+                    <li><a href="../policy/car.html" target="_blank">자동차대여약관</a></li>
+                </ul>
+                <div class="footer_txt">
+                    <p>
+                        회사명 : (주)투어스태프 / 대표 : 김남진<br />
+                        주소 : 부산광역시 해운대구 APEC로 30 108호<br />
+                        사업자 등록번호 : 110-87-01893<br />
+                        전화 : 051-740-4080<br />
+                        통신판매업신고번호 : 2021-부산해운대-0918<br />
+                        개인정보관리책임자 : 김승휘<br />
+                        COPYRIGHT &copy; 2021 TOURZY CORP. ALL RIGHTS RESERVED.
+                    </p>
+                </div>
+            </div>
+            <!--//footer inner-->
+        </footer>
+        <!--//footer-->
+    </div>
+    <!--//wrap-->
+
+</body>
+
+</html>
