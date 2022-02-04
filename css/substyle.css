@@ -3384,3 +3384,61 @@
 
     z-index: 9999;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* howtouse */
+#about .howtouse {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#about .howtouse h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    color: #3E3A39;
+}
+
+#about .howtouse ul { 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+#about .howtouse ul li { 
+    position: relative;
+    width: calc(97%/4);
+}
+
+#about .howtouse ul li img {
+    width: 200px;
+    height: 433px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+#about .howtouse ul li h3 {
+    font-family: RIDIbatang;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #3E3A39;
+    margin-top: 104px;
+}
