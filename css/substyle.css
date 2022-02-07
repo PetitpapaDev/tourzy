@@ -3397,13 +3397,16 @@
 
 
 
-/* howtouse */
-#about .howtouse {
-    margin-top: 100px;
+
+
+
+/* dashboard */
+#howto .dashboard {
+    margin-top: 106px;
     margin-bottom: 100px;
 }
 
-#about .howtouse h2 {
+#howto .dashboard h2 {
     font-family: NanumGothic;
     font-style: normal;
     font-weight: bold;
@@ -3413,26 +3416,144 @@
     color: #3E3A39;
 }
 
-#about .howtouse ul { 
+#howto .dashboard ul { 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 91px;
+}
+
+#howto .dashboard ul li { 
+    position: relative;
+    width: calc(97%/3);
+}
+
+#howto .dashboard ul li h3 {
+    font-family: RIDIbatang;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #3E3A39;
+    margin-top: 111px;
+}
+/* dashboard */
+
+/* dashboard_status */
+#howto .dashboard_status {
+    margin-top: 106px;
+    margin-bottom: 100px;
+}
+
+#howto .dashboard_status h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    color: #3E3A39;
+}
+
+#howto .dashboard_status ul { 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 91px;
+}
+
+#howto .dashboard_status ul li { 
+    position: relative;
+    width: calc(97%/4);
+}
+
+#howto .dashboard_status ul li img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+#howto .dashboard_status ul li h3 {
+    font-family: RIDIbatang;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #3E3A39;
+    margin-top: 111px;
+}
+/* dashboard_status */
+
+/* dashboard_sign */
+#howto .dashboard_sign {
+    margin-top: 106px;
+    margin-bottom: 100px;
+}
+
+#howto .dashboard_sign h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    color: #3E3A39;
+}
+
+#howto .dashboard_sign .sign { 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 91px;
+}
+
+#howto .dashboard_sign .sign .sign_list { 
+    position: relative;
+    width: calc(97%/3);
+}
+
+#howto .dashboard_sign .sign .sign_list h3 {
+    font-family: RIDIbatang;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #3E3A39;
+    margin-top: 111px;
+}
+/* dashboard_sign */
+
+/* howto_list */
+#howto_list h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    color: #3E3A39;
+}
+
+#howto_list ul { 
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
 }
 
-#about .howtouse ul li { 
+#howto_list ul li { 
     position: relative;
     width: calc(97%/4);
 }
 
-#about .howtouse ul li img {
-    width: 200px;
-    height: 433px;
+#howto_list ul li img {
+    width: 300px;
+    height: 300px;
     display: block;
     margin: 0 auto;
     object-fit: cover;
 }
 
-#about .howtouse ul li h3 {
+#howto_list ul li h3 {
     font-family: RIDIbatang;
     font-style: normal;
     font-weight: normal;
@@ -3442,3 +3563,4 @@
     color: #3E3A39;
     margin-top: 104px;
 }
+/* howto_list */
