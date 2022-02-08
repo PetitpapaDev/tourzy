@@ -3570,6 +3570,7 @@
 
 /* link */
 #howto .link {
+    width: 1021px;
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -3591,7 +3592,8 @@
 
 #howto .link ul li {
     position: relative;
-    width: calc(97%/7);
+    width: calc(100%/7);
+    display: inline-block;
 }
 
 #howto .link ul li a {
@@ -3602,6 +3604,7 @@
     font-size: 18px;
     line-height: 18px;
     text-align: center;
+    padding-right: 64px;
 }
 
 /* link 반응형 */
@@ -3659,7 +3662,9 @@
     height: 300px;
 }
 
-#howto #dashboard ul { 
+#howto #dashboard ul {
+    width: 1021px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
@@ -3668,6 +3673,10 @@
 #howto #dashboard ul li { 
     position: relative;
     width: calc(97%/3);
+}
+
+#howto #dashboard > ul > li:nth-child(3) > div { 
+    float: right;
 }
 
 #howto #dashboard ul li h3 {
