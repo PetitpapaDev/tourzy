@@ -163,8 +163,6 @@ function displayData(currentPage, dataPerPage) {
     }
 
     $("#news_page").html(txt);
-
-    window.location.reload()
 }
 
 $("#dataPerPage").change(function () {
