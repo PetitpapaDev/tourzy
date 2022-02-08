@@ -3396,7 +3396,58 @@
 
 
 
+/* howto */
+#howto {
+    width: 66.35vw;
+    margin: 0 auto;
+    margin-bottom: 105px;
+}
 
+#howto .inner {
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* 중간 중간 점선 */
+#howto .dashed img {
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+}
+
+/* howto 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+    
+    #howto { 
+        width: 94.7vw;
+        margin-bottom: 14.63vw;
+    }
+    
+    /* 중간 중간 점선 */
+    #howto .dashed img {
+        display: block;
+        margin: 0 auto;
+        height: 50px;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #howto { 
+        width: 94.7vw;
+        margin-bottom: 14.63vw;
+    }
+    
+    /* 중간 중간 점선 */
+    #howto .dashed img {
+        display: block;
+        margin: 0 auto;
+        height: 50px;
+    }
+}
+/* howto 반응형 */
 
 /* reason */
 #howto .reason {
@@ -3448,126 +3499,349 @@
 /* reason 반응형 */
 /* reason */
 
-/* dashboard */
-#howto .dashboard {
-    margin-top: 106px;
+/* info */
+#howto .info {
+    margin-top: 100px;
     margin-bottom: 100px;
 }
 
-#howto .dashboard h2 {
+#howto .info h2 {
     font-family: NanumGothic;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 42px;
+    font-size: 24px;
+    line-height: 24px;
     text-align: center;
     color: #3E3A39;
 }
 
-#howto .dashboard ul { 
+#howto .info ul {
     display: flex;
     justify-content: space-between;
-    margin-top: 91px;
 }
 
-#howto .dashboard ul li { 
+#howto .info ul li {
+    position: relative;
+    width: calc(97%/5);
+}
+
+#howto .info ul li h3 {
+    font-family: RIDIbatang;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #3E3A39;
+}
+
+/* info 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+    
+    #howto .info {
+        margin-top: 8vw;
+        margin-bottom: 8vw;
+    }
+
+    #howto .info h2 {
+        font-size: 5vw;
+        line-height: 5vw;
+        margin-top: 8vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #howto .info {
+        margin-top: 8vw;
+        margin-bottom: 8vw;
+    }
+
+    #howto .info h2 {
+        font-size: 5vw;
+        line-height: 5vw;
+        margin-top: 8vw;
+    }
+}
+/* info 반응형 */
+/* info */
+
+/* link */
+#howto .link {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#howto .link h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #3E3A39;
+}
+
+#howto .link ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#howto .link ul li {
+    position: relative;
+    width: calc(97%/7);
+}
+
+#howto .link ul li a {
+    all: unset;
+    font-family: RIDIbatang;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+}
+
+/* link 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+    
+    #howto .link {
+        margin-top: 8vw;
+        margin-bottom: 8vw;
+    }
+
+    #howto .link h2 {
+        font-size: 5vw;
+        line-height: 5vw;
+        margin-top: 8vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #howto .link {
+        margin-top: 8vw;
+        margin-bottom: 8vw;
+    }
+
+    #howto .link h2 {
+        font-size: 5vw;
+        line-height: 5vw;
+        margin-top: 8vw;
+    }
+}
+/* link 반응형 */
+/* link */
+
+/* dashboard */
+#howto #dashboard {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#howto #dashboard h2 {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #53BDB8;
+    margin-bottom: 100px;
+}
+
+#howto #dashboard img {
+    width: 600px;
+    height: 300px;
+}
+
+#howto #dashboard ul { 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+#howto #dashboard ul li { 
     position: relative;
     width: calc(97%/3);
 }
 
-#howto .dashboard ul li h3 {
-    font-family: RIDIbatang;
+#howto #dashboard ul li h3 {
+    font-family: Nanum Gothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000000;
+    text-align: start;
+    margin-top: 20px;
+}
+#howto #dashboard ul li p {
+    font-family: Nanum Gothic;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 28px;
-    text-align: center;
-    color: #3E3A39;
-    margin-top: 111px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000000;
+    text-align: start;
+    margin-left: 40px;
 }
 /* dashboard */
 
 /* dashboard_status */
-#howto .dashboard_status {
+#howto #dashboard_status {
     margin-top: 106px;
     margin-bottom: 100px;
 }
 
-#howto .dashboard_status h2 {
+#howto #dashboard_status h2 {
     font-family: NanumGothic;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 42px;
+    font-size: 18px;
+    line-height: 18px;
     text-align: center;
-    color: #3E3A39;
+    color: #53BDB8;
+    margin-bottom: 100px;
 }
 
-#howto .dashboard_status ul { 
+#howto #dashboard_status ul { 
     display: flex;
     justify-content: space-between;
-    margin-top: 91px;
 }
 
-#howto .dashboard_status ul li { 
+#howto #dashboard_status ul li { 
     position: relative;
     width: calc(97%/4);
 }
 
-#howto .dashboard_status ul li img {
-    width: 150px;
+#howto #dashboard_status ul li img {
+    width: 300px;
+    height: 300px;
     display: block;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
-#howto .dashboard_status ul li h3 {
+#howto #dashboard_status ul li:first-child {
+    width: 533px;
+}
+
+#howto #dashboard_status ul li:first-child img {
+    width: 533px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#howto #dashboard_status ul li h3 {
     font-family: RIDIbatang;
     font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 28px;
-    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: start;
     color: #3E3A39;
-    margin-top: 111px;
+}
+
+#howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(3) {
+    margin-top: 20px;
+}
+
+#howto #dashboard_status ul li:first-child ul li {
+    width: 50%;
+}
+
+#howto #dashboard_status ul li:first-child ul li:first-child {
+    padding-right: 50px;
+}
+
+#howto #dashboard_status ul li p {
+    font-family: Nanum Gothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000000;
+    text-align: start;
+    margin-top: 20px;
+}
+
+#howto #dashboard_status ul li:nth-child(3) p:last-child {
+    font-family: Nanum Gothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000000;
+    text-align: start;
+    margin-top: 36px;
+    margin-left: 40px;
 }
 /* dashboard_status */
 
 /* dashboard_sign */
-#howto .dashboard_sign {
+#howto #dashboard_sign {
     margin-top: 106px;
     margin-bottom: 100px;
 }
 
-#howto .dashboard_sign h2 {
+#howto #dashboard_sign h2 {
     font-family: NanumGothic;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 42px;
+    font-size: 18px;
+    line-height: 18px;
     text-align: center;
-    color: #3E3A39;
+    color: #53BDB8;
+    margin-bottom: 100px;
 }
 
-#howto .dashboard_sign .sign { 
+#howto #dashboard_sign img {
+    width: 300px;
+    height: 300px;
+}
+
+#howto #dashboard_sign .sign {
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
     margin-top: 91px;
+    width: 842px;
 }
 
-#howto .dashboard_sign .sign .sign_list { 
+#howto #dashboard_sign .sign .sign_list {
     position: relative;
     width: calc(97%/3);
 }
 
-#howto .dashboard_sign .sign .sign_list h3 {
+#howto #dashboard_sign .sign .sign_list li {
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin-bottom: 46px;
+}
+
+#howto #dashboard_sign .sign .sign_list img {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+#howto #dashboard_sign .sign .sign_list h3 {
     font-family: RIDIbatang;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 14px;
+    line-height: 40px;
     text-align: center;
-    color: #3E3A39;
-    margin-top: 111px;
+    color: #000000;
+    display: block;
 }
 /* dashboard_sign */
 
