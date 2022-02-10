@@ -3385,17 +3385,6 @@
     z-index: 9999;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* howto */
 #howto {
     width: 66.35vw;
@@ -3426,9 +3415,8 @@
     
     /* 중간 중간 점선 */
     #howto .dashed img {
-        display: block;
-        margin: 0 auto;
-        height: 50px;
+        width: 0.26vw;
+        height: 8vw;
     }
 }
 
@@ -3442,9 +3430,8 @@
     
     /* 중간 중간 점선 */
     #howto .dashed img {
-        display: block;
-        margin: 0 auto;
-        height: 50px;
+        width: 0.26vw;
+        height: 8vw;
     }
 }
 /* howto 반응형 */
@@ -3471,14 +3458,14 @@
 @media all and (min-width : 768px) and (max-width : 1024px) {
     
     #howto .reason {
-        margin-top: 8vw;
-        margin-bottom: 8vw;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     #howto .reason h2 {
-        font-size: 5vw;
-        line-height: 5vw;
-        margin-top: 8vw;
+        font-size: 4.8vw;
+        line-height: 4.8vw;
+        margin-top: 13.33vw;
     }
 }
 
@@ -3486,14 +3473,14 @@
 @media all and (max-width : 767px) {
 
     #howto .reason {
-        margin-top: 8vw;
-        margin-bottom: 8vw;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     #howto .reason h2 {
-        font-size: 5vw;
-        line-height: 5vw;
-        margin-top: 8vw;
+        font-size: 4.8vw;
+        line-height: 4.8vw;
+        margin-top: 13.33vw;
     }
 }
 /* reason 반응형 */
@@ -3540,14 +3527,34 @@
 @media all and (min-width : 768px) and (max-width : 1024px) {
     
     #howto .info {
-        margin-top: 8vw;
-        margin-bottom: 8vw;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     #howto .info h2 {
-        font-size: 5vw;
-        line-height: 5vw;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
         margin-top: 8vw;
+    }
+    
+    #howto .info ul {
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+    
+    #howto .info ul li {
+        position: relative;
+        width: calc(97%/5);
+    }
+    
+    #howto .info ul li h3 {
+        font-family: RIDIbatang;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
+        color: #3E3A39;
     }
 }
 
@@ -3555,14 +3562,30 @@
 @media all and (max-width : 767px) {
 
     #howto .info {
-        margin-top: 8vw;
-        margin-bottom: 8vw;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     #howto .info h2 {
-        font-size: 5vw;
-        line-height: 5vw;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
         margin-top: 8vw;
+    }
+    
+    #howto .info ul {
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+    
+    #howto .info ul li {
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: 1.33vw;
+    }
+    
+    #howto .info ul li h3 {
+        font-size: 3.2vw;
+        line-height: 5.33vw;
     }
 }
 /* info 반응형 */
@@ -3570,7 +3593,6 @@
 
 /* link */
 #howto .link {
-    width: 1021px;
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -3586,14 +3608,17 @@
 }
 
 #howto .link ul {
-    display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 35px;
 }
 
 #howto .link ul li {
-    position: relative;
-    width: calc(100%/7);
-    display: inline-block;
+    text-align: center;
+    float: left;
+}
+
+#howto .link ul li:nth-child(7):after {
+    clear: left;
 }
 
 #howto .link ul li a {
@@ -3602,24 +3627,43 @@
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 48px;
     text-align: center;
-    padding-right: 64px;
+    margin-right: 64px;
+}
+
+#howto .link ul li:nth-child(6) a {
+    margin-right: 0px;
 }
 
 /* link 반응형 */
 /* Tablets */
 @media all and (min-width : 768px) and (max-width : 1024px) {
-    
+
     #howto .link {
         margin-top: 8vw;
-        margin-bottom: 8vw;
+        margin-bottom: 0;
     }
 
     #howto .link h2 {
-        font-size: 5vw;
-        line-height: 5vw;
-        margin-top: 8vw;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+    }
+
+    #howto .link ul {
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto .link ul li {
+        width: 100%;
+        margin-top: 4vw;
+    }
+
+    #howto .link ul li a {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-right: 0;
     }
 }
 
@@ -3628,13 +3672,28 @@
 
     #howto .link {
         margin-top: 8vw;
-        margin-bottom: 8vw;
+        margin-bottom: 0;
     }
 
     #howto .link h2 {
-        font-size: 5vw;
-        line-height: 5vw;
-        margin-top: 8vw;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+    }
+
+    #howto .link ul {
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto .link ul li {
+        width: 100%;
+        margin-top: 4vw;
+    }
+
+    #howto .link ul li a {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-right: 0;
     }
 }
 /* link 반응형 */
@@ -3642,7 +3701,8 @@
 
 /* dashboard */
 #howto #dashboard {
-    margin-top: 100px;
+    clear: both;
+    margin-top: 180px;
     margin-bottom: 100px;
 }
 
@@ -3675,7 +3735,7 @@
     width: calc(97%/3);
 }
 
-#howto #dashboard > ul > li:nth-child(3) > div { 
+#howto #dashboard > ul > li:nth-child(3) > div {
     float: right;
 }
 
@@ -3689,6 +3749,7 @@
     text-align: start;
     margin-top: 20px;
 }
+
 #howto #dashboard ul li p {
     font-family: Nanum Gothic;
     font-style: normal;
@@ -3699,6 +3760,105 @@
     text-align: start;
     margin-left: 40px;
 }
+
+/* dashboard 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #howto #dashboard {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #howto #dashboard h2 {
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-bottom: 8vw;
+    }
+
+    #howto #dashboard img {
+        width: 89.332vw;
+        height: 44.66vw;
+        object-fit: contain;
+    }
+
+    #howto #dashboard ul {
+        width: 80vw;
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto #dashboard ul li { 
+        width: 100%;
+        margin-top: 0vw;
+    }
+
+    #howto #dashboard > ul > li:nth-child(3) > div {
+        float: left;
+    }
+    
+    #howto #dashboard ul li h3 {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-top: 2.66vw;
+    }
+
+    #howto #dashboard ul li p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-top: 1.3vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #howto #dashboard {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 13.33vw;
+    }
+
+    #howto #dashboard h2 {
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-bottom: 8vw;
+    }
+
+    #howto #dashboard img {
+        width: 89.332vw;
+        height: 44.66vw;
+        object-fit: contain;
+    }
+
+    #howto #dashboard ul {
+        width: 80vw;
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto #dashboard ul li { 
+        width: 100%;
+        margin-top: 0vw;
+    }
+
+    #howto #dashboard > ul > li:nth-child(3) > div {
+        float: left;
+    }
+    
+    #howto #dashboard ul li h3 {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-top: 2.66vw;
+    }
+
+    #howto #dashboard ul li p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-top: 1.3vw;
+    }
+}
+/* dashboard 반응형 */
 /* dashboard */
 
 /* dashboard_status */
@@ -3792,6 +3952,158 @@
     margin-top: 36px;
     margin-left: 40px;
 }
+
+/* dashboard_status 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #howto #dashboard_status {
+        margin-top: 13.33vw;
+        margin-bottom: 0;
+    }
+
+    #howto #dashboard_status h2 {
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-bottom: 0;
+    }
+
+    #howto #dashboard_status ul { 
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto #dashboard_status ul li { 
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    #howto #dashboard_status ul li img {
+        width: 80vw;
+        height: 80vw;
+        object-fit: contain;
+        margin-bottom: 2.66vw;
+        margin-top: 8vw;
+    }
+
+    #howto #dashboard_status ul li:first-child {
+        width: 89.33vw;
+    }
+    
+    #howto #dashboard_status ul li:first-child img {
+        width: 89.33vw;
+        margin-bottom: 2.66vw;
+        margin-top: 8vw;
+    }
+
+    #howto #dashboard_status ul li h3 {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+    }
+
+    #howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(1) {
+        margin-top: 6.4vw;
+    }
+
+    #howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(3) {
+        margin-top: 6.4vw;
+    }
+    
+    #howto #dashboard_status ul li:first-child ul li {
+        width: 80vw;
+    }
+    
+    #howto #dashboard_status ul li:first-child ul li:first-child {
+        padding-right: 0;
+    }
+
+    #howto #dashboard_status ul li p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-top: 0vw;
+    }
+
+    #howto #dashboard_status ul li:nth-child(3) p:last-child {
+        margin-top: 2.66vw;
+        margin-left: 5.33vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #howto #dashboard_status {
+        margin-top: 13.33vw;
+        margin-bottom: 0;
+    }
+
+    #howto #dashboard_status h2 {
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-bottom: 0;
+    }
+
+    #howto #dashboard_status ul { 
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto #dashboard_status ul li { 
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    #howto #dashboard_status ul li img {
+        width: 80vw;
+        height: 80vw;
+        object-fit: contain;
+        margin-bottom: 2.66vw;
+        margin-top: 8vw;
+    }
+
+    #howto #dashboard_status ul li:first-child {
+        width: 89.33vw;
+    }
+    
+    #howto #dashboard_status ul li:first-child img {
+        width: 89.33vw;
+        margin-bottom: 2.66vw;
+        margin-top: 8vw;
+    }
+
+    #howto #dashboard_status ul li h3 {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+    }
+
+    #howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(1) {
+        margin-top: 6.4vw;
+    }
+
+    #howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(3) {
+        margin-top: 6.4vw;
+    }
+    
+    #howto #dashboard_status ul li:first-child ul li {
+        width: 80vw;
+    }
+    
+    #howto #dashboard_status ul li:first-child ul li:first-child {
+        padding-right: 0;
+    }
+
+    #howto #dashboard_status ul li p {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-top: 0vw;
+    }
+
+    #howto #dashboard_status ul li:nth-child(3) p:last-child {
+        margin-top: 2.66vw;
+        margin-left: 5.33vw;
+    }
+}
+/* dashboard_status 반응형 */
 /* dashboard_status */
 
 /* dashboard_sign */
@@ -3849,6 +4161,104 @@
     align-items: center;
     margin-left: 14px;
 }
+
+/* dashboard_sign 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #howto #dashboard_sign {
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: 13.33vw;
+    }
+
+    #howto #dashboard_sign h2 {
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-bottom: 8vw;
+    }
+
+    #howto #dashboard_sign img {
+        width: 80vw;
+        height: 80vw;
+        object-fit: contain;
+    }
+
+    #howto #dashboard_sign .sign { 
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto #dashboard_sign .sign .sign_list {
+        width: 100%;
+        margin-top: 1.3vw;
+    }
+
+    #howto #dashboard_sign .sign .sign_list ul li {
+        margin-bottom: 2.66vw;
+    }
+
+    #howto #dashboard_sign .sign .sign_list img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    #howto #dashboard_sign .sign_list h3 {
+        width: 100%;
+        font-size: 2.66vw;
+        line-height: 2.66vw;
+        margin-top: 0vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #howto #dashboard_sign {
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: 13.33vw;
+    }
+
+    #howto #dashboard_sign h2 {
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-bottom: 8vw;
+    }
+
+    #howto #dashboard_sign img {
+        width: 80vw;
+        height: 80vw;
+        object-fit: contain;
+    }
+
+    #howto #dashboard_sign .sign { 
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto #dashboard_sign .sign .sign_list {
+        width: 100%;
+        margin-top: 1.3vw;
+    }
+
+    #howto #dashboard_sign .sign .sign_list ul li {
+        margin-bottom: 2.66vw;
+    }
+
+    #howto #dashboard_sign .sign .sign_list img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    #howto #dashboard_sign .sign_list h3 {
+        width: 100%;
+        font-size: 2.66vw;
+        line-height: 2.66vw;
+        margin-top: 0vw;
+    }
+}
+/* dashboard_sign 반응형 */
 /* dashboard_sign */
 
 /* howto_list */
@@ -3904,4 +4314,83 @@
     text-align: left;
     margin-top: 20px;
 }
+
+/* howto_list 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    #howto_list h2 {
+        font-size: 1.82vw;
+        line-height: 1.82vw;
+        margin-top: 6.51vw;
+    }
+
+    #howto_list ul { 
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto_list ul li { 
+        width: 100%;
+        margin-top: 1.3vw;
+    }
+
+    #howto_list ul li img {
+        width: 39.11vw;
+        height: 39.11vw;
+        object-fit: contain;
+    }
+
+    #howto_list ul li h3 {
+        font-size: 1.56vw;
+        line-height: 1.56vw;
+        margin-top: 0vw;
+    }
+
+    #howto_list ul li p {
+        font-size: 1.82vw;
+        line-height: 1.82vw;
+        margin-top: 1.3vw;
+    }
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #howto_list h2 {
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-top: 13.33vw;
+    }
+
+    #howto_list ul { 
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    #howto_list ul li { 
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: 8vw;
+    }
+
+    #howto_list ul li img {
+        width: 80vw;
+        height: 80vw;
+        object-fit: contain;
+    }
+
+    #howto_list ul li h3 {
+        font-size: 3.2vw;
+        line-height: 3.2vw;
+        margin-top: 2.66vw;
+    }
+
+    #howto_list ul li p {
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-top: 2.66vw;
+    }
+}
+/* howto_list 반응형 */
 /* howto_list */
