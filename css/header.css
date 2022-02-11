@@ -149,7 +149,7 @@ body {
 }
 
 #header .gnb li:hover a.cate { 
-    border-bottom: 3px solid #89C53F;
+    border-bottom: 3px solid #53BDB8;
 }
 
 #header .gnb .gnb_sub { 
@@ -401,7 +401,7 @@ body {
     max-width: 1920px;
     min-width: 100%;
     height: 300px;
-    background-color: #89C53F;
+    background-color: #53BDB8;
     text-align: center;
     margin-top: 100px;
 }
