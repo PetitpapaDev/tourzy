@@ -3742,26 +3742,28 @@
     float: right;
 }
 
-#howto #dashboard ul li h3 {
+#howto #dashboard ul li strong {
     font-family: Nanum Gothic;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 20px;
     color: #000000;
     text-align: start;
     margin-top: 20px;
+    display: block;
 }
 
-#howto #dashboard ul li p {
+#howto #dashboard ul li span {
     font-family: Nanum Gothic;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 20px;
     color: #000000;
     text-align: start;
     margin-left: 40px;
+    display: block;
 }
 
 /* dashboard 반응형 */
@@ -3771,6 +3773,7 @@
     #howto #dashboard {
         margin-top: 0;
         margin-bottom: 0;
+        padding-top: 13.33vw;
     }
 
     #howto #dashboard h2 {
@@ -3800,15 +3803,15 @@
         float: left;
     }
     
-    #howto #dashboard ul li h3 {
+    #howto #dashboard ul li strong {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
         margin-top: 2.66vw;
     }
 
-    #howto #dashboard ul li p {
+    #howto #dashboard ul li span {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
         margin-top: 1.3vw;
     }
 }
@@ -3849,15 +3852,15 @@
         float: left;
     }
     
-    #howto #dashboard ul li h3 {
+    #howto #dashboard ul li strong {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
         margin-top: 2.66vw;
     }
 
-    #howto #dashboard ul li p {
+    #howto #dashboard ul li span {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
         margin-top: 1.3vw;
     }
 }
@@ -3911,17 +3914,18 @@
     margin-bottom: 50px;
 }
 
-#howto #dashboard_status ul li h3 {
+#howto #dashboard_status ul li strong {
     font-family: RIDIbatang;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 20px;
     text-align: start;
     color: #3E3A39;
+    display: block;
 }
 
-#howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(3) {
+#howto #dashboard_status ul li:first-child ul li:nth-child(2) strong:nth-child(3) {
     margin-top: 20px;
 }
 
@@ -3933,25 +3937,19 @@
     padding-right: 50px;
 }
 
-#howto #dashboard_status ul li p {
+#howto #dashboard_status ul li span {
     font-family: Nanum Gothic;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 20px;
     color: #000000;
     text-align: start;
     margin-top: 20px;
+    display: block;
 }
 
-#howto #dashboard_status ul li:nth-child(3) p:last-child {
-    font-family: Nanum Gothic;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 14px;
-    color: #000000;
-    text-align: start;
+#howto #dashboard_status ul li:nth-child(3) span:last-child {
     margin-top: 36px;
     margin-left: 40px;
 }
@@ -3999,16 +3997,16 @@
         margin-top: 8vw;
     }
 
-    #howto #dashboard_status ul li h3 {
+    #howto #dashboard_status ul li strong {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
     }
 
-    #howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(1) {
+    #howto #dashboard_status ul li:first-child ul li:nth-child(2) strong:nth-child(1) {
         margin-top: 6.4vw;
     }
 
-    #howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(3) {
+    #howto #dashboard_status ul li:first-child ul li:nth-child(2) strong:nth-child(3) {
         margin-top: 6.4vw;
     }
     
@@ -4020,13 +4018,13 @@
         padding-right: 0;
     }
 
-    #howto #dashboard_status ul li p {
+    #howto #dashboard_status ul li span {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
         margin-top: 0vw;
     }
 
-    #howto #dashboard_status ul li:nth-child(3) p:last-child {
+    #howto #dashboard_status ul li:nth-child(3) span:last-child {
         margin-top: 2.66vw;
         margin-left: 5.33vw;
     }
@@ -4074,16 +4072,16 @@
         margin-top: 8vw;
     }
 
-    #howto #dashboard_status ul li h3 {
+    #howto #dashboard_status ul li strong {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
     }
 
-    #howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(1) {
+    #howto #dashboard_status ul li:first-child ul li:nth-child(2) strong:nth-child(1) {
         margin-top: 6.4vw;
     }
 
-    #howto #dashboard_status ul li:first-child ul li:nth-child(2) h3:nth-child(3) {
+    #howto #dashboard_status ul li:first-child ul li:nth-child(2) strong:nth-child(3) {
         margin-top: 6.4vw;
     }
     
@@ -4095,13 +4093,13 @@
         padding-right: 0;
     }
 
-    #howto #dashboard_status ul li p {
+    #howto #dashboard_status ul li span {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
         margin-top: 0vw;
     }
 
-    #howto #dashboard_status ul li:nth-child(3) p:last-child {
+    #howto #dashboard_status ul li:nth-child(3) span:last-child {
         margin-top: 2.66vw;
         margin-left: 5.33vw;
     }
@@ -4139,7 +4137,7 @@
 }
 
 #howto #dashboard_sign .sign .sign_list {
-    width: calc(97%/3);
+    width: calc(100%/3);
 }
 
 #howto #dashboard_sign .sign .sign_list ul li {
@@ -4153,12 +4151,13 @@
     height: 40px;
 }
 
-#howto #dashboard_sign .sign_list h3 {
-    width: 150px;
-    font-family: RIDIbatang;
+#howto #dashboard_sign .sign_list p {
+    width: 160px;
+    font-family: NanumGothic;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
+    line-height: 20px;
     color: #000000;
     display: flex;
     align-items: center;
@@ -4206,10 +4205,10 @@
         height: 8vw;
     }
 
-    #howto #dashboard_sign .sign_list h3 {
+    #howto #dashboard_sign .sign_list p {
         width: 100%;
         font-size: 2.66vw;
-        line-height: 2.66vw;
+        line-height: 5.33vw;
         margin-top: 0vw;
     }
 }
@@ -4254,10 +4253,10 @@
         height: 8vw;
     }
 
-    #howto #dashboard_sign .sign_list h3 {
+    #howto #dashboard_sign .sign_list p {
         width: 100%;
         font-size: 2.66vw;
-        line-height: 2.66vw;
+        line-height: 5.33vw;
         margin-top: 0vw;
     }
 }
@@ -4295,27 +4294,29 @@
     object-fit: cover;
 }
 
-#howto_list ul li h3 {
+#howto_list ul li strong {
     font-family: RIDIbatang;
     font-family: NanumGothic;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 20px;
     color: #000000;
     margin-top: 50px;
     text-align: left;
+    display: block;
 }
 
-#howto_list ul li p {
+#howto_list ul li span {
     font-family: NanumGothic;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 20px;
     color: #3E3A39;
     text-align: left;
     margin-top: 20px;
+    display: block;
 }
 
 /* howto_list 반응형 */
@@ -4323,9 +4324,9 @@
 @media all and (min-width : 768px) and (max-width : 1024px) {
 
     #howto_list h2 {
-        font-size: 1.82vw;
-        line-height: 1.82vw;
-        margin-top: 6.51vw;
+        font-size: 3.73vw;
+        line-height: 3.73vw;
+        margin-top: 13.33vw;
     }
 
     #howto_list ul { 
@@ -4334,26 +4335,27 @@
     }
 
     #howto_list ul li { 
-        width: 100%;
-        margin-top: 1.3vw;
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: 8vw;
     }
 
     #howto_list ul li img {
-        width: 39.11vw;
-        height: 39.11vw;
+        width: 80vw;
+        height: 80vw;
         object-fit: contain;
     }
 
-    #howto_list ul li h3 {
-        font-size: 1.56vw;
-        line-height: 1.56vw;
-        margin-top: 0vw;
+    #howto_list ul li strong {
+        font-size: 3.2vw;
+        line-height: 5.33vw;
+        margin-top: 2.66vw;
     }
 
-    #howto_list ul li p {
-        font-size: 1.82vw;
-        line-height: 1.82vw;
-        margin-top: 1.3vw;
+    #howto_list ul li span {
+        font-size: 3.73vw;
+        line-height: 5.33vw;
+        margin-top: 2.66vw;
     }
 }
 
@@ -4383,15 +4385,15 @@
         object-fit: contain;
     }
 
-    #howto_list ul li h3 {
+    #howto_list ul li strong {
         font-size: 3.2vw;
-        line-height: 3.2vw;
+        line-height: 5.33vw;
         margin-top: 2.66vw;
     }
 
-    #howto_list ul li p {
+    #howto_list ul li span {
         font-size: 3.73vw;
-        line-height: 3.73vw;
+        line-height: 5.33vw;
         margin-top: 2.66vw;
     }
 }
