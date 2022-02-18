@@ -856,7 +856,8 @@
         // 협력사 슬라이드
 
         // 리뷰
-        $(document).ready(function () {
+        setTimeout(function () {
+            $(document).ready(function () {
             $('.review ul').bxSlider({
                 auto: true,   /*false 슬라이드가 자동으로 전환됩니다.*/
                 speed: 1000, /*500	슬라이드 전환 시간 (ms)*/
@@ -873,6 +874,7 @@
                 touchEnabled: true
             });
         });
+        }, 3000);
         // 리뷰
 
     </script>
