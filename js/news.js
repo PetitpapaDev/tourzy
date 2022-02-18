@@ -28,7 +28,7 @@ document.addEventListener('readystatechange', function () {
 
             // 페이징 표시 호출
             paging(totalData, dataPerPage, pageCount, 1);
-        }, 1000);
+        }, 250);
     }
 });
 
