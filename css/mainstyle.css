@@ -144,7 +144,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
 }
 
 #header .gnb li:hover a.cate {
-    border-bottom: 3px solid #89C53F;
+    border-bottom: 3px solid #53BDB8;
 }
 
 #header .gnb .gnb_sub { 
