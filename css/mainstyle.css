@@ -598,6 +598,17 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
     border-radius: 5px;
     text-align: center;
     margin-top: 22px;
+    display: inline-block;
+}
+
+#news ul li span {
+    font-family: 'RIDIBatang';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    color: #000000;
+    margin-left: 10px;
 }
 
 #news ul li p { 
@@ -678,6 +689,12 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
         margin-top: 5.86vw;
     }
 
+    #news ul li span {
+        font-size: 3.73vw;
+        line-height: 6.66vw;
+        margin-left: 1.33vw;
+    }
+
     #news ul li p {
         width: 89.56vw;
         font-size: 3.73vw;
@@ -726,6 +743,12 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
         line-height: 6.66vw;
         border-radius: 1.33vw;
         margin-top: 5.86vw;
+    }
+
+    #news ul li span {
+        font-size: 3.73vw;
+        line-height: 6.66vw;
+        margin-left: 1.33vw;
     }
 
     #news ul li p {
