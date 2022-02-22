@@ -1035,6 +1035,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: inline-block;
 }
 
 #footer .footer_sns {
