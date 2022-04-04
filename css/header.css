@@ -40,7 +40,7 @@ body {
 
 #header .inner h1 img {
     position: relative;
-    width: 219.02px;
+    /* width: 219.02px; */
     height: 32px;
     vertical-align: middle;
     object-fit: contain;
@@ -207,7 +207,7 @@ body {
     font-size: 0;
     width: 6.66vw;
     height: 0.66vw;
-    background: #89C53F;
+    background: #53BDB8;
     position: relative;
     float: right;
     margin-top: 14.33vw;
@@ -219,7 +219,7 @@ body {
     position: absolute;
     width: 4.66vw;
     height: 0.66vw;
-    background: #89C53F;
+    background: #53BDB8;
     right: 0; 
     top: -2.66vw;
 }
@@ -229,7 +229,7 @@ body {
     position: absolute;
     width: 3.33vw;
     height: 0.66vw;
-    background: #89C53F;
+    background: #53BDB8;
     right: 0;
     top: 2.66vw; 
 }
@@ -536,7 +536,7 @@ body {
 }
 
 #footer .link li:hover a {
-    color: #89C53F;
+    color: #53BDB8;
     transition: all .5s;
 }
 

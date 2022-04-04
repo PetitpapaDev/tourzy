@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     $(".table_select_car").css({
         "color": "#FFFFFF",
-        "background": "#8AC63F",
+        "background": "#53BDB8",
         "border-radius": "10px"
     });
 });
@@ -23,27 +23,27 @@ function setSelect(type) {
 
     $(".table_select_car").css({
 
-        "color": "#8AC63F",
+        "color": "#53BDB8",
         "background": "#ffffff",
-        "border": "1px solid #8AC63F"
+        "border": "1px solid #53BDB8"
     });
 
     $(".table_select_use").css({
-        "color": "#8AC63F",
+        "color": "#53BDB8",
         "background": "#ffffff",
-        "border": "1px solid #8AC63F"
+        "border": "1px solid #53BDB8"
     });
 
     $(".table_select_pay").css({
-        "color": "#8AC63F",
+        "color": "#53BDB8",
         "background": "#ffffff",
-        "border": "1px solid #8AC63F"
+        "border": "1px solid #53BDB8"
     });
 
     $(".table_select_insure").css({
-        "color": "#8AC63F",
+        "color": "#53BDB8",
         "background": "#ffffff",
-        "border": "1px solid #8AC63F"
+        "border": "1px solid #53BDB8"
     });
 
     if (type == "car") {
@@ -52,7 +52,7 @@ function setSelect(type) {
 
         $(".table_select_car").css({
             "color": "#FFFFFF",
-            "background": "#8AC63F",
+            "background": "#53BDB8",
             "border-radius": "10px"
         });
     }
@@ -63,7 +63,7 @@ function setSelect(type) {
 
         $(".table_select_use").css({
             "color": "#FFFFFF",
-            "background": "#8AC63F",
+            "background": "#53BDB8",
             "border-radius": "10px"
         });
     }
@@ -74,7 +74,7 @@ function setSelect(type) {
 
         $(".table_select_pay").css({
             "color": "#FFFFFF",
-            "background": "#8AC63F",
+            "background": "#53BDB8",
             "border-radius": "10px"
         });
     }
@@ -85,7 +85,7 @@ function setSelect(type) {
 
         $(".table_select_insure").css({
             "color": "#FFFFFF",
-            "background": "#8AC63F",
+            "background": "#53BDB8",
             "border-radius": "10px"
         });
     }

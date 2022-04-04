@@ -82,8 +82,8 @@
 
 #about .dots img {
     display: block;
-    width: 150px;
-    height: 150px;
+    /* width: 150px;
+    height: 150px; */
     margin: 0 auto;
 }
 
@@ -94,7 +94,7 @@
     font-size: 36px;
     line-height: 48px;
     text-align: center;
-    color: #89C53F;
+    color: #53BDB8;
     margin-top: 154px;
 }
 
@@ -1502,7 +1502,7 @@
     line-height: 50px;
     text-align: center;
     color: #FFFFFF;
-    background: #89C53F;
+    background: #53BDB8;
     border-radius: 10px;
 }
 
@@ -1912,14 +1912,14 @@
     font-size: 14px;
     line-height: 50px;
     text-align: center;
-    color: #8AC63F;
-    border: 1px solid #8AC63F;
+    color: #53BDB8;
+    border: 1px solid #53BDB8;
     border-radius: 10px;
 }
 
 #faq .inner .table_select li:hover {
     color: #FFFFFF;
-    background: #8AC63F;
+    background: #53BDB8;
     border-radius: 10px;
 }
 
@@ -2089,7 +2089,7 @@
     line-height: 50px;
     text-align: center;
     color: #FFFFFF;
-    background: #8AC63F;
+    background: #53BDB8;
     border-radius: 10px;
 }
 
@@ -2652,7 +2652,7 @@
 #center .directions .line {
     width: 3px;
     height: 20px;
-    background: #89C53F;
+    background: #53BDB8;
     float: left;
 }
 
@@ -2675,7 +2675,7 @@
     font-size: 16px;
     line-height: 50px;
     color: #000000;
-    background: #89C53F;
+    background: #53BDB8;
     border-radius: 10px;
     text-align: center;
 
@@ -2826,7 +2826,7 @@
     line-height: 30px;
     color: #3E3A39;
     text-align: center;
-    border: 1px solid #89C53F;
+    border: 1px solid #53BDB8;
     box-sizing: border-box;
     width: 80px;
     height: 30px;
@@ -2842,9 +2842,9 @@
     line-height: 30px;
     color: #FFFFFF;
     text-align: center;
-    background: #89C53F;
+    background: #53BDB8;
     opacity: 0.8;
-    border: 1px solid #89C53F;
+    border: 1px solid #53BDB8;
     box-sizing: border-box;
 }
 
@@ -3379,7 +3379,7 @@
     font-size: 16px;
     line-height: 50px;
     color: #000000;
-    background: #89C53F;
+    background: #53BDB8;
     border-radius: 10px;
 
     z-index: 9999;

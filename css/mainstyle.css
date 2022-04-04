@@ -35,7 +35,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
 
 #header .inner h1 img {
     position: relative;
-    width: 219.02px;
+    /* width: 219.02px; */
     height: 32px;
     vertical-align: middle;
     object-fit: contain;
@@ -202,7 +202,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
     font-size: 0;
     width: 6.66vw;
     height: 0.66vw;
-    background: #89C53F;
+    background: #53BDB8;
     position: relative;
     float: right;
     margin-top: 14.33vw;
@@ -214,7 +214,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
     position: absolute;
     width: 4.66vw;
     height: 0.66vw;
-    background: #89C53F;
+    background: #53BDB8;
     right: 0; 
     top: -2.66vw;
 }
@@ -224,7 +224,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
     position: absolute;
     width: 3.33vw;
     height: 0.66vw;
-    background: #89C53F;
+    background: #53BDB8;
     right: 0;
     top: 2.66vw; 
 }
@@ -497,7 +497,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
 }
 
 #value .detail a:hover { 
-    color: #89c53f;
+    color: #53BDB8;
     transition: all .5s;
 }
 
@@ -594,7 +594,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
     font-size: 18px;
     line-height: 25px;
     color: #FFFFFF;
-    background: #89C53F;
+    background: #53BDB8;
     border-radius: 5px;
     text-align: center;
     margin-top: 22px;
@@ -1015,7 +1015,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
 }
 
 #footer .link li:hover a {
-    color: #89c53f;
+    color: #53BDB8;
     transition: all .5s;
 }
 
@@ -1059,18 +1059,6 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
 #footer .footer_sns li img {
     width: 100%;
 }
-
-/* #footer .footer_sns li:nth-child(1):hover { 
-    background: #89C53F;
-}
-
-#footer .footer_sns li:nth-child(2):hover { 
-    background: #006AEF;
-}
-
-#footer .footer_sns li:nth-child(3):hover { 
-    background: #00CB56;
-} */
 
 /* footer 반응형 */
 /* Tablets */
