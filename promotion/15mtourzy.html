@@ -48,30 +48,55 @@
 
     <style>
         #header {
-            width: 100vw;
+            display: flex;
+            width: 100%;
         }
 
         #header .inner {
-            flex-wrap: wrap;
-            text-align: center;
+            width: 60%;
+            margin: 0 auto;
         }
 
         #header .inner img {
-            margin: 0 auto;
+            width: 100%;
             display: block;
+        }
+
+        #header .inner div {
+            display: flex;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .ytlink {
+            width: 25%;
+            height: 25%;
+            position: absolute;
+            top: 52%;
+            left: 37%;
+        }
+
+        .kakao {
+            width: 17%;
+            height: 17%;
+            position: absolute;
+            top: 7%;
+            right: 27%;
+        }
+
+        .appdl {
+            width: 60%;
+            height: 40%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
         }
 
         /* 반응형 */
         /* Tablets */
         @media all and (min-width : 768px) and (max-width : 1024px) {
 
-            #header {
-            }
-
             #header .inner {
-
-            }
-            #header .inner img {
                 width: 100%;
             }
         }
@@ -79,13 +104,7 @@
         /* Mobile */
         @media all and (max-width : 767px) {
 
-            #header {
-            }
-
             #header .inner {
-
-            }
-            #header .inner img {
                 width: 100%;
             }
         }
@@ -102,7 +121,10 @@
           <div class="inner">
             <!-- <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/pr_15m_001.png" alt=""> -->
             <img src="../images/pr_15m_001.png" alt="" />
-            <img src="../images/pr_15m_002.png" alt="" />
+            <div>
+                <img src="../images/pr_15m_002.png" alt="" />
+                <a class="ytlink" href="https://youtu.be/s75ntMjakGQ" target="_blank"></a>
+            </div>
             <img src="../images/pr_15m_003.png" alt="" />
             <img src="../images/pr_15m_004.png" alt="" />
             <img src="../images/pr_15m_005.png" alt="" />
@@ -113,9 +135,14 @@
             <img src="../images/pr_15m_010.png" alt="" />
             <img src="../images/pr_15m_011.png" alt="" />
             <img src="../images/pr_15m_012.png" alt="" />
-            <img src="../images/pr_15m_013.png" alt="" />
-            <img src="../images/pr_15m_014.png" alt="" />
-
+            <div>
+                <img src="../images/pr_15m_013.png" alt="" />
+                <a class="kakao" href="http://pf.kakao.com/_Lxkxaus/chat" target="_blank"></a>
+            </div>
+            <div>
+                <img src="../images/pr_15m_014.png" alt="" />
+                <a class="appdl" href="https://tourzykr.page.link/appdownload" target="_blank"></a>
+            </div>
           </div>
           <!--//header inner-->
         </header>
