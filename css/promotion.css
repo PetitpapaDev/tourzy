@@ -44,36 +44,24 @@
     right: 0;
 }
 
-#header .inner .pr2_bg {
-    height: 100%;
-    display: block;
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 #header .inner iframe {
-    width:43%;
-    height:430px;
+    width:43vw;
+    height:47vh;
     background:#000000;
-    margin-top: 100px;
-    margin-bottom: 100px;
     position: absolute;
 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -43%);
+    transform: translate(-50%, -23%);
 
-    border-radius: 40px;
+    border-radius: 25px;
 }
 
 #header .inner .pr2_200 {
     display: block;
     position: absolute;
 
-    bottom: 3%;
+    bottom: 4%;
     right: 27%;
 }
 
@@ -88,13 +76,19 @@
 
     #header .inner .primg {
         width: 100%;
-        height: 100%;
     }
 
     #header .inner iframe {
-        height: 53.33vw;
-        margin-top: 8vw;
-        margin-bottom: 8vw;
+        width: 85vw;
+        height: 30vh;
+    }
+
+    #header .inner .pr2_200 {
+    width: 40vw;
+    display: flex;
+
+    bottom: 5%;
+    right: 3%;
     }
 }
 
@@ -108,13 +102,19 @@
 
     #header .inner .primg {
         width: 100%;
-        height: 100%;
     }
 
     #header .inner iframe {
-        height: 53.33vw;
-        margin-top: 8vw;
-        margin-bottom: 8vw;
+        width: 85vw;
+        height: 30vh;
+    }
+
+    #header .inner .pr2_200 {
+    width: 40vw;
+    display: flex;
+
+    bottom: 5%;
+    right: 3%;
     }
 }
 /* 반응형 */
