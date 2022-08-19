@@ -12,14 +12,6 @@
     text-align: center;
 }
 
-.ytlink {
-    width: 25%;
-    height: 25%;
-    position: absolute;
-    top: 52%;
-    left: 37%;
-}
-
 .kakao {
     width: 20%;
     height: 20%;
@@ -46,7 +38,7 @@
 
 #header .inner iframe {
     width:43vw;
-    height:22vw;
+    height:23vw;
     background:#000000;
     position: absolute;
 
@@ -81,7 +73,7 @@
 
     #header .inner iframe {
         width: 88vw;
-        height: 48vw;
+        height: 49vw;
     }
 
     #header .inner .pr2_200 {
@@ -107,7 +99,7 @@
 
     #header .inner iframe {
         width: 88vw;
-        height: 48vw;
+        height: 49vw;
     }
 
     #header .inner .pr2_200 {
