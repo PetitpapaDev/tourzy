@@ -46,7 +46,7 @@
 
 #header .inner iframe {
     width:43vw;
-    height:47vh;
+    height:22vw;
     background:#000000;
     position: absolute;
 
@@ -54,14 +54,15 @@
     left: 50%;
     transform: translate(-50%, -23%);
 
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
 #header .inner .pr2_200 {
+    width: 19vw;
     display: block;
     position: absolute;
 
-    bottom: 4%;
+    bottom: 6%;
     right: 27%;
 }
 
@@ -79,12 +80,12 @@
     }
 
     #header .inner iframe {
-        width: 85vw;
-        height: 30vh;
+        width: 88vw;
+        height: 48vw;
     }
 
     #header .inner .pr2_200 {
-        width: 40vw;
+        width: 38vw;
         display: flex;
 
         bottom: 5%;
@@ -105,12 +106,12 @@
     }
 
     #header .inner iframe {
-        width: 85vw;
-        height: 30vh;
+        width: 88vw;
+        height: 48vw;
     }
 
     #header .inner .pr2_200 {
-        width: 40vw;
+        width: 38vw;
         display: flex;
 
         bottom: 5%;
