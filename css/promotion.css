@@ -84,11 +84,11 @@
     }
 
     #header .inner .pr2_200 {
-    width: 40vw;
-    display: flex;
+        width: 40vw;
+        display: flex;
 
-    bottom: 5%;
-    right: 3%;
+        bottom: 5%;
+        right: 3%;
     }
 }
 
@@ -110,11 +110,11 @@
     }
 
     #header .inner .pr2_200 {
-    width: 40vw;
-    display: flex;
+        width: 40vw;
+        display: flex;
 
-    bottom: 5%;
-    right: 3%;
+        bottom: 5%;
+        right: 3%;
     }
 }
 /* 반응형 */
