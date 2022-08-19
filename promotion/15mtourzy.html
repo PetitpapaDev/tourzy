@@ -19,10 +19,13 @@
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/sc.jpg" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/promotion.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+
+    <script src="../js/promotion.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVFQRGJYV4"></script>
@@ -45,108 +48,6 @@
         }
     </script>
     <!-- naver Analytics -->
-
-    <script>
-        window.addEventListener("wheel", function(e){
-            e.preventDefault();
-        },{passive : false});
-
-        var $html = $("html");
-        var page = 1;
-        var lastPage = $(".content").length;
-
-        $html.animate({scrollTop:0},10);
-
-        $(window).on("wheel", function(e){
- 
-        if($html.is(":animated")) return;
-
-        if(e.originalEvent.deltaY > 0){
-            if (page == lastPage) return;
-
-            page++;
-        } else if(e.originalEvent.deltaY < 0){
-            if (page == 1) return;
-
-            page--;
-        }
-        var posTop = (page-1) * $(window).height();
-
-        $html.animate({scrollTop : posTop});
-
-        });
-    </script>
-
-    <style>
-
-        #header .inner .content {
-            height: 100vh;
-            position: relative;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        #header .inner img {
-            height: 100%;
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .ytlink {
-            width: 25%;
-            height: 25%;
-            position: absolute;
-            top: 52%;
-            left: 37%;
-        }
-
-        .kakao {
-            width: 20%;
-            height: 25%;
-            position: absolute;
-            top: 7%;
-            right: 30%;
-        }
-
-        .appdl {
-            width: 60%;
-            height: 30%;
-            position: absolute;
-            bottom: 40%;
-            right: 0;
-        }
-
-        /* 반응형 */
-        /* Tablets */
-        @media all and (min-width : 768px) and (max-width : 1024px) {
-
-            #header .inner .content {
-                width: 100%;
-                height: 100%;
-            }
-
-            #header .inner img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        /* Mobile */
-        @media all and (max-width : 767px) {
-
-            #header .inner .content {
-                width: 100%;
-                height: 100%;
-            }
-
-            #header .inner img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-        /* 반응형 */
-    </style>
 
 </head>
 
