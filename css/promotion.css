@@ -5,7 +5,7 @@
     text-align: center;
 }
 
-#header .inner img {
+#header .inner .primg {
     height: 100%;
     display: block;
     margin: 0 auto;
@@ -28,7 +28,7 @@
     right: 28%;
 }
 
-.appdl1 {
+.appdl3 {
     width: 60%;
     height: 30%;
     position: absolute;
@@ -36,12 +36,45 @@
     right: 0;
 }
 
-.appdl2 {
+.appdl14 {
     width: 60%;
     height: 30%;
     position: absolute;
     bottom: 40%;
     right: 0;
+}
+
+#header .inner .pr2_bg {
+    height: 100%;
+    display: block;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#header .inner iframe {
+    width:43%;
+    height:430px;
+    background:#000000;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -43%);
+
+    border-radius: 40px;
+}
+
+#header .inner .pr2_200 {
+    display: block;
+    position: absolute;
+
+    bottom: 3%;
+    right: 27%;
 }
 
 /* 반응형 */
@@ -53,9 +86,15 @@
         height: 100%;
     }
 
-    #header .inner img {
+    #header .inner .primg {
         width: 100%;
         height: 100%;
+    }
+
+    #header .inner iframe {
+        height: 53.33vw;
+        margin-top: 8vw;
+        margin-bottom: 8vw;
     }
 }
 
@@ -67,9 +106,15 @@
         height: 100%;
     }
 
-    #header .inner img {
+    #header .inner .primg {
         width: 100%;
         height: 100%;
+    }
+
+    #header .inner iframe {
+        height: 53.33vw;
+        margin-top: 8vw;
+        margin-bottom: 8vw;
     }
 }
 /* 반응형 */
