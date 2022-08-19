@@ -28,7 +28,15 @@
     right: 28%;
 }
 
-.appdl {
+.appdl1 {
+    width: 60%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.appdl2 {
     width: 60%;
     height: 30%;
     position: absolute;
