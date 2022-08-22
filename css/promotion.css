@@ -114,7 +114,7 @@
 
 /*플로팅 버튼*/
 .floating-button {
-    display: flex;
+    /* display: flex; */
     position: fixed;
     right: 10px;
     bottom: 15px;
@@ -122,22 +122,20 @@
 }
 
 .box-btn {
+    /* display: block; */
     /* display: none; */
-    background-image:url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/pr_floating_bg_box.png);
+    /* background-image:url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/pr_floating_bg_box.png); */
 }
 
-/*플로팅 버튼 아이콘 공용 스타일*/
-.icon-btn::before {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    border-radius: 50%;
-    font-size: 1.15em;
-
-    /*플로팅 버튼 아이콘 색상 수정O*/
-    color: #b67700;
-
+.box-btn img {
     display: block;
+    position: absolute;
+}
+
+.box-btn span {
+    display: block;
+    position: absolute;
+    align-items: center;
 }
     
 /*플로팅 버튼 스타일*/
@@ -145,8 +143,6 @@
     float: left;
     display: flex;
     position: relative;
-    /* width: 32px; */
-    /* height: 32px; */
     cursor: pointer;
     justify-content: center;
     align-items: center;

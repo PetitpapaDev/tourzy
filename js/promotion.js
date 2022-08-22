@@ -26,3 +26,24 @@ var posTop = (page-1) * $(window).height();
 $html.animate({scrollTop : posTop});
 
 });
+
+// floating
+$(document).ready(function () {
+
+    $(".box-btn").hide();
+
+    $(".icon-btn").click(function () {
+        
+        if ($(this).next().css("display") == "none") {
+
+            $(".box-btn").show("nomarl");
+
+            $(this).next().show("nomarl");
+
+        } else if ($(this).next().css("display") != "none") {
+
+            $(".box-btn").hide("nomarl");
+        }
+    });
+  });
+  // floating
