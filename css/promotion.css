@@ -122,6 +122,8 @@
 }
 
 .box-btn {
+    display: block;
+    position: relative;
     /* display: block; */
     /* display: none; */
     /* background-image:url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/pr_floating_bg_box.png); */
@@ -129,13 +131,18 @@
 
 .box-btn img {
     display: block;
-    position: absolute;
+    position: relative;
 }
 
-.box-btn span {
-    display: block;
+.box-btn p {
     position: absolute;
-    align-items: center;
+	top: 50%;
+	left: 50%;
+	transform: translate( -50%, -50% );
+
+    color: white;
+    font-size: 2rem;
+    font-family: Pretendard;
 }
     
 /*플로팅 버튼 스타일*/
