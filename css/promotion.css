@@ -114,7 +114,7 @@
 
 /*플로팅 버튼*/
 .floating-button {
-    /* display: flex; */
+    display: flex;
     position: fixed;
     right: 10px;
     bottom: 15px;
@@ -141,7 +141,7 @@
 	transform: translate( -50%, -50% );
 
     color: white;
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-family: Pretendard;
 }
     
