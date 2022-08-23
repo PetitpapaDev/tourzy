@@ -28,20 +28,20 @@ $html.animate({scrollTop : posTop});
 });
 
 // floating
-$(document).ready(function () {
+// $(document).ready(function () {
 
-    $("#box-btn").hide();
+//     $("#box-btn").hide();
 
-    document.getElementById("icon-btn").onclick = function() {
+//     document.getElementById("icon-btn").onclick = function() {
 
-        if (document.getElementById("box-btn").style.display == "") {
+//         if (document.getElementById("box-btn").style.display == "") {
 
-            document.getElementById("box-btn").style.display = "none";
+//             document.getElementById("box-btn").style.display = "none";
 
-        } else {
+//         } else {
 
-            document.getElementById("box-btn").style.display = "";
-        }
-    }
-  });
+//             document.getElementById("box-btn").style.display = "";
+//         }
+//     }
+//   });
   // floating

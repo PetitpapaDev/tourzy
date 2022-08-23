@@ -124,31 +124,32 @@
 #icon-btn {
     display: block;
     z-index: 999;
-    height: 4.5vw;
+    height: 3.8vw;
+
+    position: absolute;
+    left: 0;
 }
 
 #box-btn {
     position: relative;
-}
 
-#box-btn img {
-    display: block;
-    position: relative;
+    background-color: #416281;
+    width: 17vw;
     height: 4vw;
-    left: -2vw;
+    border-radius: 7px;
 }
 
 #box-btn p {
     position: absolute;
 	top: 0;
-	left: 0;
+	left: 50%;
+    transform: translate(-30%, 0%);
     line-height: 4vw;
     text-align: center;
 
     color: white;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     font-family: Pretendard;
-    padding-left: 0.5vw;
 }
     
 /*플로팅 버튼 스타일*/
