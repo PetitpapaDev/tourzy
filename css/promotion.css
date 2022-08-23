@@ -166,15 +166,15 @@
 @media all and (min-width : 768px) and (max-width : 1024px) {
 
     #icon-btn {
-        height: 4.5vw;
+        height: 10.5vw;
     }
 
     #box-btn img {
-        height: 4vw;
+        height: 10vw;
     }
 
     #box-btn p {
-        line-height: 4vw;
+        line-height: 10vw;
     }
 }
 
