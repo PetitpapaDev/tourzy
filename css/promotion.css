@@ -165,7 +165,17 @@
 /* Tablets */
 @media all and (min-width : 768px) and (max-width : 1024px) {
 
-    
+    #icon-btn {
+        height: 10.5vw;
+    }
+
+    #box-btn img {
+        height: 10vw;
+    }
+
+    #box-btn p {
+        line-height: 10vw;
+    }
 }
 
 /* Mobile */
