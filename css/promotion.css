@@ -148,7 +148,8 @@
     text-align: center;
 
     color: white;
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
+    font-size: 1.3vw;
     font-family: Pretendard;
 }
     
@@ -166,33 +167,48 @@
 /* Tablets */
 @media all and (min-width : 768px) and (max-width : 1024px) {
 
-    #icon-btn {
-        height: 10.5vw;
+    .floating-button {
+        right: 5vw;
+        bottom: 5vw;
     }
 
-    #box-btn img {
+    #icon-btn {
         height: 10vw;
     }
 
+    #box-btn {
+        width: 37vw;
+        height: 11.2vw;
+        border-radius: 7px;
+    }
+
     #box-btn p {
-        line-height: 10vw;
+        font-size: 2.3vw;
+        line-height: 11.2vw;
     }
 }
 
 /* Mobile */
 @media all and (max-width : 767px) {
 
-    #icon-btn {
-        height: 10.5vw;
+    .floating-button {
+        right: 5vw;
+        bottom: 5vw;
     }
 
-    #box-btn img {
+    #icon-btn {
         height: 10vw;
     }
 
+    #box-btn {
+        width: 37vw;
+        height: 11.2vw;
+        border-radius: 7px;
+    }
+
     #box-btn p {
-        line-height: 10vw;
-        font-size: 1.3rem;
+        font-size: 2.8vw;
+        line-height: 11.2vw;
     }
 }
 /* 반응형 */
