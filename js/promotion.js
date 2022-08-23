@@ -30,20 +30,18 @@ $html.animate({scrollTop : posTop});
 // floating
 $(document).ready(function () {
 
-    $(".box-btn").hide();
+    $("#box-btn").hide();
 
-    $(".icon-btn").click(function () {
-        
-        if ($(this).next().css("display") == "none") {
+    document.getElementById("icon-btn").onclick = function() {
 
-            $(".box-btn").show("nomarl");
+        if (document.getElementById("box-btn").style.display == "") {
 
-            $(this).next().show("nomarl");
+            document.getElementById("box-btn").style.display = "none";
 
-        } else if ($(this).next().css("display") != "none") {
+        } else {
 
-            $(".box-btn").hide("nomarl");
+            document.getElementById("box-btn").style.display = "";
         }
-    });
+    }
   });
   // floating
