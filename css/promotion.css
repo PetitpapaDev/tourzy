@@ -128,7 +128,6 @@
 }
 
 #box-btn {
-    display: block;
     position: relative;
 }
 
@@ -145,7 +144,6 @@
 	left: 0;
     line-height: 4vw;
     text-align: center;
-	/* transform: translate( -50%, -50% ); */
 
     color: white;
     font-size: 2.3rem;
@@ -162,3 +160,39 @@
     justify-content: center;
     align-items: center;
 }
+
+/* 반응형 */
+/* Tablets */
+@media all and (min-width : 768px) and (max-width : 1024px) {
+
+    
+}
+
+/* Mobile */
+@media all and (max-width : 767px) {
+
+    #icon-btn {
+        height: 10vw;
+    }
+
+    #box-btn img {
+        display: block;
+        position: relative;
+        height: 10vw;
+        left: -2vw;
+    }
+
+    #box-btn p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 10vw;
+        text-align: center;
+    
+        color: white;
+        font-size: 2.3rem;
+        font-family: Pretendard;
+        padding-left: 0.5vw;
+    }
+}
+/* 반응형 */
