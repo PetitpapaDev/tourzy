@@ -1222,6 +1222,9 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
 }
 
 .popup .popup_bg {
+    width: 100vw;
+    height: 100vh;
+    opacity: 80%;
     position: absolute;
     display: flex;
     background-color: #ffffff;
@@ -1237,8 +1240,7 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
 }
 
 .popup a img {
-    width: 70vw;
-    height: 70vw;
+    width: 100vw;
     display: block;
     margin: auto;
 }
@@ -1254,12 +1256,13 @@ body { font-family: NanumGothic; font-size:1.0rem; line-height:1; color:#3E3A39;
     font-family: NanumSquare;
     font-style: normal;
     font-weight: normal;
-    font-size: 3.2vw;
-    line-height: 3.2vw;
+    font-size: 6.2vw;
+    line-height: 6.2vw;
     color: #000000;
     position: absolute;
     width: 100vw;
     text-align: center;
     text-decoration: underline;
+    margin-top: 3vw;
 }
 /* index popup */
