@@ -150,6 +150,19 @@
           $(".popup").hide();
         }
       }
+
+      // 투어지 스토리 팝업
+        $(document).ready(function () {
+            var mql = window.matchMedia("screen and (max-width: 767px)");
+            if (mql.matches) {
+                
+            } else {
+              window.onload = function () {
+                    window.open("popup.html");
+                };
+            }
+        });
+      // 투어지 스토리 팝업
     });
 
     function setCookie(name, value, expiredays) {
@@ -220,7 +233,7 @@
   <div class="popup">
     <div class="popup_bg">
     </div>
-    <a onclick="closePop();"><img src="images/Hinnamnor.jpg" alt="태풍 힌남노"></a>
+    <a onclick="closePop();"><img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/Hinnamnor.jpg" alt="태풍 힌남노"></a>
     <div class="popup_check">
       <div class="popup_close" onclick="closePop();">닫기</div>
     </div>
