@@ -120,87 +120,6 @@
     });
     // 터치 이벤트
 
-    // index 팝업 공지
-    $(document).ready(function () {
-
-      $(".popup").hide();
-
-      function getCookie(name) {
-        var nameOfCookie = name + "=";
-        var x = 0;
-        while (x <= document.cookie.length) {
-          var y = x + nameOfCookie.length;
-          if (document.cookie.substring(x, y) == nameOfCookie) {
-            if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
-              endOfCookie = document.cookie.length;
-            return unescape(document.cookie.substring(y, endOfCookie));
-          }
-          x = document.cookie.indexOf(" ", x) + 1;
-          if (x == 0) break;
-        }
-        return "";
-      }
-
-      //cookie값 존재하지 않으면
-      if (getCookie("picnic") != "done") {
-        var mql = window.matchMedia("screen and (max-width: 767px)");
-        if (mql.matches) {
-          $(".popup").show();
-        } else {
-          $(".popup").hide();
-        }
-      }
-
-      // 투어지 스토리 팝업
-        $(document).ready(function () {
-            var mql = window.matchMedia("screen and (max-width: 767px)");
-            if (mql.matches) {
-                
-            } else {
-              window.onload = function () {
-                    window.open("popup.html");
-                };
-            }
-        });
-      // 투어지 스토리 팝업
-    });
-
-    function setCookie(name, value, expiredays) {
-      var todayDate = new Date();
-      todayDate = new Date( //00시 기준
-        parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000
-      );
-      if (todayDate > new Date()) {
-        expiredays = expiredays - 1;
-      }
-      todayDate.setDate(todayDate.getDate() + expiredays);
-      document.cookie =
-        name +
-        "=" +
-        escape(value) +
-        "; path=/; expires=" +
-        todayDate.toGMTString() +
-        ";";
-    }
-
-    // 모바일 팝업창 하루동안 열지 않음
-    function laterPop() {
-      var chkb = document.getElementById("chkb");
-      if (chkb.checked == true) {
-        chkb.checked = false;
-      } else {
-        chkb.checked = true;
-      }
-    }
-    // 모바일 팝업창 하루동안 열지 않음
-
-    // 모바일 팝업창 닫기
-    function closePop() {
-      $(".popup").hide();
-    }
-    // 모바일 팝업창 닫기
-    // index 팝업 공지
-
   </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -228,17 +147,6 @@
 </head>
 
 <body>
-
-  <!-- 팝업 -->
-  <div class="popup">
-    <div class="popup_bg">
-    </div>
-    <a onclick="closePop();"><img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/Hinnamnor.jpg" alt="태풍 힌남노"></a>
-    <div class="popup_check">
-      <div class="popup_close" onclick="closePop();">닫기</div>
-    </div>
-  </div>
-  <!-- 팝업 -->
 
   <!--wrap-->
   <div id="wrap">
