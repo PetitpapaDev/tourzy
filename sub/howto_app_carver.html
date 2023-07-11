@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- og -->
+    <meta property="og:url" content="http://tourzy.kr" />
+    <meta property="og:title" content="투어지" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://tourzy.kr/images/main_logo_s.png" />
+    <meta property="og:description" content="투어지 이용방법 | 투어지" />
+    <!-- og -->
+
+    <title>카버 이용방법 | 투어지</title>
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/sc.jpg" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/substyle.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+
+    <script>
+
+        // gnb
+        $(document).ready(function () {
+            $(".gnb_sub,.gnb_bg").hide();
+            $(".gnb > li").mouseenter(function () {
+                $(".gnb_sub,.gnb_bg").stop().slideDown(300);
+            });
+            $(".gnb > li").mouseleave(function () {
+                $(".gnb_sub,.gnb_bg").stop().slideUp(300);
+            });
+        });
+        // gnb
+
+        // mgnb
+        $(document).ready(function () {
+
+            $(".mgnb_wrap_bg").hide();
+
+            $(".m_menu_box").click(function () {
+                $(".mgnb_wrap").animate({
+                    left: '48%'
+                });
+                $(".m_menu_box").hide();
+                $(".mgnb_wrap_bg").show();
+
+            });
+            $(".close_box").click(function () {
+                $(".mgnb_wrap").animate({
+                    left: '100%'
+                });
+                $(".m_menu_box").show();
+                $(".mgnb_wrap_bg").hide();
+            });
+        });
+        // mgnb
+
+        // 마우스 스크롤 이벤트
+        $(window).ready(function () {
+
+            var $header = $("#header");
+            var $window = $(window);
+            var headerOffsetTop = $header.offset().top;
+
+            $window.resize(function () {
+                headerOffsetTop = $header.offset().top;
+            });
+
+            $window.on('scroll', function () {
+                var scrolled = $window.scrollTop() >= headerOffsetTop;
+                if (scrolled == false) {
+                    $("#header").show();
+                } else {
+                    window.onmousewheel = function (e) {
+                        if (e.wheelDelta > 0) {
+                            $("#header").show();
+                        } else {
+                            $("#header").hide();
+                        }
+                    }
+                }
+            });
+        });
+        // 마우스 스크롤 이벤트
+
+        // 터치 이벤트
+        $(document).ready(function () {
+
+            var start_touch = 0;
+
+            $(document).bind('touchstart', function (e) {
+                start_touch = e.touches[0].screenY;
+                e.preventDefault();
+            });
+
+            $(document).bind('touchmove', function (e) {
+
+                var event = e.originalEvent;
+
+                if (start_touch > event.touches[0].screenY) {
+
+                    $("#header").hide();
+
+                } else {
+
+                    $("#header").show();
+                }
+
+                event.preventDefault();
+            });
+
+            $(document).bind('touchend', function (e) {
+            });
+        });
+        // 터치 이벤트
+
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVFQRGJYV4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVFQRGJYV4');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- naver Analytics -->
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "c1198759f6c2f0";
+        if(window.wcs) {
+            wcs_do();
+        }
+    </script>
+    <!-- naver Analytics -->
+    
+</head>
+
+<body>
+    <!--wrap-->
+    <div id="wrap">
+        <!--header-->
+        
+        <!--main_visual-->
+        <article id="main_visual">
+            <h2>
+                카버 이용방법
+            </h2>
+        </article>
+        <!--//main_visual-->
+
+        <!--contents-->
+        <div id="contents">
+
+            <!--howto-->
+            <section id="howto_carver">
+                <!--howto inner-->
+                <div class="inner">
+
+                    <!--howto info-->
+                    <div class="info">
+                        <h2>카버 정보</h2>
+                        <div class="dashed">
+                            <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/line_dashed_mint.png" alt="">
+                        </div>
+                        <ul>
+                            <li>
+                                <h3>
+                                    제조사 : 카버
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    분류 : 소형 전기차
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    연료 : 전기
+                                </h3>
+                            </li>
+                            <li>
+                                 <h3>
+                                    변속 방식 : 자동
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    승차 정원 : 2인
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto info-->
+
+                    <!--howto link-->
+                    <div class="link">
+                        <h2>카버 사용방법</h2>
+                        <div class="dashed">
+                            <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/line_dashed_mint.png" alt="">
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#dashboard">
+                                    계기판 장치
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#seat">
+                                    탑승 (운전석 조절/ 안전벨트)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#start">
+                                    풋페달 및 전/후진 방향선택
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#emergency">
+                                    비상등
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#audio">
+                                    오디오
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#usb">
+                                    USB
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tilting">
+                                    최대 틸팅 각도 및 경고음
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#charge">
+                                    차량 충전
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto link-->
+
+                    <!--howto dashboard-->
+                    <div id="dashboard">
+                        <h2>계기판 장치</h2>
+                        <img src="../images/carver_dashboard_01.png" alt="">
+                    </div>
+                    <!--//howto dashboard-->
+
+                    <!--howto_carver_list-->
+                    <div id="howto_carver_list">
+                        
+                        <!--howto seat-->
+                        <div id="seat">
+                            <h2>탑승 (운전석 조절/ 안전벨트)</h2>
+                            <img src="../images/carver_seat_01.png" alt="">
+                            <img src="../images/carver_seat_02.png" alt="">
+                        </div>
+                        <!--//howto seat-->
+
+                        <!--howto start-->
+                        <div id="start">
+                            <h2>풋페달 및 전/후진 방향선택</h2>
+                            <img src="../images/carver_start_01.png" alt="">
+                        </div>
+                        <!--//howto start-->
+
+                        <!--howto emergency-->
+                        <div id="emergency">
+                            <h2>비상등</h2>
+                            <img src="../images/carver_emergency_01.png" alt="">
+                        </div>
+                        <!--//howto emergency-->
+
+                        <!--howto audio-->
+                        <div id="audio">
+                            <h2>오디오</h2>
+                            <img src="../images/carver_audio_01.png" alt="">
+                            <img src="../images/carver_audio_02.png" alt="">
+                        </div>
+                        <!--//howto audio-->
+
+                        <!--howto usb-->
+                        <div id="usb">
+                            <h2>USB</h2>
+                            <img src="../images/carver_usb_01.png" alt="">
+                        </div>
+                        <!--//howto usb-->
+
+                        <!--howto tilting-->
+                        <div id="tilting">
+                            <h2>최대 틸팅 각도 및 경고음</h2>
+                            <img src="../images/carver_tilting_01.png" alt="">
+                        </div>
+                        <!--//howto tilting-->
+
+                        <!--howto charge-->
+                        <div id="charge">
+                            <h2>차량 충전</h2>
+                            <img src="../images/carver_charge_01.png" alt="">
+                        </div>
+                        <!--//howto charge-->
+
+                    </div>
+                    <!--howto_carver_list-->
+
+                </div>
+                <!--//howto inner-->
+            </section>
+            <!--//howto-->
+        </div>
+        <!--//contents-->
+
+    </div>
+    <!--//wrap-->
+
+</body>
+
+</html>

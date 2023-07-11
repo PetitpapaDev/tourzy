@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- og -->
+    <meta property="og:url" content="http://tourzy.kr" />
+    <meta property="og:title" content="투어지" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://tourzy.kr/images/main_logo_s.png" />
+    <meta property="og:description" content="투어지 이용방법 | 투어지" />
+    <!-- og -->
+
+    <title>투어지 이용방법 | 투어지</title>
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/sc.jpg" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/substyle.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+
+    <script>
+
+        // gnb
+        $(document).ready(function () {
+            $(".gnb_sub,.gnb_bg").hide();
+            $(".gnb > li").mouseenter(function () {
+                $(".gnb_sub,.gnb_bg").stop().slideDown(300);
+            });
+            $(".gnb > li").mouseleave(function () {
+                $(".gnb_sub,.gnb_bg").stop().slideUp(300);
+            });
+        });
+        // gnb
+
+        // mgnb
+        $(document).ready(function () {
+
+            $(".mgnb_wrap_bg").hide();
+
+            $(".m_menu_box").click(function () {
+                $(".mgnb_wrap").animate({
+                    left: '48%'
+                });
+                $(".m_menu_box").hide();
+                $(".mgnb_wrap_bg").show();
+
+            });
+            $(".close_box").click(function () {
+                $(".mgnb_wrap").animate({
+                    left: '100%'
+                });
+                $(".m_menu_box").show();
+                $(".mgnb_wrap_bg").hide();
+            });
+        });
+        // mgnb
+
+        // 마우스 스크롤 이벤트
+        $(window).ready(function () {
+
+            var $header = $("#header");
+            var $window = $(window);
+            var headerOffsetTop = $header.offset().top;
+
+            $window.resize(function () {
+                headerOffsetTop = $header.offset().top;
+            });
+
+            $window.on('scroll', function () {
+                var scrolled = $window.scrollTop() >= headerOffsetTop;
+                if (scrolled == false) {
+                    $("#header").show();
+                } else {
+                    window.onmousewheel = function (e) {
+                        if (e.wheelDelta > 0) {
+                            $("#header").show();
+                        } else {
+                            $("#header").hide();
+                        }
+                    }
+                }
+            });
+        });
+        // 마우스 스크롤 이벤트
+
+        // 터치 이벤트
+        $(document).ready(function () {
+
+            var start_touch = 0;
+
+            $(document).bind('touchstart', function (e) {
+                start_touch = e.touches[0].screenY;
+                e.preventDefault();
+            });
+
+            $(document).bind('touchmove', function (e) {
+
+                var event = e.originalEvent;
+
+                if (start_touch > event.touches[0].screenY) {
+
+                    $("#header").hide();
+
+                } else {
+
+                    $("#header").show();
+                }
+
+                event.preventDefault();
+            });
+
+            $(document).bind('touchend', function (e) {
+            });
+        });
+        // 터치 이벤트
+
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVFQRGJYV4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVFQRGJYV4');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- naver Analytics -->
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "c1198759f6c2f0";
+        if(window.wcs) {
+            wcs_do();
+        }
+    </script>
+    <!-- naver Analytics -->
+    
+</head>
+
+<body>
+    <!--wrap-->
+    <div id="wrap">
+        <!--header-->
+        
+        <!--main_visual-->
+        <article id="main_visual">
+            <h2>
+                투어지 이용방법
+            </h2>
+        </article>
+        <!--//main_visual-->
+
+        <!--contents-->
+        <div id="contents">
+
+            <!--howto-->
+            <section id="howto">
+                <!--howto inner-->
+                <div class="inner">
+
+                    <!--howto info-->
+                    <div class="info">
+                        <h2>투어지 정보</h2>
+                        <div class="dashed">
+                            <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/line_dashed_mint.png" alt="">
+                        </div>
+                        <ul>
+                            <li>
+                                <h3>
+                                    제조사 : 르노
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    분류 : 소형 전기차
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    연료 : 전기
+                                </h3>
+                            </li>
+                            <li>
+                                 <h3>
+                                    변속 방식 : 자동
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    승차 정원 : 2인
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto info-->
+
+                    <!--howto link-->
+                    <div class="link">
+                        <h2>투어지 사용방법</h2>
+                        <div class="dashed">
+                            <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/line_dashed_mint.png" alt="">
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#dashboard">
+                                    계기판 장치
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#dashboard_status">
+                                    계기와 표시창
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#dashboard_sign">
+                                    계기판: 경고등 및 표시등
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#seat">
+                                    탑승 (운전석 조절/ 안전벨트)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#start">
+                                    시동 켜기
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#return">
+                                    차량 주차 및 반납
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#charge">
+                                    차량 충전
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#door">
+                                    문 열고 닫기 (동절기)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto link-->
+
+                    <!--howto dashboard-->
+                    <div id="dashboard">
+                        <h2>계기판 장치</h2>
+                        <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_dashboard_01.png" alt="">
+                        <ul>
+                            <li>
+                                <strong>
+                                    ① 보관함 및  파워 아웃렛
+                                </strong>
+                                <strong>
+                                    ② 스위치:
+                                </strong>
+                                <span>
+                                    ‧경음기<br />
+                                    ‧방향 지시등<br />
+                                    ‧헤드램프<br />
+                                    ‧보행자 경음기
+                                </span>
+                                <strong>
+                                    ③ 계기판
+                                </strong>
+                                <strong>
+                                    ④ 운전석 에어백 위치
+                                </strong>
+                            </li>
+                            <li>
+                                <strong>
+                                    ⑤ 스위치 :
+                                </strong>
+                                <span>
+                                    ‧앞유리 와이퍼 및 워셔 스위치<br />
+                                    ‧트립 컴퓨터와 경고 시스템/ 트립 컴퓨터 컨트롤<br />
+                                    ‧앞유리 김서림 제거 스위치
+                                </span>
+                                <strong>
+                                    ⑥ 잠금식 보관함
+                                </strong>
+                                <strong>
+                                    ⑦⑫ 아웃사이드 미러
+                                </strong>
+                                <span>
+                                    미러를 조정하려면 미러를 누르세요.
+                                </span>
+                            </li>
+                            <li>
+                                <div>
+                                    <strong>
+                                        ⑧ 전기 엔진 시동 스위치
+                                    </strong>
+                                    <strong>
+                                        ⑨ 주차 브레이크
+                                    </strong>
+                                    <strong>
+                                        ⑩ 스위치 :
+                                    </strong>
+                                    <span>
+                                        ‧전진<br />
+                                        ‧중립<br />
+                                        ‧후진
+                                    </span>
+                                    <strong>
+                                        ⑪ 비상 점멸 표시등 버튼
+                                    </strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto dashboard-->
+
+                    <!--howto dashboard_status-->
+                    <div id="dashboard_status">
+                        <h2>계기와 표시창</h2>
+                        <ul>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_dashboard_02.png" alt="">
+                                <ul>
+                                    <li>
+                                        <strong>
+                                            ① 충전 레벨
+                                        </strong>
+                                        <span>
+                                            에너지 잔량을 알려주는 게이지 입니다.<br />
+                                            ▷ 에너지 잔량 경고<br />
+                                            배터리가 약 12% 충전 상태에 도달하면 경고등이 점등하고 경고음이 울립니다.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <strong>
+                                            ② 에코미터
+                                        </strong>
+                                        <span>
+                                            계기판의 에코미터는 운전자에게 차량의 연료 소비 상황을 실시간으로 보여줍니다.
+                                        </span>
+                                        <strong>
+                                            ③ 차량 속도계
+                                        </strong>
+                                        <span>
+                                            시간당 킬로미터.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_dashboard_03.png" alt="">
+                                <strong>
+                                    ⑤ 표시창4
+                                </strong>
+                                <span>
+                                    버튼 5를 길게 눌러 구간 거리계를 재설정합니다.<br />
+                                    계기판이 구간 거리계로 설정되어야 합니다.
+                                </span>
+                            </li>
+                            <li>
+                                <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_dashboard_04.png" alt="">
+                                <span>
+                                    ◎ 버튼5를 반복적으로 누르면 계기판 6에 아래의 정보가 표시됩니다 :
+                                </span>
+                                <span>
+                                    ‧1회 충전 주행거리<br />
+                                    ‧적산 거리계<br />
+                                    ‧구간 거리계<br />
+                                    ‧에코 점수<br />
+                                    ‧시간
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto dashboard_status-->
+
+                    <!--howto dashboard_sign-->
+                    <div id="dashboard_sign">
+                        <h2>계기판 : 경고등 및 표시등</h2>
+                        <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_dashboard_05.png" alt="">
+                        <ul class="sign">
+                            <li class="sign_list">
+                                <ul>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_01.png" alt="">
+                                        <p>
+                                            미등 표시등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_02.png" alt="">
+                                        <p>
+                                            하향등표시등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_03.png" alt="">
+                                        <p>
+                                            상향등 표시등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_04.png" alt="">
+                                        <p>
+                                            방향지시등 표시등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_05.png" alt="">
+                                        <p>
+                                            엔진 이모빌라이저 시스템 경고등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_06.png" alt="">
+                                        <p>
+                                            운행 준비 완료 
+                                            표시등
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sign_list">
+                                <ul>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_07.png" alt="">
+                                        <p>
+                                            에어백 경고등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_08.png" alt="">
+                                        <p>
+                                            충전선 연결 표시등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_09.png" alt="">
+                                        <p>
+                                            12v 배터리 충전 경고등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_10.png" alt="">
+                                        <p>
+                                            서비스 경고등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_11.png" alt="">
+                                        <p>
+                                            주차 브레이크 작동표시등 및 브레이크 시스템 고장 경고등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_12.png" alt="">
+                                        <p>
+                                            정지 경고등
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sign_list">
+                                <ul>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_13.png" alt="">
+                                        <p>
+                                            구동 배터리 온도 경고등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_14.png" alt="">
+                                        <p>
+                                            구동 배터리 에너지 잔량 
+                                            경고등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_15.png" alt="">
+                                        <p>
+                                            전기 시스템 경고등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_16.png" alt="">
+                                        <p>
+                                            앞유리 김서림 
+                                            제거 표시등
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img src="../images/howto_dashboard_sign_17.png" alt="">
+                                        <p>
+                                            사용하지 않음
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//howto dashboard_sign-->
+
+                    <!--howto list-->
+                    <div id="howto_list">
+                        
+                        <!--howto seat-->
+                        <div id="seat">
+                            <h2>탑승 (운전석 조절/ 안전벨트)</h2>
+                            <ul>
+                                <li class="manual">
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_seat_01.png" alt="">
+                                    <strong>
+                                        ◎ 시트 앞/뒤 조절
+                                    </strong>
+                                    <span>
+                                        핸들 ①을 들어 올려 시트의 잠금을 해제합니다. 시트를 원하는 위치로 이동시킨 뒤 핸들을 놓습니다.
+                                    </span>
+                                </li>
+                                <li class="manual">
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_seat_02.png" alt="">
+                                    <strong>
+                                        ◎ 운전석 사이드 안전벨트
+                                    </strong>
+                                    <span>
+                                        벨트 ③이 어깨 위로 오게 하십시오.
+                                    </span>
+                                </li>
+                                <li class="manual">
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_seat_03.png" alt="">
+                                    <strong>
+                                        ◎ 안전벨트
+                                    </strong>
+                                    <span>
+                                        운전석 안전벨트는 왼쪽 어깨 부근에 위치합니다. ④벨트를 가능한 목 가까이 조절하세요. ⑤벨트는 허벅지 위 골반에 위치해야 합니다.
+                                    </span>
+                                </li>
+                                <li class="manual">
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_seat_04.png" alt="">
+                                    <strong>
+                                        ◎ 안전벨트 풀기
+                                    </strong>
+                                    <span>
+                                        버클 ⑦의 ⑧을 누르고 벨트를 뺍니다.<br />
+                                        ※ 뒷자리 벨트 버클은 ⑥번 위치에 있습니다.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//howto seat-->
+
+                        <!--howto start-->
+                        <div id="start">
+                            <h2>시동 켜기</h2>
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_start_01.png" alt="">
+                                    <strong>
+                                        ⅰ) 내부 또는 외부에서 도어 열기
+                                    </strong>
+                                    <span>
+                                        손잡이 ①을 올리고 위쪽으로 당깁니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_start_02.png" alt="">
+                                    <strong>
+                                        ⅱ) 브레이크 페달 밟고 시동 켜기
+                                    </strong>
+                                    <span>
+                                        왼쪽에 위치한 브레이크 페달을 밟은 채로 삐- 소리가 날 때까지 핸들 오른쪽 아래 시동 버튼을 길게 눌러줍니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_start_03.png" alt="">
+                                    <strong>
+                                        ⅲ) 주차 브레이크 해제
+                                    </strong>
+                                    <span>
+                                        브레이크 페달을 강하게 밟은 채로 버튼 ②를 누른 상태에서 레버 ①을 위로 강하게 당겼다가 갈 수 있는 만큼 누릅니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_start_04.png" alt="">
+                                    <strong>
+                                        ⅳ) 변속 기어 컨트롤
+                                    </strong>
+                                    <span>
+                                        주차 브레이크를 해제 한 후에 ②버튼을 눌러 주행, 후진을 할 수 있습니다.<br />
+                                        ▷D : 주행<br />
+                                        ▷N : 중립 (D,R 동시에 누름)<br />
+                                        ▷R : 후진
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//howto start-->
+
+                        <!--howto return-->
+                        <div id="return">
+                            <h2>차량 주차 및 반납</h2>
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_return_01.png" alt="">
+                                    <strong>
+                                        ⅰ) 변속 기어 컨트롤
+                                    </strong>
+                                    <span>
+                                        차량이 정지한 상태에서 N 스위치를 누르면 계기판에 N이 점등합니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_start_03.png" alt="">
+                                    <strong>
+                                        ⅱ) 주차 브레이크 작동
+                                    </strong>
+                                    <span>
+                                        브레이크 페달을 강하게 밟은 채로 레버①을 위로 당겨 올립니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_return_03.png" alt="">
+                                    <strong>
+                                        ⅲ) 주차 브레이크 확인
+                                    </strong>
+                                    <span>
+                                        주차 브레이크를 작동시켜 표시등③이 계기판에 켜지는 것을 확인합니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_return_04.png" alt="">
+                                    <strong>
+                                        ⅳ) 시동 끄고 앱 반납
+                                    </strong>
+                                    <span>
+                                        핸들 오른쪽 아래  시동버튼①을 눌러 계기판이 꺼지는 것을 확인하고, 앱으로 반납을 완료해주세요. (②③④)
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//howto return-->
+
+                        <!--howto charge-->
+                        <div id="charge">
+                            <h2>차량 충전</h2>
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_charge_01.png" alt="">
+                                    <strong>
+                                        구동배터리 재충전
+                                    </strong>
+                                    <span>
+                                        차량 엔진 스위치를 OFF 시키고 전방 보관함 커버③을 엽니다.<br />
+                                        보관함 내 충전선 ②를 적당한 힘으로 꺼냅어 충전 소켓 등의 전원에 연결합니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_charge_02.png" alt="">
+                                    <strong>
+                                        계기판 상태 확인합니다
+                                    </strong>
+                                    <span>
+                                        충전하면 계기판에 충전관련 정보가 표기됩니다.<br />
+                                        ⑥이 충전 중임을 나타내고, ⑤은 충전 완료율을 보여줍니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_charge_03.png" alt="">
+                                    <strong>
+                                        충전시 팬 소리/ 케이블
+                                    </strong>
+                                    <span>
+                                        ▷ 충전시 팬 소리가 납니다. 충전이 완료되더라도, 플러그가 연결되어 있으면 들릴 수 있습니다.<br />
+                                        ▷ 케이블 ②가 너무 늘어나지 않도록 하세요. 케이블 ⑧이 손상된 경우 교체가 필요합니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_charge_01.png" alt="">
+                                    <strong>
+                                        전원 차단
+                                    </strong>
+                                    <span>
+                                        플러그를 빼서 전원에서 충전선을 분리합니다. 케이블 ②를 보관함에 넣습니다. 커버 ③을 꼭 닫아야합니다. 약간 열려있어도 주행이 안 될 수 있습니다.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//howto charge-->
+
+                        <!--howto door-->
+                        <div id="door">
+                            <h2>문 열고 닫기 (동절기)</h2>
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_door_01.png" alt="">
+                                    <strong>
+                                        열기 ⅰ)
+                                    </strong>
+                                    <span>
+                                        ①영역에 손을 넣어, ②번 레버를 위로 올립니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_door_02.png" alt="">
+                                    <strong>
+                                        열기 ⅱ)
+                                    </strong>
+                                    <span>
+                                        ③번 끈을 잡고 문을 들어올립니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_door_03.png" alt="">
+                                    <strong>
+                                        닫기 ⅰ)
+                                    </strong>
+                                    <span>
+                                        ②레버를 위로 올립니다.
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/howto_door_04.png" alt="">
+                                    <strong>
+                                        닫기 ⅱ)
+                                    </strong>
+                                    <span>
+                                        ④번 부분을 손바닥으로 쳐서 밀어올려 줍니다.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//howto door-->
+                    </div>
+                    <!--howto list-->
+
+                </div>
+                <!--//howto inner-->
+            </section>
+            <!--//howto-->
+        </div>
+        <!--//contents-->
+
+    </div>
+    <!--//wrap-->
+
+</body>
+
+</html>
