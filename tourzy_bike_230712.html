@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+            
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <style>
+        #map {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+
+        #copied {
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+
+            font-family: NanumGothic;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 50px;
+            color: #000000;
+            background: #FF7500;
+            border-radius: 10px;
+
+            z-index: 9999;
+        }
+    </style>
+        
+</head>
+<body>
+
+    <div id="copied">주소가 복사되었습니다.</div>
+    
+    <div class="folium-map" id="map"></div>
+        
+</body>
+<script>
+
+    // 주소 복사
+    function copyToClipboard(val) {
+        const t = document.createElement("textarea");
+        document.body.appendChild(t);
+        t.value = val;
+        t.select();
+        document.execCommand('copy');
+        document.body.removeChild(t);
+    }
+
+    function copy(addr) {
+        
+        copyToClipboard(addr);
+
+        $("#copied").show();
+
+        self.setTimeout("hideDiv()", 2000);
+    }
+
+    $(document).ready(function () {
+
+        $("#copied").hide();
+    });
+    // 주소 복사
+
+    function hideDiv () {
+        
+        $("#copied").hide();
+    }
+
+    $(document).ready(function () {
+        // $("#folium-map").html(JSON.stringify(XLSX.utils.sheet_to_json (sheet)));
+
+        // console.log(JSON.stringify(XLSX.utils.sheet_to_json(sheet)))
+
+        var tourzy_bike =
+
+            [{"car":"TZ0350","lat":35.1359233269787,"lng":129.09166878969,"address":"대한민국 부산광역시 경림유통"},{"car":"TZ0452","lat":35.2315499927339,"lng":129.084350710898,"address":"대한민국 부산광역시 금정구 장전동 400-51"},{"car":"TZ0451","lat":35.2341629568012,"lng":129.082944483484,"address":"대한민국 부산광역시 금정구 장전동 46-4"},{"car":"TZ0098","lat":35.1432308472327,"lng":129.100527434538,"address":"대한민국 부산광역시 남구 대연동 1633-131"},{"car":"TZ0043","lat":35.1337316060722,"lng":129.101152165389,"address":"대한민국 부산광역시 남구 대연동 495-2"},{"car":"TZ0329","lat":35.1316864984575,"lng":129.102546747443,"address":"대한민국 부산광역시 남구 대연제3동 용소로"},{"car":"TZ0177","lat":35.1354713082204,"lng":129.091979867593,"address":"대한민국 부산광역시 남구 대연제5동 1741-19"},{"car":"TZ0404","lat":35.1269681774869,"lng":129.108563487624,"address":"대한민국 부산광역시 남구 용호동 174-3"},{"car":"TZ0331","lat":35.1272391512067,"lng":129.108660416221,"address":"대한민국 부산광역시 남구 용호동 175-2"},{"car":"TZ0190","lat":35.1248638761024,"lng":129.109615842275,"address":"대한민국 부산광역시 남구 용호로42번길 42-3"},{"car":"TZ0383","lat":35.1305256773028,"lng":129.103622576067,"address":"대한민국 부산광역시 도로교통공단"},{"car":"TZ0051","lat":35.1981897794184,"lng":129.102718871982,"address":"대한민국 부산광역시 동래구 안락동 514-8"},{"car":"TZ0485","lat":35.2180246148046,"lng":129.084200876364,"address":"대한민국 부산광역시 동래구 온천동 162-3"},{"car":"TZ0434","lat":35.1415715613744,"lng":129.059414349388,"address":"대한민국 부산광역시 범일역"},{"car":"TZ0492","lat":35.1777347977518,"lng":129.074795176133,"address":"대한민국 부산광역시 부산진구 양정동 150-4"},{"car":"TZ0332","lat":35.1771863911593,"lng":129.074395301269,"address":"대한민국 부산광역시 부산진구 양정동 225-8"},{"car":"TZ0028","lat":35.1666686092372,"lng":129.076456961159,"address":"대한민국 부산광역시 부산진구 양정동 산65-2"},{"car":"TZ0489","lat":35.1772786867117,"lng":129.075150055148,"address":"대한민국 부산광역시 부산진구 중앙대로990번길 8"},{"car":"TZ0411","lat":35.1374546848172,"lng":129.062290440039,"address":"대한민국 부산광역시 부산진성공원"},{"car":"TZ0091","lat":35.1432555713544,"lng":129.112948627747,"address":"대한민국 부산광역시 수영구 남천동 148-21"},{"car":"TZ0298","lat":35.1387486208901,"lng":129.107673504137,"address":"대한민국 부산광역시 수영구 남천동 291"},{"car":"TZ0275","lat":35.1606162250473,"lng":129.129826643379,"address":"대한민국 부산광역시 수영구 민락동 108-4"},{"car":"TZ0242","lat":35.1605829291726,"lng":129.129957620167,"address":"대한민국 부산광역시 수영구 민락동 108-8"},{"car":"TZ0070","lat":35.1536557754362,"lng":129.126709890011,"address":"대한민국 부산광역시 수영구 민락동 181-243"},{"car":"TZ0186","lat":35.1535505669555,"lng":129.126667123954,"address":"대한민국 부산광역시 수영구 민락동 181-243"},{"car":"TZ0312","lat":35.1654274576172,"lng":129.1255331281,"address":"대한민국 부산광역시 수영구 민락동 335-1"},{"car":"TZ0123","lat":35.1653694785161,"lng":129.126213959667,"address":"대한민국 부산광역시 수영구 민락동 339-1"},{"car":"TZ0184","lat":35.1699241852438,"lng":129.116671282792,"address":"대한민국 부산광역시 수영구 수영성로27번길 8"},{"car":"TZ0210","lat":35.1675693011025,"lng":129.129715271626,"address":"대한민국 부산광역시 신세계센텀시티"},{"car":"TZ0491","lat":35.1866551312431,"lng":129.073354428719,"address":"대한민국 부산광역시 연제구 거제동 501-1"},{"car":"TZ0026","lat":35.1786558170949,"lng":129.076198830852,"address":"대한민국 부산광역시 연제구 연산동 1425-10"},{"car":"TZ0466","lat":35.1800224217504,"lng":129.076514846414,"address":"대한민국 부산광역시 연제구 연산동 1444-7"},{"car":"TZ0460","lat":35.1797328683555,"lng":129.076454673506,"address":"대한민국 부산광역시 연제구 연산동 2109-20"},{"car":"TZ0378","lat":35.1802483361399,"lng":129.076580417092,"address":"대한민국 부산광역시 연제구 중앙대로 1001"},{"car":"TZ0223","lat":35.1747073877679,"lng":129.174395185489,"address":"대한민국 부산광역시 해운대구 대천로 110"},{"car":"TZ0067","lat":35.1733120253578,"lng":129.127974112379,"address":"대한민국 부산광역시 해운대구 동서대학교 센텀캠퍼스 1층"},{"car":"TZ0252","lat":35.2070191095045,"lng":129.118767117693,"address":"대한민국 부산광역시 해운대구 반여동 1085-3"},{"car":"TZ0152","lat":35.1735900113099,"lng":129.128516947438,"address":"대한민국 부산광역시 해운대구 센텀중앙로"},{"car":"TZ0354","lat":35.1735822660254,"lng":129.128476261613,"address":"대한민국 부산광역시 해운대구 센텀중앙로"},{"car":"TZ0149","lat":35.1730714288688,"lng":129.129292630155,"address":"대한민국 부산광역시 해운대구 센텀중앙로 48"},{"car":"TZ0103","lat":35.169551478034,"lng":129.15638805731,"address":"대한민국 부산광역시 해운대구 우동 1139-39"},{"car":"TZ0145","lat":35.1731199618362,"lng":129.128901971162,"address":"대한민국 부산광역시 해운대구 우동 1458 인텔리움센텀 12층"},{"car":"TZ0079","lat":35.1636641932253,"lng":129.15792005698,"address":"대한민국 부산광역시 해운대구 우동 524-2"},{"car":"TZ0273","lat":35.1615242810452,"lng":129.159562767878,"address":"대한민국 부산광역시 해운대구 우동 542-29"},{"car":"TZ0278","lat":35.1602661651305,"lng":129.156655106685,"address":"대한민국 부산광역시 해운대구 우동 645-16"},{"car":"TZ0075","lat":35.1631584996282,"lng":129.158084830022,"address":"대한민국 부산광역시 해운대구 우동 해운대로 612"},{"car":"TZ0243","lat":35.1631723363053,"lng":129.158395824646,"address":"대한민국 부산광역시 해운대구 우제1동 539-3"},{"car":"TZ0355","lat":35.174697724277,"lng":129.174344315245,"address":"대한민국 부산광역시 해운대구 좌동 1295-18"},{"car":"TZ0023","lat":35.1638865407144,"lng":129.169846545103,"address":"대한민국 부산광역시 해운대구 좌동순환로 473"},{"car":"TZ0244","lat":35.1718726983042,"lng":129.171868763092,"address":"대한민국 부산광역시 해운대구 중동 220-2"},{"car":"TZ0166","lat":35.1901575588498,"lng":129.116961601616,"address":"대한민국 부산광역시 해운대구 해운대로76번길 65"},{"car":"TZ0280","lat":35.1632659177181,"lng":129.15837756755,"address":"대한민국 부산광역시 해운대도시철도역"},{"car":"TZ0034","lat":35.1634053220555,"lng":129.158123891826,"address":"대한민국 부산광역시 해운대역"},{"car":"TZ0349","lat":35.1633779471397,"lng":129.158184093827,"address":"대한민국 부산광역시 해운대역"}]       
+
+        var map = L.map("map", {
+            center: [35.16380454089401, 129.1326448135078],
+            crs: L.CRS.EPSG3857,
+            zoom: 11,
+            zoomControl: true,
+            preferCanvas: false,
+        });
+
+        var tile_layer_6d7fa2c1127284ed0f5174cb21366305 = L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+        ).addTo(map);
+
+        for (let i = 0; i < tourzy_bike.length; i++) {
+
+            console.log(`${i} car:${tourzy_bike[i].car}, lat:${tourzy_bike[i].lat}, lng:${tourzy_bike[i].lng}`)
+
+            // 시작
+            var marker = L.marker(
+                [tourzy_bike[i].lat, tourzy_bike[i].lng],
+                {}
+            ).addTo(map);
+        
+            var icon = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker.setIcon(icon);
+        
+            var popup = L.popup({"maxWidth": "100%"});
+            var html = $(`<div id="html" onclick="copy('${tourzy_bike[i].address}')"; style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].car}</div>`)[0];
+            popup.setContent(html);
+            
+            marker.bindPopup(popup);
+            // 끝
+        }
+    });
+
+</script>
+</html>
