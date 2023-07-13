@@ -131,9 +131,20 @@
                 [tourzy_bike[i].lat, tourzy_bike[i].lng],
                 {}
             ).addTo(map);
+
+            var icon_color = ''
+
+            if (tourzy_bike[i].fuel <= 10) {
+
+                icon_color = 'red'
+
+            } else {
+
+                icon_color = 'orange'
+            }
         
             var icon = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": icon_color, "prefix": "glyphicon"}
             );
             marker.setIcon(icon);
         
