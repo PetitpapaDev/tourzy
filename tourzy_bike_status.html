@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+    
+    <style>html, body {width: 100%; height: 100%; margin: 0; padding: 0;}</style>
+    <style>#map {position:absolute; top:0; bottom:0; right:0; left:0;}</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+            
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- https://velog.io/@me2designer/구글-스프레드시트-웹-크롤링-for-JSON -->
+
+    <style>
+        #map {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+
+        #updated {
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            font-family: NanumGothic;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            color: #000000;
+            background: #FF7500;
+
+            z-index: 9999;
+        }
+
+        #copied {
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+
+            font-family: NanumGothic;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 50px;
+            color: #000000;
+            background: #FF7500;
+            border-radius: 10px;
+
+            z-index: 9999;
+        }
+    </style>
+        
+</head>
+
+<script>
+
+    var map
+    var tile_layer
+    var marker
+    var icon
+    var popup
+    var html
+    var tourzy_bike
+
+    // 스프레드시트 KEY
+    let myKey = "1mX1ChylBc7DxoTsv3U4nRHXdYspw4Ls8Q1y9WRVSaVo";
+
+    // 주소 복사
+    function copyToClipboard(val) {
+        const t = document.createElement("textarea");
+        document.body.appendChild(t);
+        t.value = val;
+        t.select();
+        document.execCommand('copy');
+        document.body.removeChild(t);
+    }
+
+    function copy(addr, carnum) {
+
+        var jsonIdx = tourzy_bike.findIndex(function(key) {return key["car"] === carnum});
+        
+        var idx = JSON.stringify(jsonIdx);
+
+        // console.log('idx : ' + idx)
+
+        const onlongclick = ($target, duration, callback) => {
+
+            $target.onmousedown = () => {
+                const timer = setTimeout(callback, duration);
+
+                $target.onmouseup = () => {
+                clearTimeout(timer);
+                };
+            };  
+
+            $target.ontouchstart = () => {
+                const timer = setTimeout(callback, duration);
+
+                $target.ontouchend = () => {
+                clearTimeout(timer);
+                };
+            };  
+        }
+
+        // 코드예시
+        const $target = document.querySelector('#html');
+
+        onlongclick($target, 300, () => {
+
+            alert('차량 번호 : ' + carnum + ' 작업을 완료했습니다.');
+
+            // 12씩 증가
+            // 1행 14
+            // 26
+
+            // ID
+            // AKfycbz5SxCneGEJsf6vnsFBqbjM3XLD_a2R8_DIK1GzemijGY3xfBaLBV8yOaOgZJmTWcSPqQ
+
+            // URL
+            // https://script.google.com/macros/s/AKfycbz5SxCneGEJsf6vnsFBqbjM3XLD_a2R8_DIK1GzemijGY3xfBaLBV8yOaOgZJmTWcSPqQ/exec
+
+            $.ajax({
+                type: "GET",
+                url: "https://script.google.com/macros/s/AKfycbz5SxCneGEJsf6vnsFBqbjM3XLD_a2R8_DIK1GzemijGY3xfBaLBV8yOaOgZJmTWcSPqQ/exec",
+                data: {
+                    "컬럼명1": "넣을 데이터",
+                    "컬럼명2": "넣을 데이터",
+                    "컬럼명3": "넣을 데이터"
+                },
+                success: function(response){
+                    alert('입력 완료.');
+                }
+            });
+        });
+        
+        copyToClipboard(addr);
+
+        $("#copied").show();
+
+        self.setTimeout("hideDiv()", 2000);
+    }
+
+    $(document).ready(function () {
+
+        $("#copied").hide();
+    });
+    // 주소 복사
+
+    function hideDiv() {
+        
+        $("#copied").hide();
+    }
+
+    window.onload = function () {
+        
+        google.charts.load("current", { packages: ["corechart"] }).then(() => {
+        let query = new google.visualization.Query(
+            `http://spreadsheets.google.com/tq?key=${myKey}&pub=1`
+        );
+
+            query.send((response) => {
+
+                if (response.isError()) {
+                    console.error(
+                        "Error in query: " +
+                        response.getMessage() +
+                        " " +
+                        response.getDetailedMessage()
+                    );
+                    return;
+                }
+
+                let dataTable = response.getDataTable().toJSON();
+                let jsonData = JSON.parse(dataTable);
+                let cols = jsonData.cols.map((col) => col.label);
+                let rows = jsonData.rows.map((row) => {
+                    
+                    let newRow;
+
+                    row.c.forEach((obj, index) => {
+                        if (obj == null || obj == undefined) return; //빈값이 경우 정지
+                        obj[cols[index]] = "f" in obj ? obj["f"] : obj["v"];
+                        ["f", "v"].forEach((each) => delete obj[each]);
+                        newRow = { ...newRow, ...obj };
+                    });
+
+                    return newRow;
+                });
+
+                // console.log(rows);
+
+                // tourzy_bike = JSON.stringify(rows);
+
+                tourzy_bike = rows;
+
+                map = L.map("map", {
+                    center: [35.16380454089401, 129.1326448135078],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                });
+
+                tile_layer = L.tileLayer(
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+                ).addTo(map);
+
+                for (let i = 0; i < tourzy_bike.length; i++) {
+
+                    // var json_idx = tourzy_bike.findIndex(function(key) {return key.fuel > 30});
+                    // tourzy_bike.splice(json_idx, 1);
+
+                    if (tourzy_bike[i].fuel < 30) {
+
+                        // 시작
+                        marker = L.marker(
+                            [tourzy_bike[i].lat, tourzy_bike[i].lng],
+                            {}
+                        ).addTo(map);
+
+                        var icon_color = ''
+
+                        if (tourzy_bike[i].fuel <= 10) {
+
+                            icon_color = 'red'
+
+                        } else {
+
+                            icon_color = 'orange'
+                        }
+                    
+                        icon = L.AwesomeMarkers.icon(
+                            {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": icon_color, "prefix": "glyphicon"}
+                        );
+                        marker.setIcon(icon);
+                    
+                        popup = L.popup({"maxWidth": "100%"});
+                        html = $(`<div id="html" onclick="copy('${tourzy_bike[i].address.replace("대한민국 ", "")}', '${tourzy_bike[i].car}')"; style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].car}<br /><div id="html" style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].fuel}%</div></div>`)[0];
+                        popup.setContent(html);
+                        
+                        marker.bindPopup(popup);
+                        // 끝
+                    }
+                }
+            });
+        });
+    }
+
+</script>
+
+<body>
+
+    <div id="copied">주소가 복사되었습니다.</div>
+
+    <div id="updated">UPDATED 2023.07.18. 17:05 총 19대
+        <br/>
+        빨간색 15% 이하
+        <br/>
+        주황색 15% 이상 30% 이하
+    </div>
+    
+    <div class="folium-map" id="map"></div>
+        
+</body>
+
+</html>
