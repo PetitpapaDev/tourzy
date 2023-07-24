@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+    
+    <style>html, body {width: 100%; height: 100%; margin: 0; padding: 0;}</style>
+    <style>#map {position:absolute; top:0; bottom:0; right:0; left:0;}</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+            
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <style>
+        #map {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+
+        #updated {
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            font-family: NanumGothic;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            color: #000000;
+            background: #FF7500;
+
+            z-index: 9999;
+        }
+
+        #copied {
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+
+            font-family: NanumGothic;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 50px;
+            color: #000000;
+            background: #FF7500;
+            border-radius: 10px;
+
+            z-index: 9999;
+        }
+    </style>
+        
+</head>
+
+<script>
+
+    var map
+    var tile_layer
+    var marker
+    var icon
+    var popup
+    var html
+
+    var tourzy_bike = 
+
+
+
+[{"car":"TZ0051","lock":"잠김","fuel":0,"lock_fuel":98,"lat":35.1595756293099,"lng":129.163539852166,"lastest":45131.71623842593,"address":"대한민국 부산광역시 해운대구 중동 1411-20","etc":"배터리"},{"car":"TZ0235","lock":"잠김","fuel":0,"lock_fuel":67,"lat":35.161403497069,"lng":129.130971269653,"lastest":45131.71109953704,"address":"대한민국 부산광역시 수영구 민락동 광안해변로 446","etc":"배터리"},{"car":"TZ0354","lock":"잠김","fuel":0,"lock_fuel":88,"lat":35.1630814318375,"lng":129.15880251238,"lastest":45131.71696759259,"address":"대한민국 부산광역시 해운대구 해운대로 620","etc":"배터리"},{"car":"TZ0396","lock":"잠김","fuel":0,"lock_fuel":98,"lat":35.2296454921216,"lng":129.088999794996,"lastest":45131.71368055556,"address":"대한민국 부산광역시 장전동 643-117번지 1층 120호 테라스파크 금정구 부산광역시 KR","etc":"배터리"},{"car":"TZ0452","lock":"잠김","fuel":0,"lock_fuel":98,"lat":35.2316516506902,"lng":129.084612850847,"lastest":45131.71443287037,"address":"대한민국 부산광역시 부산대정문","etc":"배터리"},{"car":"TZ0480","lock":"잠김","fuel":0,"lock_fuel":92,"lat":35.1534932498732,"lng":129.124123394407,"lastest":45131.714837962965,"address":"대한민국 부산광역시 543F+GJ8","etc":"배터리"},{"car":"TZ0081","lock":"잠김","fuel":10,"lock_fuel":98,"lat":35.1587704456134,"lng":129.055114739532,"lastest":45131.71171296296,"address":"대한민국 부산광역시 부산진구 부전로96번길 7","etc":"배터리"},{"car":"TZ0233","lock":"잠김","fuel":10,"lock_fuel":98,"lat":35.1267541438179,"lng":129.108697342533,"lastest":45131.71461805556,"address":"대한민국 부산광역시 남구 용호동 174-4","etc":"배터리"},{"car":"TZ0285","lock":"잠김","fuel":10,"lock_fuel":98,"lat":35.1555785904816,"lng":129.112651075799,"lastest":45131.132060185184,"address":"대한민국 부산광역시 수영중학교","etc":"배터리"},{"car":"TZ0317","lock":"잠김","fuel":17,"lock_fuel":98,"lat":35.1551123415775,"lng":129.118151300337,"lastest":45131.71403935185,"address":"대한민국 부산광역시 수영구 광안동 191-5","etc":"배터리"},{"car":"TZ0427","lock":"잠김","fuel":17,"lock_fuel":96,"lat":35.1502994286529,"lng":129.066080266729,"lastest":45131.714050925926,"address":"대한민국 부산광역시 부산진구 전포동 362-98","etc":"배터리"},{"car":"TZ0209","lock":"잠김","fuel":18,"lock_fuel":97,"lat":35.163637042856,"lng":129.142027276889,"lastest":45131.71525462963,"address":"대한민국 부산광역시 해운대구 우동 1002-2","etc":"배터리"},{"car":"TZ0266","lock":"잠김","fuel":18,"lock_fuel":97,"lat":35.1669854221491,"lng":129.116287775242,"lastest":45131.71467592593,"address":"대한민국 부산광역시 수영구 무학로9번길 119","etc":"배터리"},{"car":"TZ0038","lock":"잠김","fuel":19,"lock_fuel":98,"lat":35.1650065892818,"lng":129.15868505179,"lastest":45131.7094212963,"address":"대한민국 부산광역시 해운대구 우동 522-8","etc":"배터리"},{"car":"TZ0040","lock":"잠김","fuel":19,"lock_fuel":96,"lat":35.1539677220015,"lng":129.12399846978,"lastest":45131.71355324074,"address":"대한민국 부산광역시 543F+GJ8","etc":"배터리"},{"car":"TZ0185","lock":"잠김","fuel":19,"lock_fuel":97,"lat":35.1582689100025,"lng":129.116753336737,"lastest":45131.71440972222,"address":"대한민국 부산광역시 수영구 광안로35번길 61","etc":"배터리"},{"car":"TZ0347","lock":"잠김","fuel":20,"lock_fuel":97,"lat":35.1586016773497,"lng":129.113168007752,"lastest":45131.71399305556,"address":"대한민국 부산광역시 수영구 광안제4동 741-1","etc":"배터리"},{"car":"TZ0179","lock":"잠김","fuel":43,"lock_fuel":97,"lat":35.1416391,"lng":129.1011804,"lastest":45131.713159722225,"address":"대한민국 부산광역시 남구 345 101동 지하2층 주차장 5, 6라인","etc":"GPS"},{"car":"TZ0277","lock":"잠김","fuel":51,"lock_fuel":97,"lat":35.160261,"lng":129.162312,"lastest":45131.70952546296,"address":"대한민국 부산광역시 해운대구 구남로 49","etc":"GPS"},{"car":"TZ0331","lock":"잠김","fuel":52,"lock_fuel":96,"lat":35.1272836,"lng":129.1089732,"lastest":45131.710486111115,"address":"대한민국 부산광역시 남구 분포로 113 홈플러스익스프레스 메트로시티점","etc":"GPS"},{"car":"TZ0409","lock":"잠김","fuel":33,"lock_fuel":97,"lat":35.1540765122654,"lng":129.013855312655,"lastest":45131.71041666667,"address":"대한민국 부산광역시 사상구 백양대로342번길 21 204호","etc":"이탈"},{"car":"TZ0282","lock":"잠김","fuel":45,"lock_fuel":97,"lat":35.1390397731946,"lng":129.055816678638,"lastest":45131.71488425926,"address":"대한민국 부산광역시 동구 범일동 1368-13","etc":"이탈"},{"car":"TZ0403","lock":"잠김","fuel":46,"lock_fuel":97,"lat":35.1127521431007,"lng":129.113236708343,"lastest":45131.71585648148,"address":"대한민국 부산광역시 남구 용호동 547-7","etc":"이탈"},{"car":"TZ0193","lock":"잠김","fuel":53,"lock_fuel":97,"lat":35.1182247635718,"lng":129.10933254194,"lastest":45131.7172337963,"address":"대한민국 부산광역시 남구 동명로118번길 41","etc":"이탈"},{"car":"TZ0301","lock":"잠김","fuel":51,"lock_fuel":97,"lat":35.1206263422731,"lng":129.110619346614,"lastest":45131.711168981485,"address":"대한민국 부산광역시 남구 동명로125번길 13","etc":"이탈"},{"car":"TZ0189","lock":"잠김","fuel":57,"lock_fuel":97,"lat":35.1201612060291,"lng":129.115143478746,"lastest":45131.71028935185,"address":"대한민국 부산광역시 남구 용호동 375-53","etc":"이탈"},{"car":"TZ0293","lock":"잠김","fuel":51,"lock_fuel":97,"lat":35.1204302772986,"lng":129.115230243216,"lastest":45131.71591435185,"address":"대한민국 부산광역시 남구 용호동 375-5","etc":"이탈"},{"car":"TZ0230","lock":"잠김","fuel":54,"lock_fuel":97,"lat":35.1243372106423,"lng":129.111880071919,"lastest":45131.71539351852,"address":"대한민국 부산광역시 남구 용호로90번길 12-4","etc":"이탈"},{"car":"TZ0190","lock":"잠김","fuel":71,"lock_fuel":97,"lat":35.1241923029287,"lng":129.110168700258,"lastest":45131.7121412037,"address":"대한민국 부산광역시 남구 용호동 125-6","etc":"이탈"},{"car":"TZ0265","lock":"잠김","fuel":60,"lock_fuel":97,"lat":35.1927080313153,"lng":129.066721548344,"lastest":45131.717627314814,"address":"대한민국 부산광역시 연제구 거제동 894-2","etc":"이탈"},{"car":"TZ0069","lock":"잠김","fuel":34,"lock_fuel":97,"lat":35.2028171858454,"lng":129.060215474558,"lastest":45131.710914351854,"address":"대한민국 부산광역시 동래구 온천동 1617-37","etc":"이탈"},{"car":"TZ0394","lock":"잠김","fuel":49,"lock_fuel":97,"lat":35.2110021454576,"lng":129.079263954935,"lastest":45131.71635416667,"address":"대한민국 부산광역시 동래구 명륜동 681-42","etc":"이탈"},{"car":"TZ0395","lock":"잠김","fuel":37,"lock_fuel":96,"lat":35.2120034776094,"lng":129.079160365348,"lastest":45131.71454861111,"address":"대한민국 부산광역시 동래구 온천동 486-1","etc":"이탈"},{"car":"TZ0485","lock":"잠김","fuel":72,"lock_fuel":97,"lat":35.2180686665066,"lng":129.084296348112,"lastest":45131.717141203706,"address":"대한민국 부산광역시 동래구 온천동 162-3","etc":"이탈"}]
+
+
+
+    
+    
+    // 주소 복사
+    function copyToClipboard(val) {
+        const t = document.createElement("textarea");
+        document.body.appendChild(t);
+        t.value = val;
+        t.select();
+        document.execCommand('copy');
+        document.body.removeChild(t);
+    }
+
+    function copy(addr, carnum) {
+
+        var jsonIdx = tourzy_bike.findIndex(function(key) {return key["car"] === carnum});
+        
+        var idx = JSON.stringify(jsonIdx);
+
+        // console.log('idx : ' + idx)
+
+        const onlongclick = ($target, duration, callback) => {
+
+            $target.onmousedown = () => {
+                const timer = setTimeout(callback, duration);
+
+                $target.onmouseup = () => {
+                clearTimeout(timer);
+                };
+            };  
+
+            $target.ontouchstart = () => {
+                const timer = setTimeout(callback, duration);
+
+                $target.ontouchend = () => {
+                clearTimeout(timer);
+                };
+            };  
+        }
+
+        // 코드예시
+        const $target = document.querySelector('#html');
+
+        onlongclick($target, 300, () => {
+
+            alert('차량 번호 : ' + carnum + ' 작업을 완료했습니다.');
+        });
+        
+        copyToClipboard(addr);
+
+        $("#copied").show();
+
+        self.setTimeout("hideDiv()", 2000);
+    }
+    
+    $(document).ready(function () {
+
+        $("#copied").hide();
+    });
+    // 주소 복사
+
+    function hideDiv () {
+        
+        $("#copied").hide();
+    }
+
+    function mapLoad () {
+        
+        // $("#folium-map").html(JSON.stringify(XLSX.utils.sheet_to_json (sheet)));
+
+        // console.log(JSON.stringify(XLSX.utils.sheet_to_json(sheet)))
+
+        map = L.map("map", {
+            center: [35.16380454089401, 129.1326448135078],
+            crs: L.CRS.EPSG3857,
+            zoom: 11,
+            zoomControl: true,
+            preferCanvas: false,
+        });
+
+        tile_layer = L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+        ).addTo(map);
+
+        for (let i = 0; i < tourzy_bike.length; i++) {
+
+            // console.log(`${i} car:${tourzy_bike[i].car}, lat:${tourzy_bike[i].lat}, lng:${tourzy_bike[i].lng}`)
+
+            // 시작
+            marker = L.marker(
+                [tourzy_bike[i].lat, tourzy_bike[i].lng],
+                {}
+            ).addTo(map);
+
+            var icon_color = ''
+            var icon_img = ''
+
+            if (tourzy_bike[i].fuel <= 10) {
+
+                icon_color = 'red'
+
+            } else {
+
+                icon_color = 'orange'
+            }
+
+            if (tourzy_bike[i].lock == '열림') {
+
+                icon_img = 'ban-circle'
+
+            } else {
+
+                if (tourzy_bike[i].etc == 'GPS') {
+
+                    icon_img = 'plus-sign'
+
+                } else if (tourzy_bike[i].etc == '이탈') {
+
+                    icon_img = 'refresh'
+                    
+                } else {
+
+                    icon_img = 'flash'
+                }
+            }
+        
+            icon = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": icon_img, "iconColor": "white", "markerColor": icon_color, "prefix": "glyphicon"}
+            );
+            marker.setIcon(icon);
+        
+            popup = L.popup({"maxWidth": "100%"});
+            html = $(`<div id="html" onclick="copy('${tourzy_bike[i].address.replace("대한민국 ", "")}', '${tourzy_bike[i].car}')"; style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].car}<br /><div id="html" style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].fuel}%</div><br /><div id="html" style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].etc}</div></div>`)[0];
+            popup.setContent(html);
+            
+            marker.bindPopup(popup);
+            // 끝
+        }
+    }
+
+    window.onload = function () {
+        
+        mapLoad ()
+    }
+
+</script>
+
+<body>
+
+    <div id="copied">주소가 복사되었습니다.</div>
+
+    <div id="updated">UPDATED 2023.07.24. 17:11 총 34대
+        <br/>
+        밴 - 잠금 열린 차량 (0대)
+        <br/>
+        플러스 - 회수 후 확인이 필요한 차량 (3대)
+        <br/>
+        리프레쉬 - 회수 후 재배치가 필요한 차량 (14대)
+        <br/>
+        번개 - 배터리 부족 빨간색 15% 이하, 주황색 15% 이상 30% 이하 (17대)
+    </div>
+    
+    <div class="folium-map" id="map"></div>
+        
+</body>
+
+</html>
