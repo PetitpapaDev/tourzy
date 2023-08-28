@@ -10,7 +10,7 @@
     width: 100%;
     text-align: center;
     position: fixed;
-    top: 0%;
+    bottom: 0%;
     padding-top: 10px;
     padding-bottom: 10px;
 
@@ -20,8 +20,6 @@
     font-size: 16px;
     color: #000000;
     background: #FF7500;
-
-    cursor: pointer;
 
     z-index: 9999;
 }
@@ -47,41 +45,25 @@
     z-index: 9999;
 }
 
-/* nav */
-#nav { 
-    position: fixed;
+/* 하단 */
+#missing {
     width: 100%;
-    height: 15vw;
-    text-align: center;
     bottom: 0;
-    float: right;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background: #FF7500;
     
     z-index: 9999;
 }
 
-#nav li {
-    display: block;
-    text-align: center;
-    width: 50%;
+#missing ul {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
 }
 
-#nav li:first-child {
-    border-right: 2px solid #FFFFFF;
+#missing li {
+    position: relative;
+    width: calc(97%/4);
 }
-
-#nav li a {
-    display: block; 
-    font-family: NanumGothic;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 15vw;
-    color: #000000;
-
-    text-decoration: none;
-}
-/* nav */
+/* 하단 */
