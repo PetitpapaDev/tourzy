@@ -131,7 +131,7 @@
             marker.setIcon(icon);
 
             var popup = L.popup({"maxWidth": "100%"});
-            var html = $(`<div id="html" '${tourzy_bike[i].car}')"; style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].car}<br /><div id="html" style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].lastest}</div><br /><div id="html" style="width: 100.0px; height: 100.0%;"></div></div>`)[0];
+            var html = $(`<div id="html" style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].car}<br /><div id="html" style="width: 100.0%; height: 100.0%;">${tourzy_bike[i].lastest}</div><br /><div id="html" style="width: 100.0px; height: 100.0%;"></div></div>`)[0];
             popup.setContent(html);
             
             marker.bindPopup(popup);
