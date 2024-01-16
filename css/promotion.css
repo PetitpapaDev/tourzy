@@ -139,6 +139,11 @@
     border-radius: 7px;
 }
 
+/* 플로팅 버튼 마우스 호버 */
+#box-btn:hover {
+    background-color: black;
+}
+
 #box-btn p {
     position: absolute;
 	top: 0;
