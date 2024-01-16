@@ -128,12 +128,13 @@
 
     position: absolute;
     left: 0;
+    margin-left: 1vw;
 }
 
 #box-btn {
     position: relative;
 
-    background-color: #416281;
+    background-color: black;
     width: 17vw;
     height: 4vw;
     border-radius: 7px;
@@ -141,7 +142,9 @@
 
 /* 플로팅 버튼 마우스 호버 */
 #box-btn:hover {
-    background-color: black;
+    background-color: white;
+    border: 1px solid;
+    border-color: black;
 }
 
 #box-btn p {
@@ -156,6 +159,11 @@
     /* font-size: 2.5rem; */
     font-size: 1.3vw;
     font-family: Pretendard;
+}
+
+/* 플로팅 버튼 마우스 호버 */
+#box-btn:hover p {
+    color: black;
 }
     
 /*플로팅 버튼 스타일*/
