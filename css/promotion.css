@@ -36,7 +36,7 @@
     right: 0;
 }
 
-#wrap .inner iframe {
+.fullscreen {
     width:43vw;
     height:23vw;
     background:#000000;
@@ -47,6 +47,16 @@
     transform: translate(-50%, -23%);
 
     border-radius: 20px;
+}
+
+.shorts {
+    position: absolute;
+    width: 14.8vw;
+    height: 56vh;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -23%);
+    border: none;
 }
 
 #wrap .inner .pr2_200 {
@@ -71,9 +81,17 @@
         width: 100%;
     }
 
-    #wrap .inner iframe {
+    .fullscreen {
         width: 88vw;
         height: 49vw;
+    }
+
+    .shorts {
+        /* width: 32.2vw;
+        height: 64vh; */
+
+        width: 32.2%;
+        height: 57.5%;
     }
 
     #wrap .inner .pr2_200 {
@@ -97,9 +115,17 @@
         width: 100%;
     }
 
-    #wrap .inner iframe {
+    .fullscreen {
         width: 88vw;
         height: 49vw;
+    }
+
+    .shorts {
+        /* width: 32.7vw;
+        height: 37vh; */
+
+        width: 31.3%;
+        height: 56%;
     }
 
     #wrap .inner .pr2_200 {
@@ -138,6 +164,8 @@
     width: 17vw;
     height: 4vw;
     border-radius: 7px;
+
+    cursor: pointer;
 }
 
 /* 플로팅 버튼 마우스 호버 */
