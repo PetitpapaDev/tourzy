@@ -1780,7 +1780,7 @@
 }
 
 #promotion .promotion_banner .ft {
-    background-image:url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/1hour_bg.png);
+    background-image:url(https://gcore.jsdelivr.net/gh/petitpapadev/tourzy/images/1hour_bg.png);
     background-repeat: no-repeat;
     background-position: center;
     Background-size: 1000px;
@@ -3087,13 +3087,13 @@
 }
 
 #tourzystory .story .bx-prev {
-    background: url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/bx_prev.png) no-repeat;
+    background: url(https://gcore.jsdelivr.net/gh/petitpapadev/tourzy/images/bx_prev.png) no-repeat;
     width: 22.92px;
     height: 79.17px;
 }
 
 #tourzystory .story .bx-next {
-    background: url(https://cdn.jsdelivr.net/gh/petitpapadev/tourzy/images/bx_next.png) no-repeat;
+    background: url(https://gcore.jsdelivr.net/gh/petitpapadev/tourzy/images/bx_next.png) no-repeat;
     width: 22.92px;
     height: 79.17px;
 }
