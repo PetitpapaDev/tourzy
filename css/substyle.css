@@ -1773,6 +1773,46 @@
     height: 400px;
 }
 
+#promotion .promotion_banner ul > li {
+    background-color: #000000;
+}
+
+#promotion .promotion_banner ul > li img {
+    opacity: 20%;
+}
+
+#promotion .promotion_banner ul > li:first-child a {
+    background-color: #ffffff;
+}
+
+#promotion .promotion_banner ul > li:first-child a > img {
+    opacity: 100%;
+}
+
+/* #promotion .promotion_banner ul > li:nth-child(3) {
+    background-color: #000000;
+}
+
+#promotion .promotion_banner ul > li:nth-child(3) img {
+    opacity: 20%;
+}
+
+#promotion .promotion_banner ul > li:nth-child(4) {
+    background-color: #000000;
+}
+
+#promotion .promotion_banner ul > li:nth-child(4) img {
+    opacity: 20%;
+}
+
+#promotion .promotion_banner ul > li:nth-child(5) {
+    background-color: #000000;
+}
+
+#promotion .promotion_banner ul > li:nth-child(5) img {
+    opacity: 20%;
+} */
+
 #promotion .promotion_banner {
     display: flex;
     width: 100%;
